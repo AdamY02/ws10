@@ -1,0 +1,107 @@
+Script started on 2021-09-12 01:25:05+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="25"]
+]0;
+--- Question 1, find the home directory ---
+yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $HOME
+/home/yin
+
+--- Question 2, find the UID ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $UID
+1001
+
+--- Question 3, find the group ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo[K[K[K[Ktail /etc/group
+tss:x:111:
+uuidd:x:112:
+tcpdump:x:113:
+ssh:x:114:
+landscape:x:115:
+lxd:x:116:instr1
+systemd-coredump:x:999:
+instr1:x:1000:
+mysql:x:117:
+yin:x:1001:
+
+--- Question 4, make directory temp and change the premission ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mkdir temp
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ chmod 677 temp/
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd temp/
+bash: cd: temp/: Permission denied
+--- can not cd into temp after execution premission is removed ---
+
+--- Question 4, ls and ls -l still works after premission removed ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls temp/
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls -l temp/
+total 0
+
+--- Question 5, move directory and copy directory ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mkdir cp_temp[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+a1.txt                             cmds.log    temp
+amazon_reviews_us_Books_v1_02.tsv  number.txt  worksheet_Folder
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mv temp/ [K[K[K[K[K[K[K[K[Kmkdir temp2
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mv temp
+temp/  temp2/ 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mv temp[K[K[K[K[K[K[Kmv temp/ temp2/
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls
+a1.txt                             cmds.log    temp2
+amazon_reviews_us_Books_v1_02.tsv  number.txt  worksheet_Folder
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mkdir cp_temp
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls
+a1.txt                             cmds.log  number.txt  worksheet_Folder
+amazon_reviews_us_Books_v1_02.tsv  cp_temp   temp2
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cp -R temp[K[K[K[Kcp_temp temp2/[K[K[K[K[K[K[K/ temp2/
+
+--- inside the folder temp2, I have two directory that I moved and copied from outer directory ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd temp2/
+]0;yin@f6lanuxA3: ~/amazonReview/temp2yin@f6lanuxA3:~/amazonReview/temp2$ ls
+cp_temp  temp
+]0;yin@f6lanuxA3: ~/amazonReview/temp2yin@f6lanuxA3:~/amazonReview/temp2$ cd ..
+
+
+
+--- Question 6, use ls and grep to find the memory info and cpu info ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls /proc | grep mem
+io[Kmem[K
+[Kmem[Kinfo
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls /proc | grep cpi[Ku
+[Kcpu[Kinfo
+
+--- Question 7, use head to check mem info ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ head /proc/cpuinfo [K[K[K[K[K[K[K[Kmeminfo
+MemTotal:        4049408 kB
+MemFree:          269888 kB
+MemAvailable:    1024448 kB
+Buffers:           31552 kB
+Cached:          1068928 kB
+SwapCached:         9024 kB
+Active:           152384 kB
+Inactive:        1069248 kB
+Active(anon):      50048 kB
+Inactive(anon):    88512 kB
+--- memory in server : 4049408 KB --- 
+
+
+--- Question 8, use tail to check cpu info ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ tail /proc/cpuinfo
+processor	: 79
+cpu		: POWER8 (architected), altivec supported
+clock		: 4190.000000MHz
+revision	: 2.0 (pvr 004d 0200)
+
+timebase	: 512000000
+platform	: pSeries
+model		: IBM,9080-MHE
+machine		: CHRP IBM,9080-MHE
+MMU		: Hash
+--- 79 processors, architecture name is POWER8, processor speed is 4190MHZ ---
+
+--- Question 9, find the size of amazon customer reviews file ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls -l --block-size=G amazon_reviews_us_Books_v1_02.tsv 
+-rw-rw-r-- 1 yin yin 4G Nov 24  2017 amazon_reviews_us_Books_v1_02.tsv
+--- the file is 4GB ---
+
+--- Question 10, find how many customer reviews contains the word great ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ grep -i great amazon_reviews_us_Books_v1_02.tsv |  wc -l > [K[K
+857172
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-09-12 01:31:34+00:00 [COMMAND_EXIT_CODE="0"]
