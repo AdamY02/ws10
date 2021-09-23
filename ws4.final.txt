@@ -1,0 +1,103 @@
+Script started on 2021-09-22 18:12:09+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+--- make directory CUSTOMERS and PRODUCTS ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mkdir CUSTOMERS
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ MKDIR [K[K[K[K[K[Kmkdir p[KPRODUCTS
+--- I lookup the ID ahead so I just search them and find out the helpfulness scores ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 51025090 amazon_reviews_us_Books_v1_02.tsv |  cut -f 9 > CUSTOMERS/51025090.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 51125276 amazon_reviews_us_Books_v1_02.tsv |  cut -f 9 > CUSTOMERS/51125276.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 51330742 amazon_reviews_us_Books_v1_02.tsv |  cut -f 9 > CUSTOMERS/51330742.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 0385731949 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0385731949.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 0911903968 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0911903968.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ egrep 0316358142 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0316358142.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ less PRODUCTS/0316358142.txt 
+[?1049h[22;0;0t[?1h=3
+3
+27
+11
+27
+1
+--- First customers ---
+PRODUCTS/0316358142.txt (END)[K[K[?1l>[?1049l[23;0;0t]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=0; count=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=($paste -sd [K[K[K[K[K[K[K[K[K[K[K[K$( )p )a )s )t )e )[C )- )s )d )[C )+ )[C )C )U )S )TOMERS/ )5 )1 )0 )25090.txt )[C )| )[C )b )c )[C[C
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $sum
+9
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(while read line; do echo "($[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K(wc -l < pr[K[KCUSTOMERS/51025090.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "$sum/$count)[K" | bc
+4
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" 
+scale=2; 9/2
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+4.50
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=[K[K[K[Kmean=4.50
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo "($line-$mean)^2" |  bc; done < CUSTOMERS/51025090.txt | paste -sd + | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo sum[K[K[K$sum
+24.50
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(wc -l[K[K[K[K[K[K[K[K[K[K[K[K[Kecho "scale=2; $sum/$count" | bc
+12.25
+--- Second customers ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo[K[K[K[Ksum =[K[K=0; to[K[Kcount=0; mean =[K[K=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(paste -sd + CUSTOMERS/51125276.txt | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $sum
+83
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count$[K=$(wc -l < CUSTOMERS/51125276.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+7.54
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mean=7.54
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo "($line-mean)^2 | b c; done < CUST[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C mean)^2 | b[1@c[A]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$ mean)^2 | [1@b[A]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmean)^2 | b[1P[A]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C" | [1@b[A]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[CCUSTOMERS/51125276.txt | paste -sd + | [K[K| bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $sum
+2546.71
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ eh[Kcho "scale=2; $sum/$count" | bc
+231.51
+
+--- third customer ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=0; count=0; mean=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(paste -sd + CUSTOMERS/51330742.txt | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(wc -l < CUSTOMERS/51330742.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+107.22
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mean=107.5[K22
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo "($line-$mean)^2" |  bc; done < CUSTOMERS/51330742.txt | paste -sd + | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+40340.16
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-09-22 18:50:25+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2021-09-22 19:02:47+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+--- first product ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [K]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=0; count=0; mean=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(paste -sd + PRODUCTS/0385731949.txt | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $sum
+28
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(wc-[K -l < PRODUCTS/0385731949.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+4.66
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mean=4.66
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo "($line-$mean)^2" |  bc [K; done < PRODUCTS/0385731949.txt | paste -sd + | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+12.55
+--- second product ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=0; count=0; mean=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(paste -sd + PRODUCTS/0911903968.txt | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(wc -l < PRODUCTS/0911903968.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+12.71
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mean=12.71
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo " [K($line-$mean)^2" |  bc; done < PRODUCTS/0911903968.txt | paste -sd + | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+124.48
+
+--- third product ---
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=0; count=0; mean=0
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(paste -sd + PRODUCTS/0316358142.txt | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ count=$(wc -l < PRODUCTS/0316358142.txt )
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+12.00
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ mean=12.00
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sum=$(while read line; do echo "($line-$mean)^2" |  bc; done < PRODUCTS/0316358142.txt | paste -sd + | bc)
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo "scale=2; $sum/$count" | bc
+122.33
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-09-22 19:15:48+00:00 [COMMAND_EXIT_CODE="0"]

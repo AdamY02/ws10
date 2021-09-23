@@ -1,0 +1,1000 @@
+  121  id -u yin
+  122  echo $UID
+  123  ls
+  124  pwd
+  125  cd amazonReview/
+  126  pwd
+  127  cd ..
+  128  cd amazonReview/
+  129  echo $HOME
+  130  cd ..
+  131  ls
+  132  script a1.txt
+  133  less a1.txt
+  134  less /etc/group
+  135  $USER
+  136  $ users
+  137  echo $users
+  138  less /etc/group
+  139  groups
+  140  cd ..
+  141  groups
+  142  id -g
+  143  id -G
+  144  groups
+  145  users yin
+  146  less /etc/group
+  147  id -g user
+  148  id -g yin
+  149  id -G user
+  150  id -G yin
+  151  groups yin
+  152  less /etc/group
+  153  more /etc/group
+  154  ls
+  155  cd yin
+  156  ls
+  157  more /etc/group
+  158  echo $UID
+  159  echo $GID
+  160  id -g yin
+  161  ls
+  162  rm a1.txt 
+  163  ls
+  164  script a1.txt
+  165  less a1.txt 
+  166  vi a1.txt
+  167  rm a1.txt 
+  168  ls
+  169  mkdir temp
+  170  ls
+  171  ls -l
+  172  chmod temp 666
+  173  chmod 666 temp/
+  174  ls -l
+  175  cd temp
+  176  cd temp/
+  177  chmod 777 temp/
+  178  ls -l
+  179  chmod 677 temp/
+  180  ls -l
+  181  cd temp/
+  182  exit
+  183  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > customerMostReview.txt
+  184  less customerMostReview.txt 
+  185  cut -f 2 amazon_reviews_us_Books_v1_02.tsv  | sort -n | uniq -c | sort -nr > customerMostReview.txt
+  186  less customerMostReview.txt 
+  187  head 3 customerMostReview.txt 
+  188  head -n 3 customerMostReview.txt 
+  189  less amazon_reviews_us_Books_v1_02.tsv 
+  190  cut -f 4,6 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > mostReviewedProduct.txt
+  191  less mostReviewedProduct.txt 
+  192  head -n 3 mostReviewedProduct.txt 
+  193  less amazon_reviews_us_Books_v1_02.tsv 
+  194  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > helfulness.txt
+  195  less helfulness.txt 
+  196  head -n 10 helfulness.txt 
+  197  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > customerMostReviewed.txt
+  198  cut -f 4,6 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > mostReviewedItem.txt
+  199  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > helpfulness.txt
+  200  echo "find the top 3 reviewers that authored the most reviews"
+  201  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > customerMostReviewed.txt
+  202  echo "the top 3 reviewers is"
+  203  head -n 3 customerMostReviewed.txt 
+  204  echo "find the top 3 most reviewed products"
+  205  cut -f 4,6 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > mostReviewedProduct.txt
+  206  echo "the top 3 most reviewed product is"
+  207  head -n 3 mostReviewedProduct.txt 
+  208  echo "helpfulness values"
+  209  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr | > helpfulness.txt
+  210  echo "the helpfulness values "
+  211  head -n 10 helpfulness.txt 
+  212  less helpfulness.txt 
+  213  ls
+  214  ehco "------------ find top 3 most authoered reviewer"
+  215  echo "--------- find the top 3 most authored reviewer"
+  216  echo "find the most authored top 3 reviewer"
+  217  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > mostAuthoredReviewer.txt
+  218  head -n 3 mostAuthoredReviewer.txt 
+  219  echo "find the top 3 most reviewed prodcuts"
+  220  cut -f 4,6 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > mostReviewedProduct.txt
+  221  head -n 3 mostReviewedProduct.txt 
+  222  echo "helpfulness values"
+  223  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > helpfulness.txt
+  224  head -n 10 helpfulness.txt 
+  225  ls
+  226  cd amazonReview/
+  227  ls
+  228  less amazon_reviews_us_Books_v1_02.tsv 
+  229  cut amazon_reviews_us_Books_v1_02.tsv  -f 2,3 > try01.txt
+  230  ls
+  231  less try01.txt 
+  232  sort -n try01.txt
+  233  sort -n amazon_reviews_us_Books_v1_02.tsv > try02.txt
+  234  less try02.txt 
+  235  sort -n try01.txt > try02.txt
+  236  less try02.txt 
+  237  less amazon_reviews_us_Books_v1_02.tsv 
+  238  rm try01.txt
+  239  ls
+  240  rm try02.txt
+  241  ls
+  242  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > try01.txt
+  243  less try01.txt 
+  244  uniq -c try01.txt > try02.txt
+  245  less try02.txt 
+  246  sort try02.txt >try03.txt
+  247  less try03.txt 
+  248  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > try01.txt
+  249  less try01.txt 
+  250  sort -n try01.txt > try02.txt 
+  251  less try02.txt 
+  252  uniq -c try02.txt > try03.txt
+  253  less try03.txt
+  254  sort -n try03.txt > try04.txt
+  255  less try04.txt
+  256  sort -nr try04.txt > try04.txt
+  257  less try04.txt
+  258  sort -nr try03.txt >try04.txt
+  259  less try04.txt
+  260  sort -nr  uniq -c sort -n cut -f 2 amazon_reviews_us_Books_v1_02.tsv > try05.txt
+  261  sort -n cut -f 2 amazon_reviews_us_Books_v1_02.tsv > try05.txt
+  262  ls
+  263  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > try05.txt
+  264  less try05.txt
+  265  less try04.txt
+  266  less try01.txt 
+  267  rm try01.txt try02.txt 
+  268  ls
+  269  rm try03.txt try04.txt try05.txt 
+  270  ls
+  271  less amazon_reviews_us_Books_v1_02.tsv 
+  272  cut -f 4 amazon_reviews_us_Books_v1_02.tsv > try01.txt
+  273  less try01.txt 
+  274  sort try01.txt > try02.txt
+  275  uniq -c try02.txt > try03.txt
+  276  sort -nr try03.txt > try04.txt
+  277  less try04.txt 
+  278  rm try01.txt try02.txt try03.txt try04.txt 
+  279  ls
+  280  less amazon_reviews_us_Books_v1_02.tsv 
+  281  cut -f 9 amazon_reviews_us_Books_v1_02.tsv  > try01.txt
+  282  less try01.txt 
+  283  less amazon_reviews_us_Books_v1_02.tsv 
+  284  sort -n try01.txt > try02.txt
+  285  uniq -c try02.txt > try03.txt
+  286  sort -nr try03.txt > try04.txt
+  287  less try04.txt 
+  288  rm try01.txt try02.txt try03.txt try04.txt 
+  289  ls
+  290  script ws3.txt
+  291  less amazon_reviews_us_Books_v1_02.tsv 
+  292  head customerMostReview.txt 
+  293  less ws3.txt 
+  294  rm ws3.txt 
+  295  rm customerMostReview.txt 
+  296  ls
+  297  script ws3.txt
+  298  less ws3.txt 
+  299  vi ws3.txt
+  300  rm ws3.txt
+  301  ls
+  302  rm helfulness.txt mostReviewedProduct.txt customerMostReview.txt 
+  303  ls
+  304  script ws3.txt
+  305  less ws3.txt 
+  306  rm ws3.txt 
+  307  rm mostReviewedItem.txt 
+  308  rm helpfulness.txt 
+  309  rm customerMostReviewed.txt 
+  310  ls
+  311  script ws3.txt
+  312  cut -f 9 amazon_reviews_us_Books_v1_02.tsv | sort -n | uniq -c | sort -nr > helpfulness.txt 
+  313  less helpfulness.txt 
+  314  less ws3.txt 
+  315  vi ws3.txt 
+  316  ls
+  317  rm customerMostReviewed.txt helpfulness.txt mostReviewedProduct.txt 
+  318  ls
+  319  rm ws3.txt 
+  320  ls
+  321  script ws3.txt
+  322  rm ws3.txt 
+  323  ls
+  324  script ws3.txt
+  325  less ws3.txt 
+  326  rm ws3.txt 
+  327  ls
+  328  script ws3.txt
+  329  less ws3.txt 
+  330  history > cmds.log
+  331  less cmds.log 
+  332  ls
+  333  exit
+  334  ls
+  335  cd amazonReview/
+  336  ls
+  337  less ws3.txt
+  338  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws3.txt > ws3.clean.txt
+  339  ls
+  340  less ws3.clean.txt 
+  341  tr -cd '\11\12\15\40-\176' <ws3.txt> ws3.2.txt
+  342  ls
+  343  less ws3.2.txt
+  344  rm ws3.clean.txt 
+  345  rm ws3.2.txt 
+  346  ls
+  347  tr -cd '\11\12\15\40-\176' <ws3.txt> ws3.clean.txt
+  348  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws3.clean.txt > ws3.clean2.txt
+  349  ls
+  350  less ws3.clean2.txt 
+  351  less ws30clean2.txt
+  352  less ws3.clean2.txt 
+  353  git status
+  354  git add ws3.clean2.txt 
+  355  ls
+  356  git status
+  357  git add cmds.log
+  358  git status
+  359  git remote set-url https://github.com/AdamY02/ws3.git
+  360  git remote set-url origin https://github.com/AdamY02/ws3.git
+  361  git commit -m "ws3"
+  362  git status
+  363  git ls-files
+  364  git rm counts.txt
+  365  git ls-files
+  366  ls
+  367  mkdir ws3_work
+  368  ls
+  369  mv mostReviewedProduct.txt ws3_work/
+  370  ls
+  371  mv helpfulness.txt mostAuthoredReviewer.txt ws3_work/
+  372  ls
+  373  git push -u origin master
+  374  less ws3.clean2.txt 
+  375  exit
+  376  ls
+  377  cd amazonReview/
+  378  ls
+  379  cd temp
+  380  ls -l
+  381  cd ..
+  382  ls
+  383  cd temp
+  384  ls -l
+  385  mkdir temp2
+  386  ls
+  387  mv temp2 amazonReview/
+  388  ls
+  389  ls -l
+  390  cd amazonReview/
+  391  ls -l
+  392  rm temp2
+  393  rmdir temp2
+  394  ls
+  395  ls -l
+  396  cd ..
+  397  ls
+  398  mkdir temp2
+  399  cp temp2
+  400  cp temp2 amazonReview/
+  401  ls -l
+  402  cp -R  temp2 amazonReview/
+  403  cd amazonReview/
+  404  ls
+  405  cd temp2
+  406  ls
+  407  cd ..
+  408  ls
+  409  cd temp2
+  410  ls
+  411  cat "abc" > newfile.txt
+  412  echo "abc" > newfile.txt
+  413  ls
+  414  cd ..
+  415  ls
+  416  cp -R temp2 amazonReview/
+  417  cd amazonReview/
+  418  cd temp2
+  419  ls
+  420  cd ..
+  421  echo "question 1 ......"
+  422  echo " yes but "
+  423  echo $'find homedirectory'
+  424  echo " ---Question1, find homedirectory "
+  425  echo $HOME
+  426  echo "---Question2, find UID"
+  427  echo $UID
+  428  echo "---Question 3, find the group"
+  429  tail -n 5 /etc/group
+  430  ls
+  431  mkdir temp
+  432  chmod 677 temp
+  433  ls -l
+  434  cd temp
+  435  ls temp
+  436  ls -l temp
+  437  echo " For question 4, can not cd into the temp directory but ls and ls-l work"
+  438  chmod 777 temp
+  439  mv temp temp2
+  440  ls
+  441  cd temp2
+  442  ls
+  443  cd ..
+  444  mkdir cp_temp
+  445  cp cp_temp/ temp2/
+  446  cp -R cp_temp/ temp2/
+  447  cd temp2/
+  448  ls
+  449  cd ..
+  450  echo "Question 6, use ls to find mem and cpu info"
+  451  ls /proc | grep mem
+  452  ls /proc |grep cpu
+  453  echo "Question 7, use head to check the mem info"
+  454  head head /proc/meminfo
+  455  echo "Question 8, use tail to check processor, architecture name and processor speed"
+  456  tail /proc/cpuinfo
+  457  ls
+  458  echo "Question 9, find the size of amazon customer reviews file"
+  459  ls -l --block-size=G
+  460  echo "Question 10, find the great review appear in the file shows how many counts of it"
+  461  grep -i great amazon_reviews_us_Books_v1_02.tsv | wc -l > number.txt
+  462  less number.txt 
+  463  ls -l
+  464  echo "aaa"
+  465  echo $HOME
+  466  echo $UID
+  467  tail /etc/group
+  468  mkdir temp
+  469  chmod 677 temp
+  470  ls -l
+  471  cd temp
+  472  ls temp
+  473  ls -l temp
+  474  mkdir cp_temp
+  475  echo $HOME
+  476  echo $UID
+  477  tail /etc/group
+  478  mkdir temp
+  479  chmod 677 temp/
+  480  cd temp/
+  481  ls temp/
+  482  ls -l temp/
+  483  ls
+  484  mkdir temp2
+  485  mv temp/ temp2/
+  486  ls
+  487  mkdir cp_temp
+  488  ls
+  489  cp -R cp_temp/ temp2/
+  490  cd temp2/
+  491  ls
+  492  cd ..
+  493  ls /proc | grep mem
+  494  ls /proc | grep cpu
+  495  head /proc/meminfo
+  496  tail /proc/cpuinfo
+  497  ls -l --block-size=G amazon_reviews_us_Books_v1_02.tsv 
+  498  grep -i great amazon_reviews_us_Books_v1_02.tsv | wc -l 
+  499  script abc.txt
+  500  ls
+  501  vi abc.txt 
+  502  ls
+  503  cd ~
+  504  cd amazonReview/
+  505  cd ~
+  506  ls /proc
+  507  ls /proc | grep mem
+  508  ls /proc | grep cpu
+  509  head meninfo
+  510  head meminfo
+  511  head /proc meminfo
+  512  head /proc/meminfo
+  513  tail /proc/cpuinfo
+  514  ech "sdf 
+  515  dsf"
+  516  echo "abcsdf \n abc"
+  517  echo 'hello\nworld"
+  518  a
+  519  echo 'hello world'
+  520  echo "hello"
+  521  echo 'hello\nworld'
+  522  echo $'hello\nworld'
+  523  ls
+  524  cd amazonReview/
+  525  ls
+  526  ls -l
+  527  ls ls -lh
+  528  ls -lh
+  529  ls -lh amazon_reviews_us_Books_v1_02.tsv 
+  530  ls -l --block-size=M
+  531  ls -l --block-size=G
+  532  grep -i amazon_reviews_us_Books_v1_02.tsv | wc -l > numbersofGreat.txt
+  533  ls
+  534  rm numbersofGreat.txt 
+  535  grep -i great amazon_reviews_us_Books_v1_02.tsv > number.txt
+  536  less number.txt 
+  537  grep -ic amazon_reviews_us_Books_v1_02.tsv > number.txt
+  538  grep -ic great amazon_reviews_us_Books_v1_02.tsv  > number.txt
+  539  less number.txt 
+  540  vi number.txt 
+  541  grep -c great amazon_reviews_us_Books_v1_02.tsv  > number.txt 
+  542  less number.txt 
+  543  grep -ic great amazon_reviews_us_Books_v1_02.tsv  > number.txt 
+  544  less number.txt 
+  545  grep -ic "great" amazon_reviews_us_Books_v1_02.tsv > number.txt
+  546  less number.txt 
+  547  grep -c great amazon_reviews_us_Books_v1_02.tsv  > number.txt 
+  548  less number
+  549  less number.txt 
+  550  grep -i great amazon_reviews_us_Books_v1_02.tsv > number.txt 
+  551  less number.txt 
+  552  grep -i great amazon_reviews_us_Books_v1_02.tsv | wc -l > number.txt
+  553  less number
+  554  less number.txt 
+  555  ls
+  556  cd ..
+  557  ls
+  558  cd amazonReview/
+  559  ls
+  560  cd ws3_work/
+  561  ls
+  562  cd ..
+  563  ls
+  564  mv ws3.clean.txt ws3.clean2.txt ws3.txt ws3_work/
+  565  ls
+  566  git status
+  567  ls
+  568  mkdir ws2_work
+  569  mv unverified.txt verified.txt ws2_work/
+  570  ls
+  571  script a1.txt
+  572  less a1.txt 
+  573  script a1.txt
+  574  less a1.txt 
+  575  tr -cd '\11\12\15\40-\176' <a1.txt> a1.clean.txt
+  576  less a1.clean.txt 
+  577  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a1.clean.txt a1.clean2.txt
+  578  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a1.clean.txt > a1.clean2.txt
+  579  ls
+  580  less a1.clean2.txt 
+  581  rm a1.clean.txt a1.clean2.txt 
+  582  ls
+  583  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a1.txt > a1.clean.txt
+  584  less a1.clean.txt 
+  585  tr -cd '\11\12\15\40-\176' <a1.clean.txt> a1.clean2.txt
+  586  less a1.clean2.txt 
+  587  sed -i "s/^M//g" a1.clean2.txt 
+  588  less a1.clean2.txt 
+  589  less a1.clean2.txt
+  590  less a1.clean.txt 
+  591  script a1.txt
+  592  less a1.txt
+  593  ls
+  594  rm a1.clean.txt a1.clean2.txt 
+  595  ls
+  596  vi a1.txt 
+  597  rm a1.txt 
+  598  ls
+  599  script a1.txt
+  600  ls
+  601  rm cp_temp/
+  602  rm temp2/
+  603  ls
+  604  rm temp2/
+  605  rmdir temp2/
+  606  temp2
+  607  cd temp2/
+  608  ls
+  609  rm temp
+  610  rm newfile.txt 
+  611  rmdir cp_temp/
+  612  rmdir temp/
+  613  ls
+  614  cd ..
+  615  ls
+  616  rmdir temp2/
+  617  ls
+  618  rmdir cp_temp
+  619  mkdir worksheet_Folder
+  620  ls
+  621  mv ws2_work/ ws3_work/ worksheet_Folder/
+  622  ls
+  623  worksheet_Folder/
+  624  ls
+  625  cd worksheet_Folder/
+  626  ls
+  627  cd ..
+  628  ls
+  629  rmdir temp/
+  630  ls
+  631  script a1.txt 
+  632  less a1.txt
+  633  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a1.txt > a1.clean.txt
+  634  less a1.clean.txt 
+  635  tr -cd '\11\12\15\40-\176' < a1.clean.txt > a1.final.txt
+  636  less a1.final.txt 
+  637  vi a1.final.txt 
+  638  exit
+  639  ls
+  640  cd amazonReview/
+  641  ls
+  642  less a1.
+  643  ;ess a1.final.txt 
+  644  less a1.final.txt 
+  645  git status
+  646  less a1.txt 
+  647  rm a1.txt 
+  648  ls
+  649  cat a1.final.txt > a1.txt
+  650  ls
+  651  less a1.txt 
+  652  ls
+  653  mkdir assign_1
+  654  ls
+  655  mv a1.clean.txt a1.final.txt assign_1/
+  656  ls
+  657  git status
+  658  git ls
+  659  git ls-files
+  660  git rm -cached ws3.clean2.txt
+  661  git rm --cached ws3.clean2.txt 
+  662  ls
+  663  git rm --cached cmds.log 
+  664  ls
+  665  git remote set-url origin https://github.com/AdamY02/assignment1
+  666  git add a1.txt 
+  667  git status
+  668  ls
+  669  git commit -m "assignment 1"
+  670  git push
+  671  exit
+  672  cd amazonReview/
+  673  ls
+  674  cat "15" > ca1.txt
+  675  echo "15" > cat1.txt
+  676  ls
+  677  less ca1.
+  678  less ca1.txt
+  679  vi ca1.txt 
+  680  echo 15 >ca1.txt
+  681  vi ca1.txt 
+  682  less ca1.txt 
+  683  echo 20 ca2.txt
+  684  echo 20 > ca2.txt
+  685  bc ca1.txt
+  686  bc 1+5
+  687  bc ca1.txt ca2.txt
+  688  bc
+  689  bc ca1.txt 
+  690  head -n 2 ca1.txt 
+  691  echo "12+5" | bc
+  692  echo 21+5 | bc
+  693  head ca1.txt + 12 | bc
+  694  cat ca1.txt 
+  695  exit
+  696  cd amazonReview/
+  697  ls
+  698  mkdir assignment_Folder
+  699  ls
+  700  mv assign_1/ assignment_Folder/
+  701  ls
+  702  mkdir CUSTOMERS
+  703  mkdir PRODUCTS
+  704  ls
+  705  echo "1+5" | bc
+  706  bc 6*6
+  707  bc "6+6"
+  708  egrep -c 10254212 amazon_reviews_us_Books_v1_02.tsv > try01.txt
+  709  less try01.txt 
+  710  egrep -c 1025 amazon_reviews_us_Books_v1_02.tsv > try01.txt
+  711  less try01.txt 
+  712  egrep -c 1023654 amazon_reviews_us_Books_v1_02.tsv  > try01.txt 
+  713  less try01.txt 
+  714  less amazon_reviews_us_Books_v1_02.tsv 
+  715  egrep -c 51025090 amazon_reviews_us_Books_v1_02.tsv > try01.txt 
+  716  less amazon_reviews_us_Books_v1_02.tsv 
+  717  less try01.txt 
+  718  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv > try01.txt 
+  719  less try01.txt 
+  720  less amazon_reviews_us_Books_v1_02.tsv 
+  721  cut -9 try01.txt > try02.txt
+  722  cut -f 9 try01.txt > try02.txt 
+  723  less try02.txt 
+  724  less try01.txt 
+  725  less amazon_reviews_us_Books_v1_02.tsv 
+  726  less try01.txt 
+  727  less amazon_reviews_us_Books_v1_02.tsv 
+  728  egrep 51025090 51125276 amazon_reviews_us_Books_v1_02.tsv > try1.txt
+  729  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv > try1.txt
+  730  less try1.txt 
+  731  rm try01.txt try02.txt 
+  732  egrep 51125276 amazon_reviews_us_Books_v1_02.tsv > try2.txt
+  733  less try2.txt 
+  734  egrep -c 51125276 amazon_reviews_us_Books_v1_02.tsv 
+  735  less try2.txt 
+  736  egrep 51330742 amazon_reviews_us_Books_v1_02.tsv > try3.txt
+  737  less try3.txt 
+  738  less try3.txt
+  739  egrep -c 51330742 amazon_reviews_us_Books_v1_02.tsv
+  740  egrep -c 0385731949 amazon_reviews_us_Books_v1_02.tsv 
+  741  egrep -c 0911903968 amazon_reviews_us_Books_v1_02.tsv 
+  742  egrep -c 0316358142 amazon_reviews_us_Books_v1_02.tsv 
+  743  cd amazonReview/
+  744  ls
+  745  head ca2.txt 
+  746  head ca1.txt 
+  747  paste ca1.txt ca2.txt 
+  748  paste -d + ca1.txt ca2.txt 
+  749  paste -d + ca1.txt ca2.txt | bc
+  750  vi ca1.txt 
+  751  less ca1.txt 
+  752  paste -sd + ca1.txt | bc
+  753  paste -d + ca1.txt 
+  754  wc ca1.txt 
+  755  wc -l ca1.txt 
+  756  wc -l ca2.txt 
+  757  wc -l <ca1.txt >
+  758  wc -l < ca1.txt 
+  759  who
+  760  who > users
+  761  cat users
+  762  ls
+  763  rm users
+  764  head ca1.txt 
+  765  head < ca1.txt 
+  766  echo ca1.txt 
+  767  echo < ca1.txt 
+  768  wc -l < ca1.txt 
+  769  wc -l 15
+  770  wc -l "12313"
+  771  dc.txt < ca1.txt 
+  772  echo < ca1.txt 
+  773  cat dc.txt < ca1.txt 
+  774  ls
+  775  less ca1.txt 
+  776  less ca2.txt 
+  777  paste -d + ca1.txt ca2.txt 
+  778  paste -d + ca1.txt ca2.txt | bc
+  779  paste -sd + ca1.txt | bc
+  780  echo "38 / 2" | bc
+  781  paste -sd + ca1.txt | bc > ca2.txt 
+  782  less ca2.txt 
+  783  paste -sd + ca1.txt | bc > ca2.txt | paste -d 
+  784  paste -sd + ca1.txt | bc > ca2.txt | paste -d / ca2.txt 
+  785  less ca2.txt 
+  786  paste -sd + ca1.txt | bc 
+  787  paste -sd + ca1.txt | bc | + 2 bc
+  788  wc -l ca1.txt 
+  789  paste -sd + ca1.txt | bc >> new1.txt 
+  790  less new1.txt 
+  791  wc -l < ca1.txt > new1.txt 
+  792  less new1.txt 
+  793  paste -sd + ca1.txt | bc >> new1.txt 
+  794  we -c ca1.txt >> new1.txt 
+  795  wc -l < ca1.txt >> new1.txt 
+  796  less new1.txt 
+  797  paste -sd + ca1.txt | bc >> new1.txt 
+  798  paste -sd + ca1.txt | bc > new1.txt 
+  799  wc -l < ca1.txt >> new1.txt 
+  800  less new1.txt 
+  801  paste -d ca1.txt " / " 
+  802  exit
+  803  cd amazonReview/
+  804  ls
+  805  less ca1.txt 
+  806  paste -d + ca1.txt | bc > ca2.txt 
+  807  less ca2.txt 
+  808  less ca1.txt 
+  809  paste -sd + ca1.txt | bc > ca2.txt 
+  810  less ca2.txt 
+  811  wc -l < ca1.txt >> ca2.txt 
+  812  less ca2.txt 
+  813  paste -sd / ca2.txt | bc > ca2.txt 
+  814  less ca2.txt 
+  815  paste -sd + ca1.txt | bc > ca2.txt ; wc -l < ca1.txt >> ca2.txt
+  816  less ca2.txt 
+  817  exit
+  818  mkdir CUSTOMERS PRODUCTS
+  819  ls
+  820  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMER/51025090.txt
+  821  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51025090
+  822  total=0; sum=0
+  823  sum=$(paste -sd + CUSTOMERS/51025090 | bc )
+  824  echo $sum
+  825  total=$(wc -l < CUSTOMERS/51025090) 
+  826  echo "$sum/$total" | bc
+  827  echo scale=2 "$sum/$total" | bc
+  828  echo "scale=2, $sum/$total" | bc
+  829  echo "scale=2; $sum/total" | bc 
+  830  echo total
+  831  echo $total
+  832  echo "scale=2; 125.12215" | bc
+  833  echo "scale=2, 2.56885"
+  834  echo "scale=2; 2.5649"
+  835  echo 'scale=2; 2.5567'
+  836  echo "scale=2; 2.5648" | bc -l
+  837  echo 'scale=2; 100*(25920-239)/2592000' | bc -l
+  838  echo "scale=2; $total/$sum" | bc
+  839  echo "scale=2; $sum/$total" | bc
+  840  unset sum total
+  841  sum=0; count=0
+  842  sum=$(paste -sd + CUSTOMERS/51025090 | bc )
+  843  echo $sum
+  844  $mean=4.50
+  845  mean=4.50
+  846  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < CUSTOMERS/51025090 | paste -sd + | bc )
+  847  echo $sum
+  848  less CUSTOMERS/51025090 
+  849  count=$(wc -l < CUSTOMERS/51025090 )
+  850  echo $count
+  851  echo "$sum/$count" | bc
+  852  echo "scale=2; $sum/$count" | bc 
+  853  cd amazonReview/
+  854  echo total
+  855  TEST = foo; echo $TEST
+  856  TEST=foo
+  857  echo $TEST
+  858  unset TEST
+  859  echo $TEST
+  860  echo $good
+  861  good = abc
+  862  good=abc
+  863  echo $good
+  864  unset good
+  865  total=wc -l ca1.txt 
+  866  total < head -n 1 ca1.txt 
+  867  total= < head -n 1 ca1.txt 
+  868  total=$(wc -l < ca1.txt )
+  869  echo $total
+  870  unset total
+  871  echo total
+  872  echo $total
+  873  set total=5
+  874  echo total
+  875  echo $total
+  876  total=5
+  877  echo $total
+  878  unset total
+  879  less ca1.txt 
+  880  total=$(paste -sd + ca1.txt | bc)
+  881  echo $total
+  882  count=$(wc -l < ca1.txt )
+  883  echo $count
+  884  total/count | bc
+  885  $total / $count | bc
+  886  $total / $count
+  887  echo "$total / $count" | bc
+  888  vi ca1.txt 
+  889  paste -sd + ca1.txt | bc > ca2.txt 
+  890  less ca2.txt 
+  891  total=$(paste -sd + ca1.txt | bc)
+  892  echo $total
+  893  sum=total
+  894  echo $sum
+  895  sum=$total
+  896  echo $sum
+  897  total=$(wc -l < ca1.txt )
+  898  echo $total
+  899  echo "$sum/$total" | bc
+  900  echo "$sum/total" | bc >> ca1.txt 
+  901  echo "$sum/$total" | bc >> ca1.txt 
+  902  less ca1.txt 
+  903  $sum=0
+  904  sum=0
+  905  echo $sum
+  906  total=0
+  907  vi ca1.txt 
+  908  vi ca2.txt 
+  909  less ca2.txt 
+  910  paste -sd - 18 ca1.txt | bc
+  911  less ca1.txt 
+  912  paste -sd - 18 + ca1.txt | bc
+  913  less ca1.txt 
+  914  echo "sqrt(20)" | bc
+  915  echo "sqrt 5" | bc
+  916  echo "sqrt(5)" | bc
+  917  sum=5
+  918  echo $sum
+  919  echo "
+  920  echo "sqrt($sum)" | bc
+  921  echo "sq(10)" | bc
+  922  echo "2^2" | bc
+  923  echo "$sum^2" | bc
+  924  sum=-5
+  925  echo $sum
+  926  echo "$sum^2" | bc
+  927  for i=0 in ca1.txt do echo done
+  928  for i in ca1.txt; do echo $i; done
+  929  for i in ca1.txt do echo "$i" done
+  930  for i in (1..5); do echo $i; done
+  931  for i in a b c; do echo $i; done
+  932  for i in ca1.txt; do echo $i; done
+  933  read -n 2 ca1.txt 
+  934  read ca1.txt 
+  935  while read line; do echo $line; done < ca1.txt 
+  936  while read i; do echo $i; done < ca1.txt 
+  937  while read i; do echo ($i+sum); done < ca1.txt 
+  938  echo $sum
+  939  sum=11
+  940  while read i; do echo "$si+$sum"; done < ca1.txt 
+  941  while read i; do echo "$i+$sum"; done < ca1.txt 
+  942  while read i; do echo "$i+$sum"; | bc; done < ca1.txt 
+  943  while read line; do echo "$line+$sum" | bc; done < ca1.txt 
+  944  mean=18
+  945  less ca1.txt 
+  946  echo $mean
+  947  $sum=$(paste -sd + ca1.txt | bc)
+  948  sum=$(paste -sd + ca1.txt | bc)
+  949  echo $sum
+  950  total=$(wc -l < ca1.txt )
+  951  echo $total
+  952  $sum/$total
+  953  echo "$sum/$total" | bc
+  954  mean=$(echo "Sum/$total" | bc
+  955  mean=$(echo "$sum/$total" | bc )
+  956  echo $mean
+  957  while read line; do echo "$line-$mean" | bc; done < ca1.txt 
+  958  while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt 
+  959  while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt | paste -sd + 
+  960  while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt | paste -sd + | bc
+  961  unset total
+  962  unset sum
+  963  total=0
+  964  sum=0
+  965  total=$(while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt | paste -sd + | bc
+  966  while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt | paste -sd + | bc
+  967  total=$(while read line; do echo "($line-$mean)^2" | bc; done < ca1.txt | paste -sd + | bc)
+  968  echo $total
+  969  ls
+  970  rm try1.txt try2.txt 
+  971  less cat1.txt 
+  972  rm cat1.txt 
+  973  ls
+  974  rm try3.txt 
+  975  cd assignment_Folder/
+  976  ls
+  977  cd assign_1/
+  978  ls
+  979  cd ..
+  980  ls
+  981  script ws4.txt
+  982  ls
+  983  rmdir CUSTOMERS/
+  984  rmdir PRODUCTS/
+  985  script ws4.txt
+  986  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv >try01.txt
+  987  less try01.txt 
+  988  cut -f 9 try01.txt 
+  989  cut -f 9 try01.txt > CUSTOMERS/51025090.txt
+  990  ls
+  991  cd CUSTOMERS/
+  992  LS
+  993  ls
+  994  less 51025090.txt 
+  995  rm 51025090.txt 
+  996  cd ..
+  997  less ws4.txt 
+  998  sum = 1
+  999  sum=1
+ 1000  total=2
+ 1001  echo "$sum/$total" | bc
+ 1002  ls
+ 1003  script ws4.txt
+ 1004  less ws4.txt 
+ 1005  exit
+ 1006  mkdir CUSTOMERS
+ 1007  mkdir PRODUCTS
+ 1008  egrep 51025090 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51025090.txt
+ 1009  egrep 51125276 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51125276.txt
+ 1010  egrep 51330742 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > CUSTOMERS/51330742.txt
+ 1011  egrep 0385731949 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0385731949.txt
+ 1012  egrep 0911903968 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0911903968.txt
+ 1013  egrep 0316358142 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/0316358142.txt
+ 1014  less PRODUCTS/0316358142.txt 
+ 1015  sum=0; count=0
+ 1016  sum=$(paste -sd + CUSTOMERS/51025090.txt | bc )
+ 1017  echo $sum
+ 1018  count=$(wc -l < CUSTOMERS/51025090.txt )
+ 1019  echo "$sum/$count" | bc
+ 1020  echo "scale=2; $sum/$count" 
+ 1021  echo "scale=2; $sum/$count" | bc
+ 1022  mean=4.50
+ 1023  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < CUSTOMERS/51025090.txt | paste -sd + | bc)
+ 1024  echo $sum
+ 1025  echo "scale=2; $sum/$count" | bc
+ 1026  sum=0; count=0; mean=0
+ 1027  sum=$(paste -sd + CUSTOMERS/51125276.txt | bc)
+ 1028  echo $sum
+ 1029  count=$(wc -l < CUSTOMERS/51125276.txt )
+ 1030  echo "scale=2; $sum/$count" | bc
+ 1031  mean=7.54
+ 1032  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < CUSTOMERS/51125276.txt | paste -sd + | bc)
+ 1033  echo $sum
+ 1034  echo "scale=2; $sum/$count" | bc
+ 1035  sum=0; count=0; mean=0
+ 1036  sum=$(paste -sd + CUSTOMERS/51330742.txt | bc)
+ 1037  count=$(wc -l < CUSTOMERS/51330742.txt )
+ 1038  echo "scale=2; $sum/$count" | bc
+ 1039  mean=107.22
+ 1040  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < CUSTOMERS/51330742.txt | paste -sd + | bc)
+ 1041  echo "scale=2; $sum/$count" | bc
+ 1042  cd amazonReview/
+ 1043  ls
+ 1044  rmdir CUSTOMERS/
+ 1045  rmdir PRODUCTS/
+ 1046  cd CUSTOMERS/
+ 1047  LS
+ 1048  rm 51025090 
+ 1049  ls
+ 1050  cd ..
+ 1051  rmdir CUSTOMERS/
+ 1052  ls
+ 1053  script ws4.txt
+ 1054  less CUSTOMERS/51330742.txt 
+ 1055  script try01.txt > try02.txt
+ 1056  echo heelo
+ 1057  echo good
+ 1058  echo bay
+ 1059  echo cccc
+ 1060  sum=0; count=0; mean=0
+ 1061  sum=$(paste -sd + PRODUCTS/0385731949.txt | bc)
+ 1062  echo $sum
+ 1063  count=$(wc -l < PRODUCTS/0385731949.txt )
+ 1064  echo "scale=2; $sum/$count" | bc
+ 1065  mean=4.66
+ 1066  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < PRODUCTS/0385731949.txt | paste -sd + | bc)
+ 1067  echo "scale=2; $sum/$count" | bc
+ 1068  sum=0; count=0; mean=0
+ 1069  sum=$(paste -sd + PRODUCTS/0911903968.txt | bc)
+ 1070  count=$(wc -l < PRODUCTS/0911903968.txt )
+ 1071  echo "scale=2; $sum/$count" | bc
+ 1072  mean=12.71
+ 1073  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < PRODUCTS/0911903968.txt | paste -sd + | bc)
+ 1074  echo "scale=2; $sum/$count" | bc
+ 1075  sum=0; count=0; mean=0
+ 1076  sum=$(paste -sd + PRODUCTS/0316358142.txt | bc)
+ 1077  count=$(wc -l < PRODUCTS/0316358142.txt )
+ 1078  echo "scale=2; $sum/$count" | bc
+ 1079  mean=12.00
+ 1080  sum=$(while read line; do echo "($line-$mean)^2" | bc; done < PRODUCTS/0316358142.txt | paste -sd + | bc)
+ 1081  echo "scale=2; $sum/$count" | bc
+ 1082  cd amazonReview/
+ 1083  ls
+ 1084  less try01.txt 
+ 1085  script try01.txt 
+ 1086  less try01.txt 
+ 1087  script -a try01.txt 
+ 1088  less try01.txt 
+ 1089  history
+ 1090  less ws4.txt 
+ 1091  less CUSTOMERS/51330742.txt 
+ 1092  script -a ws4.txt
+ 1093  less PRODUCTS/0316358142.txt 
+ 1094  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws4.txt > ws4.clean.txt
+ 1095  tr -cd '\11\12\15\40-\176' <ws4.clean.txt > ws4.final.txt
+ 1096  less ws4.final.txt 
+ 1097  vi ws4.final.txt 
+ 1098  less ws4.final.txt 
+ 1099  tr -cd '\11\12\15\40-\176' <ws4.clean.txt > ws4.final.txt
+ 1100  less ws4.final.txt 
+ 1101  vi ws4.final.txt 
+ 1102  tr -d "[k" < ws4.final.txt > ws4.try.txt
+ 1103  less ws4.try.txt 
+ 1104  tr -d "[K" < ws4.final.txt > ws4.try.txt 
+ 1105  less ws4.try.txt 
+ 1106  tr -d "C" < ws4.try.txt> ws4.try2.txt
+ 1107  less ws4.try2.txt 
+ 1108  cd assignment_Folder/
+ 1109  ls
+ 1110  cd assign_1/
+ 1111  ls
+ 1112  less a1.final.txt 
+ 1113  cd ..
+ 1114  ls
+ 1115  less ws4.final.txt 
+ 1116  exit
+ 1117  cd amazonReview/
+ 1118  ls
+ 1119  vi ws4.final.txt 
+ 1120  history > cmds.log
