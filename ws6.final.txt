@@ -1,0 +1,51 @@
+Script started on 2021-10-06 03:35:00+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+----- Question 1 -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ DATETIME=$(date "+%Y%m%d_%H%M%S")
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo $DATETIME
+20211006_033505
+
+----- Question 2 -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd PRODUCTS/
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ ls
+0446672211.20211006_033505.txt  0446672211.txt
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ cd ..
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-06 03:35:50+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- Question 3 -----
+Script started on 2021-10-06 03:36:43+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ echo -e "US \t 12345 \t 01234 \t 0446672211 \t 12  \t idea \t idea \t 3 \t 12 " >> PRODUCTS/0446672211.20211006_033505.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-06 03:38:42+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- Question 4 -----
+Script started on 2021-10-06 03:42:45+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ln PRODUCTS/0446672211.20211006_033505.txt PRODUCTS/0446672211.LATEST.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd PRODUCTS/
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ ls
+0446672211.20211006_033505.txt  0446672211.LATEST.txt  0446672211.txt
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ cd ..
+
+----- Question 5 -----
+
+
+
+Script started on 2021-10-06 04:31:20+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [K]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ crontab -e
+----- I delete the lines inside nano when modifying the crontab, they are too messy to display -----
+----- my code for crontab is 
+
+        * * * * * sum=$(cut -f 8 /home/yin/amazonReview/PRODUCTS/0446672211.LATEST.txt | paste -sd + | bc); count=$(wc -l < /home/yin/amazonReview/PRODUCTS/0446672211.LATEST.txt); echo "scale=2; $sum/$count" | bc > /home/yin/amazonReview/PRODUCTS/0446672211.AVGRATING.txt -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd PRODUCTS/
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ ls
+0446672211.20211006_033505.txt  0446672211.LATEST.txt
+0446672211.AVGRATING.txt        0446672211.txt
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ less 0446672211.AVGRATING.txt 
+[?1049h[22;0;0t[?1h=4.28
+
+Script done on 2021-10-06 04:41:21+00:00 [COMMAND_EXIT_CODE="0"]
