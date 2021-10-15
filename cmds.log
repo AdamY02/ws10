@@ -1,1000 +1,1000 @@
- 1005  ls -la | wc
- 1006  alias w="ls -la | wc"
- 1007  w
- 1008  unalias i
- 1009  unalias w
- 1010  vi ~/.bashrc 
- 1011  i
- 1012  vi ~/.bashrc 
- 1013  ll
- 1014  i
- 1015  source ~/.bashrc
- 1016  i
- 1017  vi ~/.bashrc 
- 1018  i
- 1019  source ~/.bashrc
- 1020  i
- 1021  source ~/.bashrc
- 1022  i
- 1023  vi ~/.bashrc 
- 1024  i
- 1025  unalias i
- 1026  i
- 1027  ls
- 1028  cd amazonReview/
- 1029  ls
- 1030  cd PRODUCTS/
- 1031  ls
- 1032  echo "abc" > abc.txt
- 1033  echo "add" > asff.txt
- 1034  ls
- 1035  ls -c 
- 1036  ls | wc -l
- 1037  cd ..
- 1038  ls | wc -l
- 1039  ls
- 1040  ls -a
- 1041  ls -a | wc -l
- 1042  cd CUSTOMERS/
- 1043  ls
- 1044  ls -a
- 1045  less .txt
- 1046  rm .txt
- 1047  ls
- 1048  ls -a
- 1049  cd ..
- 1050  ls
- 1051  cd ..
- 1052  ls
- 1053  less newfile.txt 
- 1054  rm newfile.txt 
- 1055  ls
- 1056  less abc.txt 
- 1057  rm abc.txt 
- 1058  ls
- 1059  cd ~
- 1060  wget http://ftp.gnu.org/gnu/datamash/datamash-1.3.tar.gz
- 1061  tar -xzf datamash-1.3.tar.gz 
+ 1045  tail -n 5 sort_100Cus_corre.txt 
+ 1046  for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
+ 1047  less 100Cus_average.txt 
+ 1048  sort -k 2 100Cus_average.txt > sorted_100Cus_average.txt
+ 1049  head -n 5 sorted_100Cus_average.txt 
+ 1050  tail -n 5 sorted_100Cus_average.txt 
+ 1051  sort -V -k 2 100Cus_average.txt > sorted_100Cus_average.txt
+ 1052  head -n 5 sorted_100Cus_average.txt 
+ 1053  tail -n sorted_100Cus_average.txt 
+ 1054  tail -n 5 sorted_100Cus_average.txt 
+ 1055  for i in {1..100}; do filename=$(ls ~/amazonReview/PRODUCTS | head -n $i | tail -1) && sum=$(cut -f 1 PRODUCTS/$filename | paste -sd + | bc) && count=$(wc -l < PRODUCTS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Pro_average.txt; done
+ 1056  sort -V -k 2 100Pro_average.txt > sorted_100Pro_average.txt
+ 1057  head -n 5 sorted_100Pro_average.txt 
+ 1058  tail -n 5 sorted_100Pro_average.txt 
+ 1059  ls
+ 1060  cd ~/datamash-1.3/
+ 1061  cd ..
  1062  ls
- 1063  cd temp
- 1064  rmdir temp
- 1065  ls
- 1066  cd temp2/
- 1067  ls
- 1068  rm newfile.txt 
- 1069  ls
- 1070  cd ..
- 1071  ls
- 1072  rmdir temp2/
- 1073  ls
- 1074  cd datamash-1.3/
- 1075  ./configure
- 1076  make 
- 1077  make check
- 1078  ./datamash -W ppearson 1:2 < ../files/c.txt
+ 1063  cd amazonReview/
+ 1064  ls
+ 1065  cd CUSTOMERS/
+ 1066  ls
+ 1067  pwd
+ 1068  cd ..
+ 1069  cd ~/datamash-1.3/
+ 1070  ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1
+ 1071  ls /home/yin/amazonReview/CUSTOMERS/ | head -n 2
+ 1072  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 2 | tail -1)
+ 1073  echo $filename
+ 1074  ./datamash -W ppearson 1:2 < filename
+ 1075  ./datamash -W ppearson 1:2 < $filename
+ 1076  ./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename
+ 1077  echo $filename | cut -f 1 -d '.'
+ 1078  echo "abc" | cat "ddd"
  1079  cd ..
  1080  ls
- 1081  cd yin
- 1082  cd amazonReview/
- 1083  ls
- 1084  cd CUS
- 1085  cd CUSTOMERS/
- 1086  ls
- 1087  ls ..
- 1088  less ca3
- 1089  cd ..
- 1090  less ca3.txt 
- 1091  ./datamash -W ppearson 1:2 <ca3.txt 
- 1092  cd ~/datamash-1.3/
- 1093  pwd
- 1094  cd ..
- 1095  ls
- 1096  cd amazonReview/
- 1097  ls
- 1098  less /home/yin/amazonReview/ca2.txt
- 1099  cd ~/datamash-1.3/
- 1100  ./datamash -W ppearson 1:2 < /home/yin/amazonReview/ca3.txt
- 1101  cd ~
- 1102  ls
- 1103  cd amazonReview/
- 1104  ls
- 1105  cd "abc \t def" > gg.txt
- 1106  echo "abc \t def" > gg.txt
- 1107  less gg.txt 
- 1108  echo -e "abc \t def" gg.txt
- 1109  echo -e "abc \t def" > gg.txt
- 1110  less gg.txt 
- 1111  exit
- 1112  echo h1
- 1113  echo bbb
- 1114  ls
- 1115  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort uniq | wc -l
- 1116  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq | wc -l
- 1117  cut -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq | wc -l
- 1118  cut -f 6 amazon_reviews_us_Books_v1_02.tsv | sort | uniq | wc -l
- 1119  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > 100CustomersID.txt
- 1120  less 100CustomersID.txt 
- 1121  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > topReviewID.txt
- 1122  less topReviewID.txt 
- 1123  c
- 1124  cut -b 9-16 topReviewID.txt > topReviewID2.txt
- 1125  less topReviewID2.txt 
- 1126  for i in {1..100}; do numID=$(head -n $i topReviewID2.txt | tail -1) && grep $numID amazon_reviews_us_Books_v1_02.tsv | cut -f 8,9 > CUSTOMERS/$numID.txt; done
- 1127  echo good
- 1128  for i in {1..100}; do numID=$(head -n $i topReviewID2.txt | tail -1) && grep $numID amazon_reviews_us_Books_v1_02.tsv | cut -f 8,9 > CUSTOMERS/$numID.txt; done
- 1129  cd CUSTOMERS/
- 1130  ls
+ 1081  cd amazonReview/
+ 1082  ls
+ 1083  less try.txt 
+ 1084  echo 12345 > try.txt 
+ 1085  echo -e '\t' >> try.txt 
+ 1086  echo good >> try.txt 
+ 1087  less try.txt 
+ 1088  echo '123 \t 456' > try.txt 
+ 1089  less try.txt 
+ 1090  echo -e  '123 \t 456' > try.txt 
+ 1091  less try.txt 
+ 1092  echo '123' > try.txt 
+ 1093  echo '\t' >> try.txt 
+ 1094  echo '456' >> try.txt 
+ 1095  less try.txt 
+ 1096  try=$(echo 12345)
+ 1097  echo -e '$try \t 456'
+ 1098  echo -e '($try) \t 456'
+ 1099  echo -e $try
+ 1100  echo -e $try '\t 456'
+ 1101  unset try 
+ 1102  cd ~/datamash-1.3/
+ 1103  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1 | tail -1) && correlation=$(./datamash -w ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation
+ 1104  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1 | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation
+ 1105  cd ..
+ 1106  cd amazonReview/
+ 1107  cd CUSTOMERS/
+ 1108  ls
+ 1109  ls head -n 1
+ 1110  ls | head -n 1
+ 1111  less 20595117.txt 
+ 1112  cd ..
+ 1113  cd ~/datamash-1.3/
+ 1114  cd ..
+ 1115  cd amazonReview/
+ 1116  script try.txt 
+ 1117  less try.txt 
+ 1118  cd ~/datamash-1.3/
+ 1119  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation; done
+ 1120  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> 100Customer_correlation; done
+ 1121  ls 100Customer_correlation 
+ 1122  less 100Customer_correlation 
+ 1123  rm 100Customer_correlation 
+ 1124  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/CUSTOMERS/100Customer_correlation; done
+ 1125  less /home/yin/amazonReview/CUSTOMERS/100Customer_correlation
+ 1126  cd ..
+ 1127  cd amazonReview/
+ 1128  cd CUSTOMERS/
+ 1129  ls 100Customer_correlation 
+ 1130  less 100Customer_correlation 
  1131  cd ..
- 1132  ls
- 1133  cut -f 4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > topProductID.txt
- 1134  less topProductID.txt 
- 1135  cd amazonReview/CUSTOMERS/
- 1136  ls
- 1137  cd ..
+ 1132  cd datamash-1.3/
+ 1133  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation; done
+ 1134  rm /home/yin/amazonReview/CUSTOMERS/100Customer_correlation 
+ 1135  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation; done
+ 1136  less /home/yin/amazonReview/100Customer_correlation 
+ 1137  cd /home/yin/amazonReview/
  1138  ls
- 1139  basename gg.txt 
- 1140  echo gg.txt 
- 1141  echo gg.txt | cut -f 1 -d '.'
- 1142  for item in */; do echo $item; done
- 1143  for item in *; do echo $item; done
- 1144  for item in .txt; do echo $item; done
- 1145  for item in *.txt; do echo $item; done
- 1146  ls
- 1147  cd CUSTOMERS/
- 1148  ls
- 1149  cd ..
- 1150  cd PRODUCTS/
- 1151  ls
- 1152  rm abc.txt asff.txt 
- 1153  cd ..
- 1154  script a2.txt
- 1155  script -a a2.txt 
- 1156  less a2.txt 
- 1157  script a2.txt
- 1158  vi a2.txt 
- 1159  script a2.txt 
- 1160  vi a2.txt 
- 1161  script -a a2.txt 
- 1162  vi a2.txt 
- 1163  script -a a2.txt 
- 1164  vi a2.txt 
- 1165  script -a a2.txt 
- 1166  cd CUSTOMERS/
- 1167  ls
- 1168  less 20595117.txt 
- 1169  ls | wc -l
+ 1139  less 100CustomersID.txt 
+ 1140  cd ~/datamash-1.3/
+ 1141  for i in {1..10}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation; done
+ 1142  cd ..
+ 1143  cd amazonReview/
+ 1144  ls
+ 1145  less 100Customer_correlation 
+ 1146  sort -n 100Customer_correlation > try.txt 
+ 1147  less try.txt 
+ 1148  sort -k 2 100Customer_correlation > try.txt 
+ 1149  less try.txt 
+ 1150  less 100Customer_
+ 1151  less 100Customer_correlation 
+ 1152  rm 100Customer_correlation 
+ 1153  cd ~/datamash-1.3/
+ 1154  cd ..
+ 1155  cd amazonReview/
+ 1156  ls
+ 1157  cd ~/datamash-1.3/
+ 1158  for i in {1..100}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1159  cd ..
+ 1160  cd amazonReview/
+ 1161  less 100Customer_correlation.txt 
+ 1162  cd CUSTOMERS/
+ 1163  less 50895620.txt 
+ 1164  cd ..
+ 1165  rm 100Customer_correlation.txt 
+ 1166  cd ~/datamash-1.3/
+ 1167  for i in {1..100}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1168  cd ..
+ 1169  cd amazonReview/
  1170  ls
- 1171  rm *
- 1172  ls
- 1173  cd ..
- 1174  ls
- 1175  vi a2.txt 
- 1176  script -a a2.txt 
- 1177  vi a2.txt 
- 1178  script -a a2.txt 
- 1179  vi a2.txt 
- 1180  echo too
- 1181  cut -b 9-18 topProductID.txt > topProductID2.txt
- 1182  cut -b 9-18 topReviewID.txt > topReviewID2.txt
- 1183  cut -b 9-18 topProductID.txt > topProductID2.txt
- 1184  for i in {1..100}; do numID=$(head -n $i topProductID2.txt | tail -1) && grep $numID amazon_reviews_us_Books_v1_02.tsv | cut -f 8,9 > PRODUCTS/$numID.txt; done
- 1185  alias I="ls -latr"
- 1186  I
- 1187  alias w="ls -la | wc"
- 1188  w
- 1189  vi ~/.bashrc
- 1190  source ~/.bashrc
- 1191  cd CUSTOMERS/
- 1192  ls | wc -l
- 1193  ls -a | wc -l
- 1194  cd ..
- 1195  cd PRODUCTS/
- 1196  ls | wc -l
- 1197  ls -a | wc -l
- 1198  cd ..
- 1199  cd amazonReview/
- 1200  less a2.txt 
- 1201  vi a2.txt 
- 1202  ls
- 1203  script -a a2.txt 
- 1204  less topReviewID2.txt 
- 1205  rm topReviewID2.txt 
- 1206  ls
- 1207  vi a2.txt 
- 1208  script -a a2.txt 
- 1209  vi a2.txt 
- 1210  less topProductID.txt
- 1211  less topProductID2.txt
- 1212  script -a a2.txt 
- 1213  cd PRODUCTS/
- 1214  ls
- 1215  ls | wc -l
- 1216  cd ..
- 1217  ls
- 1218  vi a2.txt 
- 1219  script -a a2.txt 
- 1220  vi a2.txt 
- 1221  script -a a2.txt 
- 1222  vi a2.txt 
- 1223  exit
- 1224  ls | head -n 1
- 1225  cd ~/datamash-1.3/
- 1226  for i in {1..100}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
- 1227  cd ~/amazonReview/
- 1228  head -n 5 100Customer_correlation.txt 
- 1229  sort -k 2 100Customer_correlation.txt > sort_100Cus_corre.txt
- 1230  head -n 5 sort_100Cus_corre.txt 
- 1231  tail -n 5 sort_100Cus_corre.txt 
- 1232  for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
- 1233  less 100Cus_average.txt 
- 1234  sort -k 2 100Cus_average.txt > sorted_100Cus_average.txt
- 1235  head -n 5 sorted_100Cus_average.txt 
- 1236  tail -n 5 sorted_100Cus_average.txt 
- 1237  sort -V -k 2 100Cus_average.txt > sorted_100Cus_average.txt
- 1238  head -n 5 sorted_100Cus_average.txt 
- 1239  tail -n sorted_100Cus_average.txt 
- 1240  tail -n 5 sorted_100Cus_average.txt 
- 1241  for i in {1..100}; do filename=$(ls ~/amazonReview/PRODUCTS | head -n $i | tail -1) && sum=$(cut -f 1 PRODUCTS/$filename | paste -sd + | bc) && count=$(wc -l < PRODUCTS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Pro_average.txt; done
- 1242  sort -V -k 2 100Pro_average.txt > sorted_100Pro_average.txt
- 1243  head -n 5 sorted_100Pro_average.txt 
- 1244  tail -n 5 sorted_100Pro_average.txt 
- 1245  ls
- 1246  cd ~/datamash-1.3/
- 1247  cd ..
- 1248  ls
- 1249  cd amazonReview/
- 1250  ls
- 1251  cd CUSTOMERS/
- 1252  ls
- 1253  pwd
- 1254  cd ..
- 1255  cd ~/datamash-1.3/
- 1256  ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1
- 1257  ls /home/yin/amazonReview/CUSTOMERS/ | head -n 2
- 1258  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 2 | tail -1)
- 1259  echo $filename
- 1260  ./datamash -W ppearson 1:2 < filename
- 1261  ./datamash -W ppearson 1:2 < $filename
- 1262  ./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename
- 1263  echo $filename | cut -f 1 -d '.'
- 1264  echo "abc" | cat "ddd"
- 1265  cd ..
- 1266  ls
- 1267  cd amazonReview/
- 1268  ls
- 1269  less try.txt 
- 1270  echo 12345 > try.txt 
- 1271  echo -e '\t' >> try.txt 
- 1272  echo good >> try.txt 
- 1273  less try.txt 
- 1274  echo '123 \t 456' > try.txt 
- 1275  less try.txt 
- 1276  echo -e  '123 \t 456' > try.txt 
- 1277  less try.txt 
- 1278  echo '123' > try.txt 
- 1279  echo '\t' >> try.txt 
- 1280  echo '456' >> try.txt 
- 1281  less try.txt 
- 1282  try=$(echo 12345)
- 1283  echo -e '$try \t 456'
- 1284  echo -e '($try) \t 456'
- 1285  echo -e $try
- 1286  echo -e $try '\t 456'
- 1287  unset try 
- 1288  cd ~/datamash-1.3/
- 1289  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1 | tail -1) && correlation=$(./datamash -w ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation
- 1290  filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n 1 | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation
- 1291  cd ..
- 1292  cd amazonReview/
- 1293  cd CUSTOMERS/
- 1294  ls
- 1295  ls head -n 1
- 1296  ls | head -n 1
- 1297  less 20595117.txt 
- 1298  cd ..
- 1299  cd ~/datamash-1.3/
- 1300  cd ..
- 1301  cd amazonReview/
- 1302  script try.txt 
- 1303  less try.txt 
- 1304  cd ~/datamash-1.3/
- 1305  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation; done
- 1306  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> 100Customer_correlation; done
- 1307  ls 100Customer_correlation 
- 1308  less 100Customer_correlation 
- 1309  rm 100Customer_correlation 
- 1310  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/CUSTOMERS/100Customer_correlation; done
- 1311  less /home/yin/amazonReview/CUSTOMERS/100Customer_correlation
- 1312  cd ..
- 1313  cd amazonReview/
- 1314  cd CUSTOMERS/
- 1315  ls 100Customer_correlation 
- 1316  less 100Customer_correlation 
+ 1171  less 100Customer_correlation.txt 
+ 1172  cd ~/datamash-1.3/
+ 1173  ./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/50895620.txt 
+ 1174  cd /home/yin/amazonReview/
+ 1175  sort -k 2 100Customer_correlation.txt > try.txt 
+ 1176  less try.txt 
+ 1177  cd CUSTOMERS/
+ 1178  less 50895620.txt 
+ 1179  cd ..
+ 1180  ls
+ 1181  rm 100Customer_correlation.txt 
+ 1182  cd ~/datamash-1.3/
+ 1183  cd ~/amazonReview/
+ 1184  less a2.txt 
+ 1185  script -a a2.txt 
+ 1186  vi a2.txt 
+ 1187  script -a a2.txt 
+ 1188  vi a2.txt 
+ 1189  less amazon_reviews_us_Books_v1_02.tsv 
+ 1190  cd CUSTOMERS/
+ 1191  ls
+ 1192  cd ..
+ 1193  less CUSTOMERS/46134316.txt
+ 1194  cut -f 2 CUSTOMERS/46134316.txt | paste sd + | bc
+ 1195  cut -f 2 CUSTOMERS/46134316.txt > try.txt 
+ 1196  less try.txt 
+ 1197  paste -sd + try.txt | bc
+ 1198  cut -f 2 CUSTOMERS/46134316.txt | paste -sd + | bc 
+ 1199  wc -l CUSTOMERS/46134316.txt 
+ 1200  wc -l < CUSTOMERS/46134316.txt 
+ 1201  ls ~/amazonReview/CUSTOMERS/ | head -n 3
+ 1202  ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1 | cut -f 2 | paste -sd + | bc
+ 1203  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 | paste -sd + | bc
+ 1204  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 
+ 1205  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 > try.txt 
+ 1206  less try.txt 
+ 1207  cut -f 2 CUSTOMERS/20595117.txt > try.txt 
+ 1208  less try.txt 
+ 1209  cut -f 2 20595117.txt
+ 1210  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 ~/amazonReview/CUSTOMERS/ | > try.txt 
+ 1211  unset filename
+ 1212  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc
+ 1213  filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc
+ 1214  filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc)
+ 1215  echo $filename
+ 1216  echo $sum
+ 1217  cut -f 2 CUSTOMERS/20595117.txt | paste -sd + | bc
+ 1218  total=$(wc -l <  CUSTOMERS/20595117.txt )
+ 1219  echo total
+ 1220  echo $total
+ 1221  echo $sum/$total | bc
+ 1222  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt
+ 1223  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
+ 1224  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
+ 1225  CUSTOMERS/for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
+ 1226  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
+ 1227  less 100Cus_average.txt 
+ 1228  rm 100Cus_average.txt 
+ 1229  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
+ 1230  less 100Cus_average.txt 
+ 1231  less a2.txt 
+ 1232  less amazon_reviews_us_Books_v1_02.tsv 
+ 1233  for i in {1..2}; do filename=$(ls ~/amazonReview/PRODUCTS | head -n $i | tail -1) && sum=$(cut -f 1 PRODUCTS/$filename | paste -sd + | bc) && count=$(wc -l < PRODUCTS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Pro_average.txt; done
+ 1234  less 100Pro_average.txt 
+ 1235  rm 100Pro_average.txt 
+ 1236  ls
+ 1237  rm 100Cus_average.txt 
+ 1238  ls
+ 1239  less a2.txt 
+ 1240  script -a a2.txt 
+ 1241  less sorted_100Cus_average.txt 
+ 1242  ls
+ 1243  less sort_100Cus_corre.txt 
+ 1244  less a2.txt 
+ 1245  less 100Cus_average.txt 
+ 1246  less sorted_100Cus_average.txt 
+ 1247  vi try.txt 
+ 1248  sort try.txt 
+ 1249  sort -V -k 2 100Cus_average.txt > try.txt 
+ 1250  less try.txt 
+ 1251  vi a2.txt 
+ 1252  script -a a2.txt 
+ 1253  vi a2.txt 
+ 1254  script -a a2.txt 
+ 1255  less sorted_100Pro_average.txt 
+ 1256  vi a2.txt 
+ 1257  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a2.txt > a2.clean1.txt
+ 1258  tr -cd '\11\12\15\40-\176' <a2.clean1.txt > a2.final.txt
+ 1259  less a2.final.txt 
+ 1260  vi a2.final.txt 
+ 1261  history > cmds.txt
+ 1262  ls
+ 1263  ls cmds.txt 
+ 1264  git status
+ 1265  git ls-files
+ 1266  git rm --cached README cmds.log ws4.final.txt 
+ 1267  git add a2.final.txt 
+ 1268  git commit -m "assingment 2"
+ 1269  git remote set-url origin https://github.com/AdamY02/assingment2.git
+ 1270  git push origin master
+ 1271  exit
+ 1272  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > allReviewID.txt
+ 1273  cut -b 9-16 allReviewID.txt > top1000ReviewID.txt
+ 1274  for i in {1..100}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && grep $filename amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$filename.txt; done 
+ 1275  cd CUSTOMERS/
+ 1276  ls
+ 1277  less 20595117.txt 
+ 1278  cd ..
+ 1279  ls
+ 1280  rm ca1.txt ca2.txt ca3.txt ca4.txt 
+ 1281  ls
+ 1282  mkdir assingment_2
+ 1283  rm dir assingment_2/
+ 1284  rmdir assingment_2/
+ 1285  mkdir assignment_2
+ 1286  mv a2.txt assignment_2/
+ 1287  mv a2.clean1.txt a2.final.txt assignment_2/
+ 1288  ls
+ 1289  mv 100Cus_average.txt 100CustomersID.txt assignment_2/
+ 1290  ls
+ 1291  mv 100Customer_correlation.txt 100Pro_average.txt assignment_2/
+ 1292  ls
+ 1293  rm gg.txt 
+ 1294  rm history.txt 
+ 1295  ls
+ 1296  mv topProductID.txt topReviewID.txt assignment_2/
+ 1297  ls
+ 1298  mv sorted_100Cus_average.txt sorted_100Pro_average.txt sort_100Cus_corre.txt topProductID2.txt assignment_2/
+ 1299  ls
+ 1300  cd assignment_2
+ 1301  ls
+ 1302  cd ..
+ 1303  ls
+ 1304  mv assignment_2/ assignment_Folder/
+ 1305  cd assignment_Folder/
+ 1306  ls
+ 1307  cd ..
+ 1308  ls
+ 1309  less amazon_reviews_us_Books_v1_02.tsv 
+ 1310  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > ca1.txt 
+ 1311  less ca1.txt 
+ 1312  cd assignment_Folder/
+ 1313  cd assignment_2/
+ 1314  ls
+ 1315  less topReviewID.txt 
+ 1316  tail -n 10 topReviewID.txt 
  1317  cd ..
- 1318  cd datamash-1.3/
- 1319  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation; done
- 1320  rm /home/yin/amazonReview/CUSTOMERS/100Customer_correlation 
- 1321  for i in {1..2}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation; done
- 1322  less /home/yin/amazonReview/100Customer_correlation 
- 1323  cd /home/yin/amazonReview/
- 1324  ls
- 1325  less 100CustomersID.txt 
- 1326  cd ~/datamash-1.3/
- 1327  for i in {1..10}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation; done
- 1328  cd ..
- 1329  cd amazonReview/
- 1330  ls
- 1331  less 100Customer_correlation 
- 1332  sort -n 100Customer_correlation > try.txt 
- 1333  less try.txt 
- 1334  sort -k 2 100Customer_correlation > try.txt 
- 1335  less try.txt 
- 1336  less 100Customer_
- 1337  less 100Customer_correlation 
- 1338  rm 100Customer_correlation 
- 1339  cd ~/datamash-1.3/
- 1340  cd ..
- 1341  cd amazonReview/
- 1342  ls
- 1343  cd ~/datamash-1.3/
- 1344  for i in {1..100}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1318  ls
+ 1319  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > ca1.txt 
+ 1320  less ca1.txt 
+ 1321  cut -f 2 amason.. | sort | uniq -c | sort -rn > 100CustomersID
+ 1322  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > ca1.txt
+ 1323  less ca1.txt 
+ 1324  tail ca1.txt 
+ 1325  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort > ca1.txt 
+ 1326  less ca1.txt 
+ 1327  tail ca1.txt 
+ 1328  less amazon_reviews_us_Books_v1_02.tsv 
+ 1329  cut -f 8,9 amazon_reviews_us_Books_v1_02.tsv > ca2.txt
+ 1330  less ca2.txt 
+ 1331  ls
+ 1332  rm 100CustomersID 
+ 1333  cd assignment_Folder/
+ 1334  cd assignment_2/
+ 1335  ls
+ 1336  less topReviewID.txt 
+ 1337  tail -n 30 topReviewID.txt 
+ 1338  cd ..
+ 1339  ls
+ 1340  less amazon_reviews_us_Books_v1_02.tsv 
+ 1341  cd assignment_Folder/
+ 1342  cd assignment_2/
+ 1343  ls
+ 1344  grep customer topReviewID.txt 
  1345  cd ..
- 1346  cd amazonReview/
- 1347  less 100Customer_correlation.txt 
- 1348  cd CUSTOMERS/
- 1349  less 50895620.txt 
- 1350  cd ..
- 1351  rm 100Customer_correlation.txt 
- 1352  cd ~/datamash-1.3/
- 1353  for i in {1..100}; do filename=$(ls /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
- 1354  cd ..
- 1355  cd amazonReview/
- 1356  ls
- 1357  less 100Customer_correlation.txt 
- 1358  cd ~/datamash-1.3/
- 1359  ./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/50895620.txt 
- 1360  cd /home/yin/amazonReview/
- 1361  sort -k 2 100Customer_correlation.txt > try.txt 
- 1362  less try.txt 
- 1363  cd CUSTOMERS/
- 1364  less 50895620.txt 
- 1365  cd ..
+ 1346  ls
+ 1347  less ca2.txt 
+ 1348  sed '1d' ca2.txt > ca1.txt 
+ 1349  less ca1.txt 
+ 1350  ls
+ 1351  rm ca1.txt ca2.txt 
+ 1352  ls
+ 1353  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > allReviewID.txt
+ 1354  less allReviewID.txt 
+ 1355  cut -b 9-16 allReviewID.txt > top1000ReviewID.txt
+ 1356  less top1000ReviewID.txt 
+ 1357  head -n 1 top1000ReviewID.txt 
+ 1358  grep 50122160 amazon_reviews_us_Books_v1_02.tsv > ca1.txt
+ 1359  less ca1.txt 
+ 1360  mv CUSTOMERS/ assignment_Folder/
+ 1361  cd assignment_Folder/
+ 1362  cd ..
+ 1363  mv PRODUCTS/ assignment_Folder/
+ 1364  ls
+ 1365  cd assignment_Folder/
  1366  ls
- 1367  rm 100Customer_correlation.txt 
- 1368  cd ~/datamash-1.3/
- 1369  cd ~/amazonReview/
- 1370  less a2.txt 
- 1371  script -a a2.txt 
- 1372  vi a2.txt 
- 1373  script -a a2.txt 
- 1374  vi a2.txt 
- 1375  less amazon_reviews_us_Books_v1_02.tsv 
- 1376  cd CUSTOMERS/
- 1377  ls
- 1378  cd ..
- 1379  less CUSTOMERS/46134316.txt
- 1380  cut -f 2 CUSTOMERS/46134316.txt | paste sd + | bc
- 1381  cut -f 2 CUSTOMERS/46134316.txt > try.txt 
- 1382  less try.txt 
- 1383  paste -sd + try.txt | bc
- 1384  cut -f 2 CUSTOMERS/46134316.txt | paste -sd + | bc 
- 1385  wc -l CUSTOMERS/46134316.txt 
- 1386  wc -l < CUSTOMERS/46134316.txt 
- 1387  ls ~/amazonReview/CUSTOMERS/ | head -n 3
- 1388  ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1 | cut -f 2 | paste -sd + | bc
- 1389  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 | paste -sd + | bc
- 1390  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 
- 1391  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 > try.txt 
- 1392  less try.txt 
- 1393  cut -f 2 CUSTOMERS/20595117.txt > try.txt 
- 1394  less try.txt 
- 1395  cut -f 2 20595117.txt
- 1396  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1 | cut -f 2 ~/amazonReview/CUSTOMERS/ | > try.txt 
- 1397  unset filename
- 1398  ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc
- 1399  filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc
- 1400  filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc)
- 1401  echo $filename
- 1402  echo $sum
- 1403  cut -f 2 CUSTOMERS/20595117.txt | paste -sd + | bc
- 1404  total=$(wc -l <  CUSTOMERS/20595117.txt )
- 1405  echo total
- 1406  echo $total
- 1407  echo $sum/$total | bc
- 1408  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt
- 1409  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n 1 | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
- 1410  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMER/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
- 1411  CUSTOMERS/for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt ; done
- 1412  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo $sum/$count | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
- 1413  less 100Cus_average.txt 
- 1414  rm 100Cus_average.txt 
- 1415  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS | head -n $i | tail -1) && sum=$(cut -f 2 CUSTOMERS/$filename | paste -sd + | bc) && count=$(wc -l < CUSTOMERS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Cus_average.txt; done
- 1416  less 100Cus_average.txt 
- 1417  less a2.txt 
- 1418  less amazon_reviews_us_Books_v1_02.tsv 
- 1419  for i in {1..2}; do filename=$(ls ~/amazonReview/PRODUCTS | head -n $i | tail -1) && sum=$(cut -f 1 PRODUCTS/$filename | paste -sd + | bc) && count=$(wc -l < PRODUCTS/$filename) && average=$(echo "scale=2; $sum/$count" | bc) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $average >> 100Pro_average.txt; done
- 1420  less 100Pro_average.txt 
- 1421  rm 100Pro_average.txt 
- 1422  ls
- 1423  rm 100Cus_average.txt 
- 1424  ls
- 1425  less a2.txt 
- 1426  script -a a2.txt 
- 1427  less sorted_100Cus_average.txt 
- 1428  ls
- 1429  less sort_100Cus_corre.txt 
- 1430  less a2.txt 
- 1431  less 100Cus_average.txt 
- 1432  less sorted_100Cus_average.txt 
- 1433  vi try.txt 
- 1434  sort try.txt 
- 1435  sort -V -k 2 100Cus_average.txt > try.txt 
- 1436  less try.txt 
- 1437  vi a2.txt 
- 1438  script -a a2.txt 
- 1439  vi a2.txt 
- 1440  script -a a2.txt 
- 1441  less sorted_100Pro_average.txt 
- 1442  vi a2.txt 
- 1443  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a2.txt > a2.clean1.txt
- 1444  tr -cd '\11\12\15\40-\176' <a2.clean1.txt > a2.final.txt
- 1445  less a2.final.txt 
- 1446  vi a2.final.txt 
- 1447  history > cmds.txt
- 1448  ls
- 1449  ls cmds.txt 
- 1450  git status
- 1451  git ls-files
- 1452  git rm --cached README cmds.log ws4.final.txt 
- 1453  git add a2.final.txt 
- 1454  git commit -m "assingment 2"
- 1455  git remote set-url origin https://github.com/AdamY02/assingment2.git
- 1456  git push origin master
- 1457  exit
- 1458  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > allReviewID.txt
- 1459  cut -b 9-16 allReviewID.txt > top1000ReviewID.txt
- 1460  for i in {1..100}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && grep $filename amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$filename.txt; done 
- 1461  cd CUSTOMERS/
- 1462  ls
- 1463  less 20595117.txt 
- 1464  cd ..
- 1465  ls
- 1466  rm ca1.txt ca2.txt ca3.txt ca4.txt 
- 1467  ls
- 1468  mkdir assingment_2
- 1469  rm dir assingment_2/
- 1470  rmdir assingment_2/
- 1471  mkdir assignment_2
- 1472  mv a2.txt assignment_2/
- 1473  mv a2.clean1.txt a2.final.txt assignment_2/
+ 1367  mv CUSTOMERS/ PRODUCTS/ assignment_2/
+ 1368  cd ..
+ 1369  ls
+ 1370  mkdir CUSTOMERS
+ 1371  for i in {1..2}; do filename=$(head -n $i allReviewED.txt | tail -1); done
+ 1372  for i in {1..2}; do filename=$(head -n $i allReviewID.txt | tail -1); done
+ 1373  for i in {1..2}; do filename=$(head -n $i allReviewID.txt | tail -1) && echo $filename ; done
+ 1374  for i in {1..2}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && echo $filename ; done
+ 1375  for i in {1..2}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && grep $filename amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$filename.txt; done 
+ 1376  less CUSTOMERS/50122160.txt 
+ 1377  cd CUSTOMERS/
+ 1378  LS
+ 1379  ls
+ 1380  rm *
+ 1381  ls
+ 1382  cd ..
+ 1383  ls
+ 1384  rm ca1.txt 
+ 1385  script ws5.txt
+ 1386  less ws5.txt 
+ 1387  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws5.txt > ws5.clean.txt
+ 1388  tr -cd '\11\12\15\40-\176' <ws5.clean.txt > ws5.final.txt
+ 1389  less ws5.final.txt 
+ 1390  vi ws5.final.txt 
+ 1391  history > cmds.log
+ 1392  git ls-files
+ 1393  git rm --cached a2.final.txt 
+ 1394  git add cmds.log 
+ 1395  git add ws5.final.txt 
+ 1396  git commit -m "worksheet 5"
+ 1397  git remote set-url https://github.com/AdamY02/ws5.git
+ 1398  git remote set-url origin https://github.com/AdamY02/ws5.git
+ 1399  git push origin master
+ 1400  ls
+ 1401  cd worksheet_Folder/
+ 1402  ls
+ 1403  cd ..
+ 1404  mkdir ws5_work
+ 1405  ls
+ 1406  mv ws5.txt ws5.final.txt ws5.clean.txt ws5_work/
+ 1407  ls
+ 1408  mv allReviewID.txt top1000ReviewID.txt ws5_work/
+ 1409  ls
+ 1410  rm cmds.log 
+ 1411  rm cmds.txt 
+ 1412  ls
+ 1413  mv ws5_work/ worksheet_Folder/
+ 1414  exit
+ 1415  date
+ 1416  date "+%Y%m%d"
+ 1417  date "$Y"
+ 1418  date "+%Y"
+ 1419  date "+%Y%m%d_%H%M%S"
+ 1420  date "+%H"
+ 1421  date "%S"
+ 1422  date "+%S"
+ 1423  variable=$(date "+%Y%m%d_%H%M%S"
+ 1424  )
+ 1425  variable=$(date "+%Y%m%d_%H%M%S")
+ 1426  echo $vairable
+ 1427  (date "+%Y%m%d_%H%M%S")
+ 1428  variable=$(date "+%Y%m%d_%H%M%S")
+ 1429  echo $variable 
+ 1430  cd amazonReview/
+ 1431  ls
+ 1432  cd assignment_Folder/
+ 1433  cd assignment_2/
+ 1434  ls
+ 1435  mv PRODUCTS/ /home/yin/amazonReview/
+ 1436  cd ~/amazonReview/
+ 1437  ls
+ 1438  cd PRODUCTS/
+ 1439  ls
+ 1440  less 05
+ 1441  less 0439784549.txt 
+ 1442  cd ~/amazonReview/CUSTOMERS/
+ 1443  ls
+ 1444  less 35004134.txt 
+ 1445  cp 52447634.txt /home/yin/amazonReview/
+ 1446  cd ~/amazonReview/
+ 1447  ls
+ 1448  less 52447634.txt 
+ 1449  less amazon_reviews_us_Books_v1_02.tsv 
+ 1450  ls
+ 1451  echo abc > abc.txt
+ 1452  ln -s abc.txt abcd.txt
+ 1453  less abcd.txt 
+ 1454  rm abc
+ 1455  rm abc.txt 
+ 1456  less abcd.txt 
+ 1457  rm abcd.txt 
+ 1458  exit
+ 1459  ls
+ 1460  mv CUSTOMERS/ assignment_Folder/assignment_2/
+ 1461  mv CUSTOMERS/ assignment_Folder/
+ 1462  cd assignment_Folder/
+ 1463  ls
+ 1464  mv CUSTOMERS/ assignment_2/
+ 1465  cd assignment_2/
+ 1466  ls
+ 1467  cd ..
+ 1468  ls
+ 1469  cd CUSTOMERS/
+ 1470  ls
+ 1471  cd ..
+ 1472  ls
+ 1473  cd assignment_2/
  1474  ls
- 1475  mv 100Cus_average.txt 100CustomersID.txt assignment_2/
+ 1475  cd ~/amazonReview/
  1476  ls
- 1477  mv 100Customer_correlation.txt 100Pro_average.txt assignment_2/
+ 1477  mv PRODUCTS/ assignment_Folder/assignment_2/
  1478  ls
- 1479  rm gg.txt 
- 1480  rm history.txt 
- 1481  ls
- 1482  mv topProductID.txt topReviewID.txt assignment_2/
- 1483  ls
- 1484  mv sorted_100Cus_average.txt sorted_100Pro_average.txt sort_100Cus_corre.txt topProductID2.txt assignment_2/
+ 1479  cd assignment_Folder/
+ 1480  ls
+ 1481  cd CUSTOMERS/
+ 1482  ls
+ 1483  cd ..
+ 1484  cd assignment_2/
  1485  ls
- 1486  cd assignment_2
+ 1486  cd CUSTOMERS/
  1487  ls
  1488  cd ..
  1489  ls
- 1490  mv assignment_2/ assignment_Folder/
- 1491  cd assignment_Folder/
- 1492  ls
- 1493  cd ..
- 1494  ls
- 1495  less amazon_reviews_us_Books_v1_02.tsv 
- 1496  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > ca1.txt 
- 1497  less ca1.txt 
- 1498  cd assignment_Folder/
- 1499  cd assignment_2/
+ 1490  cd CUSTOMERS/
+ 1491  ls
+ 1492  rm *
+ 1493  ls
+ 1494  cd ..
+ 1495  rmdir CUSTOMERS/
+ 1496  ls
+ 1497  cd ..
+ 1498  ls
+ 1499  mv CUSTOMERS/ assignment_2/
  1500  ls
- 1501  less topReviewID.txt 
- 1502  tail -n 10 topReviewID.txt 
- 1503  cd ..
+ 1501  cd ..
+ 1502  ls
+ 1503  mkdir PRODUCTS
  1504  ls
- 1505  cut -f 2 amazon_reviews_us_Books_v1_02.tsv > ca1.txt 
- 1506  less ca1.txt 
- 1507  cut -f 2 amason.. | sort | uniq -c | sort -rn > 100CustomersID
- 1508  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > ca1.txt
- 1509  less ca1.txt 
- 1510  tail ca1.txt 
- 1511  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort > ca1.txt 
+ 1505  cd PRODUCTS/
+ 1506  ls
+ 1507  cd ..
+ 1508  less amazon_reviews_us_Books_v1_02.tsv 
+ 1509  ls
+ 1510  less try.txt 
+ 1511  vi ca1.txt
  1512  less ca1.txt 
- 1513  tail ca1.txt 
- 1514  less amazon_reviews_us_Books_v1_02.tsv 
- 1515  cut -f 8,9 amazon_reviews_us_Books_v1_02.tsv > ca2.txt
- 1516  less ca2.txt 
- 1517  ls
- 1518  rm 100CustomersID 
- 1519  cd assignment_Folder/
- 1520  cd assignment_2/
- 1521  ls
- 1522  less topReviewID.txt 
- 1523  tail -n 30 topReviewID.txt 
- 1524  cd ..
+ 1513  tail -n +2 ca1.txt > ca2.txt
+ 1514  less ca2.txt 
+ 1515  rm ca1.txt  ca2.txt 
+ 1516  cut -f 4,9 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > ca1.txt
+ 1517  less ca1.txt 
+ 1518  cut -f 4,9 amazon_reviews_us_Books_v1_02.tsv > ca2.txt
+ 1519  less ca2.txt 
+ 1520  rm ca1.txt ca2.txt 
+ 1521  cd assignment_Folder/
+ 1522  cd assignment_2/
+ 1523  ls
+ 1524  cd PRODUCTS/
  1525  ls
- 1526  less amazon_reviews_us_Books_v1_02.tsv 
- 1527  cd assignment_Folder/
- 1528  cd assignment_2/
+ 1526  less 0446672211.txt 
+ 1527  cd ..
+ 1528  cd ~/amazonReview/
  1529  ls
- 1530  grep customer topReviewID.txt 
- 1531  cd ..
- 1532  ls
- 1533  less ca2.txt 
- 1534  sed '1d' ca2.txt > ca1.txt 
- 1535  less ca1.txt 
- 1536  ls
- 1537  rm ca1.txt ca2.txt 
- 1538  ls
- 1539  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > allReviewID.txt
- 1540  less allReviewID.txt 
- 1541  cut -b 9-16 allReviewID.txt > top1000ReviewID.txt
- 1542  less top1000ReviewID.txt 
- 1543  head -n 1 top1000ReviewID.txt 
- 1544  grep 50122160 amazon_reviews_us_Books_v1_02.tsv > ca1.txt
- 1545  less ca1.txt 
- 1546  mv CUSTOMERS/ assignment_Folder/
- 1547  cd assignment_Folder/
- 1548  cd ..
- 1549  mv PRODUCTS/ assignment_Folder/
- 1550  ls
- 1551  cd assignment_Folder/
- 1552  ls
- 1553  mv CUSTOMERS/ PRODUCTS/ assignment_2/
- 1554  cd ..
- 1555  ls
- 1556  mkdir CUSTOMERS
- 1557  for i in {1..2}; do filename=$(head -n $i allReviewED.txt | tail -1); done
- 1558  for i in {1..2}; do filename=$(head -n $i allReviewID.txt | tail -1); done
- 1559  for i in {1..2}; do filename=$(head -n $i allReviewID.txt | tail -1) && echo $filename ; done
- 1560  for i in {1..2}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && echo $filename ; done
- 1561  for i in {1..2}; do filename=$(head -n $i top1000ReviewID.txt | tail -1) && grep $filename amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$filename.txt; done 
- 1562  less CUSTOMERS/50122160.txt 
- 1563  cd CUSTOMERS/
- 1564  LS
- 1565  ls
- 1566  rm *
- 1567  ls
+ 1530  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | tail -n +2 > PRODUCTS/0446672211.txt
+ 1531  less PRODUCTS/0446672211.txt 
+ 1532  cd PRODUCTS/
+ 1533  LS
+ 1534  ls
+ 1535  rm 0446672211.txt 
+ 1536  cd ..
+ 1537  ls
+ 1538  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > PRODUCTS/0446672211.txt
+ 1539  less PRODUCTS/0446672211.txt 
+ 1540  echo -e "1 \t 2 \t 3" >> PRODUCTS/0446672211.txt 
+ 1541  less PRODUCTS/0446672211.txt 
+ 1542  exit
+ 1543  cd amazonReview/
+ 1544  ls
+ 1545  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > PRODUCTS/0446672211.txt 
+ 1546  cd PRODUCTS/
+ 1547  ls
+ 1548  echo $datetime
+ 1549  echo $DATETIME
+ 1550  echo time
+ 1551  echo $time
+ 1552  DATETIME=$(date +%Y%m%d_%H%M%S")
+ 1553  DATETIME=$(date "+%Y%m%d_%H%M%S")
+ 1554  echo DATETIME
+ 1555  echo $DATETIME
+ 1556  cd ..
+ 1557  cp PRODUCTS/0446672211.txt > PRODUCTS/0446672211.$DATETIME.txt
+ 1558  ls
+ 1559  cp try.txt abc.txt
+ 1560  less abc.txt 
+ 1561  rm abc.txt 
+ 1562  cd PRODUCTS/
+ 1563  ls
+ 1564  less 0446672211.20211003_235007.txt 
+ 1565  rm 0446672211.20211003_235007.txt
+ 1566  ls
+ 1567  less 0446672211.txt 
  1568  cd ..
- 1569  ls
- 1570  rm ca1.txt 
- 1571  script ws5.txt
- 1572  less ws5.txt 
- 1573  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws5.txt > ws5.clean.txt
- 1574  tr -cd '\11\12\15\40-\176' <ws5.clean.txt > ws5.final.txt
- 1575  less ws5.final.txt 
- 1576  vi ws5.final.txt 
- 1577  history > cmds.log
- 1578  git ls-files
- 1579  git rm --cached a2.final.txt 
- 1580  git add cmds.log 
- 1581  git add ws5.final.txt 
- 1582  git commit -m "worksheet 5"
- 1583  git remote set-url https://github.com/AdamY02/ws5.git
- 1584  git remote set-url origin https://github.com/AdamY02/ws5.git
- 1585  git push origin master
- 1586  ls
- 1587  cd worksheet_Folder/
+ 1569  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.($DATETIME).txt
+ 1570  cd PRODUCTS/
+ 1571  ls
+ 1572  cd ..
+ 1573  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
+ 1574  less amazon_reviews_us_Books_v1_02.tsv 
+ 1575  cd PRODUCTS/
+ 1576  echo -e "US \t 12345 \t 012545 \t 0446672211 \t 12 \t idea \t idea \t 3 \t 12 " >> 0446672211.20211003_235007.txt 
+ 1577  ls
+ 1578  less 0446672211.20211003_235007.txt 
+ 1579  less ~/amazonReview/amazon_reviews_us_Books_v1_02.tsv 
+ 1580  cd ..
+ 1581  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
+ 1582  cd PRODUCTS/
+ 1583  ls
+ 1584  less 0446672211.LATEST.txt 
+ 1585  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
+ 1586  exit
+ 1587  tmux
  1588  ls
- 1589  cd ..
- 1590  mkdir ws5_work
- 1591  ls
- 1592  mv ws5.txt ws5.final.txt ws5.clean.txt ws5_work/
- 1593  ls
- 1594  mv allReviewID.txt top1000ReviewID.txt ws5_work/
- 1595  ls
- 1596  rm cmds.log 
- 1597  rm cmds.txt 
- 1598  ls
- 1599  mv ws5_work/ worksheet_Folder/
- 1600  exit
- 1601  date
- 1602  date "+%Y%m%d"
- 1603  date "$Y"
- 1604  date "+%Y"
- 1605  date "+%Y%m%d_%H%M%S"
- 1606  date "+%H"
- 1607  date "%S"
- 1608  date "+%S"
- 1609  variable=$(date "+%Y%m%d_%H%M%S"
- 1610  )
- 1611  variable=$(date "+%Y%m%d_%H%M%S")
- 1612  echo $vairable
- 1613  (date "+%Y%m%d_%H%M%S")
- 1614  variable=$(date "+%Y%m%d_%H%M%S")
- 1615  echo $variable 
- 1616  cd amazonReview/
- 1617  ls
- 1618  cd assignment_Folder/
- 1619  cd assignment_2/
- 1620  ls
- 1621  mv PRODUCTS/ /home/yin/amazonReview/
- 1622  cd ~/amazonReview/
- 1623  ls
- 1624  cd PRODUCTS/
- 1625  ls
- 1626  less 05
- 1627  less 0439784549.txt 
- 1628  cd ~/amazonReview/CUSTOMERS/
- 1629  ls
- 1630  less 35004134.txt 
- 1631  cp 52447634.txt /home/yin/amazonReview/
- 1632  cd ~/amazonReview/
- 1633  ls
- 1634  less 52447634.txt 
- 1635  less amazon_reviews_us_Books_v1_02.tsv 
- 1636  ls
- 1637  echo abc > abc.txt
- 1638  ln -s abc.txt abcd.txt
- 1639  less abcd.txt 
- 1640  rm abc
- 1641  rm abc.txt 
- 1642  less abcd.txt 
- 1643  rm abcd.txt 
- 1644  exit
- 1645  ls
- 1646  mv CUSTOMERS/ assignment_Folder/assignment_2/
- 1647  mv CUSTOMERS/ assignment_Folder/
- 1648  cd assignment_Folder/
- 1649  ls
- 1650  mv CUSTOMERS/ assignment_2/
- 1651  cd assignment_2/
- 1652  ls
- 1653  cd ..
- 1654  ls
- 1655  cd CUSTOMERS/
- 1656  ls
- 1657  cd ..
- 1658  ls
- 1659  cd assignment_2/
- 1660  ls
- 1661  cd ~/amazonReview/
- 1662  ls
- 1663  mv PRODUCTS/ assignment_Folder/assignment_2/
- 1664  ls
- 1665  cd assignment_Folder/
+ 1589  exit
+ 1590  exit
+ 1591  exit
+ 1592  exit
+ 1593  echo first
+ 1594  exit
+ 1595  tmux kill-session -a
+ 1596  exit
+ 1597  tmux kill-session
+ 1598  tmux
+ 1599  exit
+ 1600  echo 'pwd'
+ 1601  echo "pwd"
+ 1602  exit
+ 1603  ECHO
+ 1604  DATETIME=$(date +"%Y%m%d_%H%M%S")
+ 1605  echo DATETIME
+ 1606  echo 
+ 1607  echo
+ 1608  echo $DATETIME
+ 1609  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
+ 1610  echo
+ 1611  cd PRODUCTS/
+ 1612  ls
+ 1613  rm 0446672211..txt 
+ 1614  cd ..
+ 1615  DATETIME=$(date "+%Y%m%d_%H%M%S")
+ 1616  echo $DATETIME
+ 1617  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
+ 1618  cd PRODUCTS/
+ 1619  ls
+ 1620  cd ..
+ 1621  echo -e "US \t 12345 \t 01234 \t 0446672211 \t 12 \t idea \t idea \t 3 \t 12 " >> PRODUCTS/0446672211.20211006_033505.txt 
+ 1622  less PRODUCTS/0446672211.20211006_033505.txt 
+ 1623  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
+ 1624  echo
+ 1625  ln PRODUCTS/0446672211.20211006_033505.txt PRODUCTS/0446672211.LATEST.txt
+ 1626  cd PRODUCTS/
+ 1627  ls
+ 1628  less 0446672211.LATEST.txt 
+ 1629  echo del
+ 1630  cd ..
+ 1631  cd PRODUCTS/
+ 1632  ls
+ 1633  cd ..
+ 1634  cd PRODUCTS/
+ 1635  crontab -e
+ 1636  cd PRODUCTS/
+ 1637  crontab -e
+ 1638  ls
+ 1639  ls 
+ 1640  crontab -e
+ 1641  cd PRODUCTS/
+ 1642  ls
+ 1643  echo delete the last 2 line
+ 1644  ls
+ 1645  less 0446672211.AVGRATING.txt 
+ 1646  cd PRODUCTS/
+ 1647  echo delete this line
+ 1648  echo -e "US \t 12345 \t 012545 \t 0446672211 \t 12 \t idea \t idea \t 1 \t 12 " >> 0446672211.20211003_235007.txt
+ 1649  less 0446672211.AVGRATING.txt 
+ 1650  cd amazonReview/
+ 1651  ls
+ 1652  * * * * * ls
+ 1653  crontab
+ 1654  crontab -l
+ 1655  ls
+ 1656  echo "abc" > abc.txt
+ 1657  ls
+ 1658  crontab abc.txt 
+ 1659  * * * * * /home/yin/amazonReview/ ls
+ 1660  crontab -e
+ 1661  crontab -l
+ 1662  crontab -e
+ 1663  crontab -l
+ 1664  ls /home/yin/amazonReview/
+ 1665  crontab -e
  1666  ls
- 1667  cd CUSTOMERS/
- 1668  ls
- 1669  cd ..
- 1670  cd assignment_2/
- 1671  ls
- 1672  cd CUSTOMERS/
- 1673  ls
- 1674  cd ..
+ 1667  less abc.txt 
+ 1668  crontab -l
+ 1669  less
+ 1670  ls
+ 1671  less abc.txt 
+ 1672  crontab -e
+ 1673  crontab -l
+ 1674  crontab -r
  1675  ls
- 1676  cd CUSTOMERS/
- 1677  ls
- 1678  rm *
- 1679  ls
- 1680  cd ..
- 1681  rmdir CUSTOMERS/
- 1682  ls
- 1683  cd ..
- 1684  ls
- 1685  mv CUSTOMERS/ assignment_2/
- 1686  ls
- 1687  cd ..
- 1688  ls
- 1689  mkdir PRODUCTS
- 1690  ls
- 1691  cd PRODUCTS/
- 1692  ls
- 1693  cd ..
- 1694  less amazon_reviews_us_Books_v1_02.tsv 
- 1695  ls
- 1696  less try.txt 
- 1697  vi ca1.txt
- 1698  less ca1.txt 
- 1699  tail -n +2 ca1.txt > ca2.txt
- 1700  less ca2.txt 
- 1701  rm ca1.txt  ca2.txt 
- 1702  cut -f 4,9 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > ca1.txt
- 1703  less ca1.txt 
- 1704  cut -f 4,9 amazon_reviews_us_Books_v1_02.tsv > ca2.txt
- 1705  less ca2.txt 
- 1706  rm ca1.txt ca2.txt 
- 1707  cd assignment_Folder/
- 1708  cd assignment_2/
- 1709  ls
- 1710  cd PRODUCTS/
- 1711  ls
- 1712  less 0446672211.txt 
- 1713  cd ..
- 1714  cd ~/amazonReview/
+ 1676  less try.txt 
+ 1677  rm abc.txt 
+ 1678  vi ca1.txt
+ 1679  paste -sd + ca1.txt 
+ 1680  paste -sd + ca1.txt  | bc
+ 1681  less ca1.txt 
+ 1682  vi ca1.txt 
+ 1683  paste -sd + ca1.txt  | bc
+ 1684  paste -sd + ca1.txt 
+ 1685  vi ca1.txt 
+ 1686  paste -sd + ca1.txt 
+ 1687  vi ca1.txt 
+ 1688  paste -sd + ca1.txt 
+ 1689  vi ca1.txt 
+ 1690  paste -sd + ca1.txt 
+ 1691  paste -sd+ ca1.txt 
+ 1692  vi ca2.txt
+ 1693  head ca2.txt 
+ 1694  paste -sd + ca2.txt 
+ 1695  vi ca1.txt 
+ 1696  rm ca1.txt ca2.txt 
+ 1697  vi ca1.
+ 1698  ls
+ 1699  vi ca1.txt
+ 1700  paste -sd + ca1.txt 
+ 1701  sum=$(paste -sd + ca1.txt | bc)
+ 1702  echo $sum
+ 1703  count=$(wc -l < ca1.txt)
+ 1704  echo $count
+ 1705  echo "scale=2; $sum/$count"
+ 1706  echo "scale=2; $sum/$count" | bc
+ 1707  ls
+ 1708  less 52447634.txt 
+ 1709  cd PRODUCTS/
+ 1710  ls
+ 1711  less 0446672211.txt 
+ 1712  cd ..
+ 1713  ls
+ 1714  cd PRODUCTS/
  1715  ls
- 1716  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | tail -n +2 > PRODUCTS/0446672211.txt
- 1717  less PRODUCTS/0446672211.txt 
- 1718  cd PRODUCTS/
- 1719  LS
- 1720  ls
- 1721  rm 0446672211.txt 
- 1722  cd ..
- 1723  ls
- 1724  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > PRODUCTS/0446672211.txt
- 1725  less PRODUCTS/0446672211.txt 
- 1726  echo -e "1 \t 2 \t 3" >> PRODUCTS/0446672211.txt 
- 1727  less PRODUCTS/0446672211.txt 
- 1728  exit
- 1729  cd amazonReview/
- 1730  ls
- 1731  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv | tail -n +2 > PRODUCTS/0446672211.txt 
- 1732  cd PRODUCTS/
- 1733  ls
- 1734  echo $datetime
- 1735  echo $DATETIME
- 1736  echo time
- 1737  echo $time
- 1738  DATETIME=$(date +%Y%m%d_%H%M%S")
- 1739  DATETIME=$(date "+%Y%m%d_%H%M%S")
- 1740  echo DATETIME
- 1741  echo $DATETIME
+ 1716  rm *
+ 1717  cs ..
+ 1718  cd ..
+ 1719  ls
+ 1720  script ws6.txt
+ 1721  VI ws6.txt 
+ 1722  vi ws6.txt 
+ 1723  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0446672211.txt
+ 1724  less PRODUCTS/0446672211.txt 
+ 1725  script -a ws6.txt 
+ 1726  vi ws6.txt 
+ 1727  echo $DATETIME
+ 1728  vi ws6.txt 
+ 1729  echo $DATETIME
+ 1730  echo $$DATETIME
+ 1731  echo $DATETIME
+ 1732  DATETIME=$(date "+%Y%m%d_%H%M%S")
+ 1733  echo $DATETIME
+ 1734  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
+ 1735  cd PRODUCTS/
+ 1736  ls
+ 1737  cd ..
+ 1738  cd PRODUCTS/
+ 1739  ls
+ 1740  rm 0446672211.20211006_033416.txt 
+ 1741  ls
  1742  cd ..
- 1743  cp PRODUCTS/0446672211.txt > PRODUCTS/0446672211.$DATETIME.txt
- 1744  ls
- 1745  cp try.txt abc.txt
- 1746  less abc.txt 
- 1747  rm abc.txt 
- 1748  cd PRODUCTS/
- 1749  ls
- 1750  less 0446672211.20211003_235007.txt 
- 1751  rm 0446672211.20211003_235007.txt
- 1752  ls
- 1753  less 0446672211.txt 
- 1754  cd ..
- 1755  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.($DATETIME).txt
- 1756  cd PRODUCTS/
- 1757  ls
- 1758  cd ..
- 1759  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
- 1760  less amazon_reviews_us_Books_v1_02.tsv 
- 1761  cd PRODUCTS/
- 1762  echo -e "US \t 12345 \t 012545 \t 0446672211 \t 12 \t idea \t idea \t 3 \t 12 " >> 0446672211.20211003_235007.txt 
- 1763  ls
- 1764  less 0446672211.20211003_235007.txt 
- 1765  less ~/amazonReview/amazon_reviews_us_Books_v1_02.tsv 
- 1766  cd ..
- 1767  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
- 1768  cd PRODUCTS/
+ 1743  script ws6.txt
+ 1744  vi ws6.txt 
+ 1745  less amazon_reviews_us_Books_v1_02.tsv 
+ 1746  script -a ws6.txt 
+ 1747  vi ws6.txt 
+ 1748  script ca3.txt
+ 1749  vi ca3.txt 
+ 1750  rm ca3.txt 
+ 1751  vi ws6.txt 
+ 1752  script -a ws6.txt 
+ 1753  cd PRODUCTS/
+ 1754  ls
+ 1755  cd ..
+ 1756  ls
+ 1757  vi ws6.txt 
+ 1758  script -a ws6.txt 
+ 1759  vi ws6.txt 
+ 1760  script -a ws6.txt 
+ 1761  vi ws6.txt 
+ 1762  script -a ws6.txt 
+ 1763  vi ws6.txt 
+ 1764  script -a ws6.txt 
+ 1765  cd PRODUCTS/
+ 1766  ls
+ 1767  less 0446672211.
+ 1768  less 0446672211.LATEST.txt 
  1769  ls
- 1770  less 0446672211.LATEST.txt 
- 1771  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
- 1772  exit
- 1773  tmux
- 1774  ls
- 1775  exit
- 1776  exit
- 1777  exit
- 1778  exit
- 1779  echo first
- 1780  exit
- 1781  tmux kill-session -a
- 1782  exit
- 1783  tmux kill-session
- 1784  tmux
- 1785  exit
- 1786  echo 'pwd'
- 1787  echo "pwd"
- 1788  exit
- 1789  ECHO
- 1790  DATETIME=$(date +"%Y%m%d_%H%M%S")
- 1791  echo DATETIME
- 1792  echo 
- 1793  echo
- 1794  echo $DATETIME
- 1795  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
- 1796  echo
- 1797  cd PRODUCTS/
- 1798  ls
- 1799  rm 0446672211..txt 
- 1800  cd ..
- 1801  DATETIME=$(date "+%Y%m%d_%H%M%S")
- 1802  echo $DATETIME
- 1803  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
- 1804  cd PRODUCTS/
- 1805  ls
- 1806  cd ..
- 1807  echo -e "US \t 12345 \t 01234 \t 0446672211 \t 12 \t idea \t idea \t 3 \t 12 " >> PRODUCTS/0446672211.20211006_033505.txt 
- 1808  less PRODUCTS/0446672211.20211006_033505.txt 
- 1809  ln PRODUCTS/0446672211.20211003_235007.txt PRODUCTS/0446672211.LATEST.txt
- 1810  echo
- 1811  ln PRODUCTS/0446672211.20211006_033505.txt PRODUCTS/0446672211.LATEST.txt
- 1812  cd PRODUCTS/
- 1813  ls
- 1814  less 0446672211.LATEST.txt 
- 1815  echo del
- 1816  cd ..
- 1817  cd PRODUCTS/
- 1818  ls
- 1819  cd ..
- 1820  cd PRODUCTS/
- 1821  crontab -e
- 1822  cd PRODUCTS/
- 1823  crontab -e
- 1824  ls
- 1825  ls 
- 1826  crontab -e
- 1827  cd PRODUCTS/
- 1828  ls
- 1829  echo delete the last 2 line
- 1830  ls
- 1831  less 0446672211.AVGRATING.txt 
- 1832  cd PRODUCTS/
- 1833  echo delete this line
- 1834  echo -e "US \t 12345 \t 012545 \t 0446672211 \t 12 \t idea \t idea \t 1 \t 12 " >> 0446672211.20211003_235007.txt
- 1835  less 0446672211.AVGRATING.txt 
- 1836  cd amazonReview/
+ 1770  cut -f 0446672211.LATEST.txt | paste -sd + | bc
+ 1771  cut -f 8 0446672211.LATEST.txt | paste -sd + | bc
+ 1772  cd ..
+ 1773  vi ws6.txt 
+ 1774  cd PRODUCTS/
+ 1775  ls
+ 1776  history > cmds.txt
+ 1777  less cmds.txt 
+ 1778  cd ..
+ 1779  vi ws6.txt 
+ 1780  script -a ws6.txt 
+ 1781  cd ..
+ 1782  cd amazonReview/
+ 1783  vi ws6.txt 
+ 1784  script -a ws6.txt 
+ 1785  ls
+ 1786  cd PRODUCTS/
+ 1787  ls
+ 1788  rm cmds.txt 
+ 1789  ls
+ 1790  cd ..
+ 1791  crontab -l
+ 1792  cd PRODUCTS/
+ 1793  ls
+ 1794  crontab -e
+ 1795  cd ..
+ 1796  ls
+ 1797  cd ~/amazonReview/
+ 1798  cd PRODUCTS/
+ 1799  pwd
+ 1800  crontab -e
+ 1801  ls
+ 1802  less 0446672211.AVGRATING.txt 
+ 1803  cd ..
+ 1804  vi ws6.txt 
+ 1805  script -a ws6.txt 
+ 1806  vi ws6.txt 
+ 1807  script -a ws6.txt 
+ 1808  vi ws6.txt 
+ 1809  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws6.txt > ws6.clean.txt
+ 1810  tr -cd '\11\12\15\40-\176' < ws6.clean.txt > ws6.final.txt
+ 1811  vi ws6.final.txt 
+ 1812  exit
+ 1813  cd amazonReview/
+ 1814  ls
+ 1815  less ws6.final.txt 
+ 1816  echo $DATETIME
+ 1817  echo $sum
+ 1818  history > cmds.log
+ 1819  less cmds.log 
+ 1820  git ls-files
+ 1821  git rm --cached cmds.log 
+ 1822  git rm --cached ws5.final.txt 
+ 1823  git add cmds.log 
+ 1824  git add ws6.final.txt 
+ 1825  git commit -m "ws6"
+ 1826  git status
+ 1827  git ls-files
+ 1828  git remote set-url https://github.com/AdamY02/ws6.git
+ 1829  git remote set-url origin https://github.com/AdamY02/ws6.git
+ 1830  git push -u origin master
+ 1831  exit
+ 1832  ls [A-Z]
+ 1833  ls
+ 1834  la [AZ]
+ 1835  ls [AZ]
+ 1836  ls A...Z
  1837  ls
- 1838  * * * * * ls
- 1839  crontab
- 1840  crontab -l
- 1841  ls
- 1842  echo "abc" > abc.txt
- 1843  ls
- 1844  crontab abc.txt 
- 1845  * * * * * /home/yin/amazonReview/ ls
- 1846  crontab -e
- 1847  crontab -l
- 1848  crontab -e
- 1849  crontab -l
- 1850  ls /home/yin/amazonReview/
- 1851  crontab -e
- 1852  ls
- 1853  less abc.txt 
- 1854  crontab -l
- 1855  less
- 1856  ls
- 1857  less abc.txt 
- 1858  crontab -e
- 1859  crontab -l
- 1860  crontab -r
- 1861  ls
- 1862  less try.txt 
- 1863  rm abc.txt 
- 1864  vi ca1.txt
- 1865  paste -sd + ca1.txt 
- 1866  paste -sd + ca1.txt  | bc
- 1867  less ca1.txt 
- 1868  vi ca1.txt 
- 1869  paste -sd + ca1.txt  | bc
- 1870  paste -sd + ca1.txt 
- 1871  vi ca1.txt 
- 1872  paste -sd + ca1.txt 
- 1873  vi ca1.txt 
- 1874  paste -sd + ca1.txt 
- 1875  vi ca1.txt 
- 1876  paste -sd + ca1.txt 
- 1877  paste -sd+ ca1.txt 
- 1878  vi ca2.txt
- 1879  head ca2.txt 
- 1880  paste -sd + ca2.txt 
- 1881  vi ca1.txt 
- 1882  rm ca1.txt ca2.txt 
- 1883  vi ca1.
- 1884  ls
- 1885  vi ca1.txt
- 1886  paste -sd + ca1.txt 
- 1887  sum=$(paste -sd + ca1.txt | bc)
- 1888  echo $sum
- 1889  count=$(wc -l < ca1.txt)
- 1890  echo $count
- 1891  echo "scale=2; $sum/$count"
- 1892  echo "scale=2; $sum/$count" | bc
- 1893  ls
- 1894  less 52447634.txt 
- 1895  cd PRODUCTS/
- 1896  ls
- 1897  less 0446672211.txt 
- 1898  cd ..
- 1899  ls
- 1900  cd PRODUCTS/
- 1901  ls
- 1902  rm *
- 1903  cs ..
- 1904  cd ..
- 1905  ls
- 1906  script ws6.txt
- 1907  VI ws6.txt 
- 1908  vi ws6.txt 
- 1909  grep 0446672211 amazon_reviews_us_Books_v1_02.tsv > PRODUCTS/0446672211.txt
- 1910  less PRODUCTS/0446672211.txt 
- 1911  script -a ws6.txt 
- 1912  vi ws6.txt 
- 1913  echo $DATETIME
- 1914  vi ws6.txt 
- 1915  echo $DATETIME
- 1916  echo $$DATETIME
- 1917  echo $DATETIME
- 1918  DATETIME=$(date "+%Y%m%d_%H%M%S")
- 1919  echo $DATETIME
- 1920  cp PRODUCTS/0446672211.txt PRODUCTS/0446672211.$DATETIME.txt
- 1921  cd PRODUCTS/
- 1922  ls
- 1923  cd ..
- 1924  cd PRODUCTS/
- 1925  ls
- 1926  rm 0446672211.20211006_033416.txt 
- 1927  ls
- 1928  cd ..
- 1929  script ws6.txt
- 1930  vi ws6.txt 
- 1931  less amazon_reviews_us_Books_v1_02.tsv 
- 1932  script -a ws6.txt 
- 1933  vi ws6.txt 
- 1934  script ca3.txt
- 1935  vi ca3.txt 
- 1936  rm ca3.txt 
- 1937  vi ws6.txt 
- 1938  script -a ws6.txt 
- 1939  cd PRODUCTS/
- 1940  ls
- 1941  cd ..
- 1942  ls
- 1943  vi ws6.txt 
- 1944  script -a ws6.txt 
- 1945  vi ws6.txt 
- 1946  script -a ws6.txt 
- 1947  vi ws6.txt 
- 1948  script -a ws6.txt 
- 1949  vi ws6.txt 
- 1950  script -a ws6.txt 
- 1951  cd PRODUCTS/
- 1952  ls
- 1953  less 0446672211.
- 1954  less 0446672211.LATEST.txt 
- 1955  ls
- 1956  cut -f 0446672211.LATEST.txt | paste -sd + | bc
- 1957  cut -f 8 0446672211.LATEST.txt | paste -sd + | bc
- 1958  cd ..
- 1959  vi ws6.txt 
- 1960  cd PRODUCTS/
- 1961  ls
- 1962  history > cmds.txt
- 1963  less cmds.txt 
- 1964  cd ..
- 1965  vi ws6.txt 
- 1966  script -a ws6.txt 
- 1967  cd ..
- 1968  cd amazonReview/
- 1969  vi ws6.txt 
- 1970  script -a ws6.txt 
- 1971  ls
- 1972  cd PRODUCTS/
- 1973  ls
- 1974  rm cmds.txt 
- 1975  ls
- 1976  cd ..
- 1977  crontab -l
- 1978  cd PRODUCTS/
- 1979  ls
- 1980  crontab -e
- 1981  cd ..
- 1982  ls
- 1983  cd ~/amazonReview/
- 1984  cd PRODUCTS/
- 1985  pwd
- 1986  crontab -e
- 1987  ls
- 1988  less 0446672211.AVGRATING.txt 
- 1989  cd ..
- 1990  vi ws6.txt 
- 1991  script -a ws6.txt 
- 1992  vi ws6.txt 
- 1993  script -a ws6.txt 
- 1994  vi ws6.txt 
- 1995  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws6.txt > ws6.clean.txt
- 1996  tr -cd '\11\12\15\40-\176' < ws6.clean.txt > ws6.final.txt
- 1997  vi ws6.final.txt 
- 1998  exit
- 1999  cd amazonReview/
- 2000  ls
- 2001  less ws6.final.txt 
- 2002  echo $DATETIME
- 2003  echo $sum
- 2004  history > cmds.log
+ 1838  cd amazonReview/
+ 1839  ls
+ 1840  ls [A-Z]
+ 1841  ls A...Z
+ 1842  ls [AZ]
+ 1843  echo "UNIX"
+ 1844  echo "\"UNIX\""
+ 1845  echo ""UNIX""
+ 1846  ls
+ 1847  mv ca1.txt ca2.txt
+ 1848  less ca2.txt 
+ 1849  ls
+ 1850  more ca2.txt 
+ 1851  more ws6.clean.txt 
+ 1852  exit
+ 1853  cd amazonReview/
+ 1854  more -p ws6.clean.txt 
+ 1855  exit
+ 1856  echo $HOME
+ 1857  echo $PATH
+ 1858  echo $home
+ 1859  cd amazonReview/
+ 1860  ls
+ 1861  vi ca2.txt 
+ 1862  echo good ca3.txt
+ 1863  echo good > ca3.txt
+ 1864  cat ca2.txt < ca3.txt 
+ 1865  less ca3.txt 
+ 1866  less ca2.txt 
+ 1867  cat ca2.txt ca3.txt 
+ 1868  cat > ca2.txt ca3.txt 
+ 1869  less ca2.txt 
+ 1870  less ca3.txt 
+ 1871  rm ca2.txt ca3.txt 
+ 1872  echo first > ca1.txt
+ 1873  echo second > ca2.txt
+ 1874  cat ca1.txt > ca2.txt 
+ 1875  less ca2.txt 
+ 1876  find .-type f -name "???" -print
+ 1877  find . -type f -name "ca" -print
+ 1878  ls
+ 1879  find . -name "ca"
+ 1880  find . -name ca2.txt 
+ 1881  find . -name ca2
+ 1882  find . -name "??2"
+ 1883  find . -name "ca2.txt"
+ 1884  find . -name ca1
+ 1885  find . -name "???.txt"
+ 1886  find . -name "?.txt"
+ 1887  find . -name "??.txt"
+ 1888  vi ca1.txt 
+ 1889  cd /
+ 1890  ls
+ 1891  cd ~
+ 1892  ls
+ 1893  cd amazonReview/
+ 1894  less ca1.txt 
+ 1895  vi ca2.txt 
+ 1896  cat ca1.txt >> ca2.txt 
+ 1897  less ca2.txt 
+ 1898  cat ca1.txt ca2.txt >> ca3.txt
+ 1899  less ca3.txt 
+ 1900  who
+ 1901  cal
+ 1902  wc -l ca1.txt outfile
+ 1903  wc -l ca1.txt 
+ 1904  exit
+ 1905  cd amazonReview/
+ 1906  ls
+ 1907  cd worksheet_Folder/
+ 1908  ls
+ 1909  cd ..
+ 1910  mkdir ws6_work
+ 1911  ls
+ 1912  rm ca1.txt ca2.txt ca3.txt 
+ 1913  ls
+ 1914  mv ws6.clean.txt ws6.final.txt ws6.txt ws6_work/
+ 1915  mv ws6_work/ worksheet_Folder/
+ 1916  ls
+ 1917  less 52447634.txt 
+ 1918  vi ca1.txt
+ 1919  vi ca1.txt 
+ 1920  sed 's/m//' ca1.txt 
+ 1921  less ca1.txt 
+ 1922  sed 's/<br />//' ca1.txt 
+ 1923  sed 's/<//' ca1.txt 
+ 1924  sed 's/good//g' ca1.txt 
+ 1925  sed 's/<br />//g' ca1.txt 
+ 1926  vi ca1.txt 
+ 1927  sed 's/.//' ca1.txt 
+ 1928  less ca1.txt 
+ 1929  sed 's/;//' ca1.txt 
+ 1930  sed 's/,/' ca1.txt 
+ 1931  sed 's/,//' ca1.txt 
+ 1932  sed 's/,*$//g' ca1.txt 
+ 1933  sed '/good/ d' ca1.txt 
+ 1934  less ca1.txt 
+ 1935  sed 's/<br//g' ca1.txt 
+ 1936  sed 's/<br //g' ca1.txt 
+ 1937  sed 's/<br ///g' ca1.txt 
+ 1938  sed 's/<br />//g' ca1.txt 
+ 1939  sed 's/<br ////g' ca1.txt 
+ 1940  less 52447634.txt 
+ 1941  sed 's/,$//' ca1.txt 
+ 1942  sed 's/;$//' ca1.txt 
+ 1943  sed -E 's/,\S*//g' ca1.txt 
+ 1944  sed 's/ ,///g' ca1.txt 
+ 1945  sed 's/,///g' ca1.txt 
+ 1946  sed 's/,//g' ca1.txt 
+ 1947  sed 's/<br />//g' ca1.txt 
+ 1948  sed 's/<br //g' ca1.txt 
+ 1949  sed 's/[<br />]//g' ca1.txt 
+ 1950  sed 's/[,]//g' ca1.txt 
+ 1951  sed 's/[;]//g' ca1.txt 
+ 1952  sed 's/[; .]//g' ca1.txt 
+ 1953  sed 's/[,.;]//g' ca1.txt 
+ 1954  vi ca1.txt 
+ 1955  sed 's/[and]//g' ca1.txt 
+ 1956  vi ca1.txt 
+ 1957  sed 's/[<br />]//g' ca1.txt 
+ 1958  sed -e 's/\<brave\>//g' ca1.txt 
+ 1959  sed -e 's/\<br />//g' ca1.txt 
+ 1960  sed -e 's/\<<br />\>//g' ca1.txt 
+ 1961  sed -e 's/<foo>//g' ca1.txt 
+ 1962  sed -e 's/<br>//g' ca1.txt 
+ 1963  sed -e 's/\<good >///g' ca1.txt 
+ 1964  sed -e 's/\<good\>//g' ca1.txt 
+ 1965  sed -e 's/\<<br />\>//g' ca1.txt 
+ 1966  sed -e 's/\<and\>//g' ca1.txt 
+ 1967  sed -e 's/\<<>\>//g' ca1.txt 
+ 1968  sed -e 's/\<<br >\>//g' ca1.txt 
+ 1969  sed -e 's/\<<br />\>//g' ca1.txt 
+ 1970  sed -e 's/\<<br \/>\>//g' ca1.txt 
+ 1971  sed 's/\\//g' ca1.txt 
+ 1972  sed 's/\///g' ca1.txt 
+ 1973  sed 's/ \< //g' ca1.txt 
+ 1974  sed 's/\<//g' ca1.txt 
+ 1975  sed 's/<//g' ca1.txt 
+ 1976  sed 's/<br //g' ca1.txt 
+ 1977  sed 's/<br \///g' ca1.txt 
+ 1978  sed 's/<br \/>//g' ca1.txt 
+ 1979  sed -e 's/<[^>]*>//g' ca1.txt 
+ 1980  less amazon_reviews_us_Books_v1_02.tsv 
+ 1981  vi ca1.txt 
+ 1982  sed 's/[.,;]//g' ca1.txt 
+ 1983  sed 's/and//g' ca1.txt 
+ 1984  sed -n '/brave/' ca1.txt 
+ 1985  sed -n '/\<brave\>' ca1.txt 
+ 1986  exit
+ 1987  cd amazonReview/
+ 1988  ls
+ 1989  less ca1.txt 
+ 1990  grep < 52447634.txt > ca2.txt
+ 1991  grep '<' 52447634.txt > ca2.txt 
+ 1992  less ca2.txt 
+ 1993  grep '<** >' 52447634.txt > ca2.txt 
+ 1994  less ca2.txt 
+ 1995  less ca1.txt 
+ 1996  sed -n '/and//g' ca1.txt 
+ 1997  sed -n '/and/' ca1.txt 
+ 1998  sed -n '/and//' ca1.txt 
+ 1999  exit
+ 2000  cd amazonReview/
+ 2001  ls
+ 2002  less ca2.txt 
+ 2003  less ca1.txt 
+ 2004  sed -i 's/<a-zA-Z]* \/>..g' 52447634.txt > ca2.txt 
+ 2005  sed -i 's/<[a-zA-Z]* \/>..g' 52447634.txt > ca2.txt 
+ 2006  sed -i 's/<[a-zA-Z]* \/>//g' 52447634.txt > ca2.txt 
+ 2007  less ca2.txt 
+ 2008  sed 's/<[a-zA-Z]* \/>//g' 52447634.txt > ca2.txt 
+ 2009  less ca2.txt 
+ 2010  less 52447634.txt 
+ 2011  vi 52447634.txt 
+ 2012  sed 's/<[a-zA-Z]* \/>//g' ca1.txt > ca2.txt 
+ 2013  less ca2.txt 
+ 2014  cd PRODUCTS/
+ 2015  ls
+ 2016  cd ..
+ 2017  less 52447634.txt 
+ 2018  grep 52447634 amazon_reviews_us_Books_v1_02.tsv > 52447634.txt
+ 2019  less 52447634.txt 
+ 2020  ls
+ 2021  script ws7.txt
+ 2022  less ws7.txt 
+ 2023  script -a ws7.txt 
+ 2024  less ws7.txt 
+ 2025  vi ws7.txt 
+ 2026  script -a ws7.txt 
+ 2027  vi ws7.txt 
+ 2028  script -a ws7.txt 
+ 2029  less ca1.txt 
+ 2030  sed 's/good//g' ca1.txt > ca2.txt 
+ 2031  less ca2.txt 
+ 2032  sed 's/good/man//g' ca1.txt > ca2.txt 
+ 2033  vi ws7.txt 
+ 2034  script -a ws7.txt 
+ 2035  vi ws7.txt 
+ 2036  vi 52447634.txt 
+ 2037  vi ws7.txt 
+ 2038  less amazon_reviews_us_Books_v1_02.tsv 
+ 2039  script -a ws7.txt 
+ 2040  less ws7.fileOutPut.txt 
+ 2041  vi ws7.
+ 2042  ls
+ 2043  vi ws7.txt 
+ 2044  history > cmds.log
