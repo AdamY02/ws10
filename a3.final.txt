@@ -1,0 +1,179 @@
+Script started on 2021-10-21 04:27:25+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd PRODUCTS/
+----- Question 1 2 3 are combined together as a loop -----
+
+----- for question 1 I use median=$(awk '{ sum+=$2; n++} END {print sum/n;}' to find the median -----
+
+----- for Question 2 I use awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' to convert the data -----
+
+----- for question 3 I redirect the result of question 2 into another file -----
+
+----- I use 1 to 200 for the loops because I ran into a problem that it only compute 50 results when I do it from 1 to 100, I can't solve the issue so I have to use 200 -----
+
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ ls
+0060193395.BINARY.txt  0066214130.txt         0316601950.BINARY.txt  0385497466.txt         0439139597.BINARY.txt  0449004023.txt         0671027344.BINARY.txt  0812511816.txt
+0060193395.txt         0140177396.BINARY.txt  0316601950.txt         038550120X.BINARY.txt  0439139597.txt         0451191145.BINARY.txt  0671027344.txt         0812548051.BINARY.txt
+0060392452.BINARY.txt  0140177396.txt         0316666343.BINARY.txt  038550120X.txt         043935806X.BINARY.txt  0451191145.txt         0671027360.BINARY.txt  0812548051.txt
+0060392452.txt         014028009X.BINARY.txt  0316666343.txt         0385504209.BINARY.txt  043935806X.txt         0451524934.BINARY.txt  0671027360.txt         0812550706.BINARY.txt
+0060514558.BINARY.txt  014028009X.txt         0316769487.BINARY.txt  0385504209.txt         0439784549.BINARY.txt  0451524934.txt         0671524313.BINARY.txt  0812550706.txt
+0060514558.txt         014131088X.BINARY.txt  0316769487.txt         0393317552.BINARY.txt  0439784549.txt         0451526341.BINARY.txt  0671524313.txt         0842329129.BINARY.txt
+0060582510.BINARY.txt  014131088X.txt         0345340426.BINARY.txt  0393317552.txt         0440212561.BINARY.txt  0451526341.txt         0679444815.BINARY.txt  0842329129.txt
+0060582510.txt         0142001740.BINARY.txt  0345340426.txt         0399142789.BINARY.txt  0440212561.txt         0525947647.BINARY.txt  0679444815.txt         0895260174.BINARY.txt
+0060761288.BINARY.txt  0142001740.txt         0345342968.BINARY.txt  0399142789.txt         0440219078.BINARY.txt  0525947647.txt         0679735771.BINARY.txt  0895260174.txt
+0060761288.txt         0156027321.BINARY.txt  0345342968.txt         0399144463.BINARY.txt  0440219078.txt         0553272535.BINARY.txt  0679735771.txt         0895261901.BINARY.txt
+0060763957.BINARY.txt  0156027321.txt         0345417623.BINARY.txt  0399144463.txt         0440414806.BINARY.txt  0553272535.txt         0679781587.BINARY.txt  0895261901.txt
+0060763957.txt         0310205719.BINARY.txt  0345417623.txt         039914563X.BINARY.txt  0440414806.txt         0553375407.BINARY.txt  0679781587.txt         0971453209.BINARY.txt
+0060875410.BINARY.txt  0310205719.txt         0374332657.BINARY.txt  039914563X.txt         0446310786.BINARY.txt  0553375407.txt         0684801523.BINARY.txt  0971453209.txt
+0060875410.txt         0312195516.BINARY.txt  0374332657.txt         039915079X.BINARY.txt  0446310786.txt         0553573403.BINARY.txt  0684801523.txt         0975599518.BINARY.txt
+0060928336.BINARY.txt  0312195516.txt         0375826688.BINARY.txt  039915079X.txt         044652252X.BINARY.txt  0553573403.txt         068484267X.BINARY.txt  0975599518.txt
+0060928336.txt         0312278586.BINARY.txt  0375826688.txt         0399150897.BINARY.txt  044652252X.txt         0590353403.BINARY.txt  068484267X.txt         1400046610.BINARY.txt
+0060930535.BINARY.txt  0312278586.txt         038529929X.BINARY.txt  0399150897.txt         0446532231.BINARY.txt  0590353403.txt         0689817851.BINARY.txt  1400046610.txt
+0060930535.txt         0312857691.BINARY.txt  038529929X.txt         0399501487.BINARY.txt  0446532231.txt         059035342X.BINARY.txt  0689817851.txt         1400050308.BINARY.txt
+0060938455.BINARY.txt  0312857691.txt         0385335482.BINARY.txt  0399501487.txt         0446608955.BINARY.txt  059035342X.txt         0743222245.BINARY.txt  1400050308.txt
+0060938455.txt         0312864256.BINARY.txt  0385335482.txt         0425198243.BINARY.txt  0446608955.txt         0609610597.BINARY.txt  0743222245.txt         1558743669.BINARY.txt
+0060987103.BINARY.txt  0312864256.txt         0385337116.BINARY.txt  0425198243.txt         0446672211.BINARY.txt  0609610597.txt         0785263535.BINARY.txt  1558743669.txt
+0060987103.txt         0312864590.BINARY.txt  0385337116.txt         0439064864.BINARY.txt  0446672211.txt         0671021001.BINARY.txt  0785263535.txt         1576734587.BINARY.txt
+0062502182.BINARY.txt  0312864590.txt         0385484518.BINARY.txt  0439064864.txt         0446677450.BINARY.txt  0671021001.txt         0786868716.BINARY.txt  1576734587.txt
+0062502182.txt         0316011770.BINARY.txt  0385484518.txt         0439136350.BINARY.txt  0446677450.txt         0671025368.BINARY.txt  0786868716.txt         1594480001.BINARY.txt
+0066214130.BINARY.txt  0316011770.txt         0385497466.BINARY.txt  0439136350.txt         0449004023.BINARY.txt  0671025368.txt         0812511816.BINARY.txt  1594480001.txt
+]0;yin@f6lanuxA3: ~/amazonReview/PRODUCTSyin@f6lanuxA3:~/amazonReview/PRODUCTS$ cd ..
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-21 04:27:56+00:00 [COMMAND_EXIT_CODE="0"]
+
+Script started on 2021-10-21 04:36:15+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd CUSTOMERS/
+]0;yin@f6lanuxA3: ~/amazonReview/CUSTOMERSyin@f6lanuxA3:~/amazonReview/CUSTOMERS$ for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+]0;yin@f6lanuxA3: ~/amazonReview/CUSTOMERSyin@f6lanuxA3:~/amazonReview/CUSTOMERS$ ls
+20595117.BINARY.txt  43546353.txt         49355567.BINARY.txt  50389232.txt         50913245.BINARY.txt  51247650.txt         52254603.BINARY.txt  52753467.txt         53016962.BINARY.txt
+20595117.txt         45041039.BINARY.txt  49355567.txt         50592435.BINARY.txt  50913245.txt         51325095.BINARY.txt  52254603.txt         52774618.BINARY.txt  53016962.txt
+30559999.BINARY.txt  45041039.txt         49447323.BINARY.txt  50592435.txt         50941451.BINARY.txt  51325095.txt         52266433.BINARY.txt  52774618.txt         53037408.BINARY.txt
+30559999.txt         45193257.BINARY.txt  49447323.txt         50608834.BINARY.txt  50941451.txt         51379338.BINARY.txt  52266433.txt         52793250.BINARY.txt  53037408.txt
+35004134.BINARY.txt  45193257.txt         49693975.BINARY.txt  50608834.txt         51010391.BINARY.txt  51379338.txt         52447634.BINARY.txt  52793250.txt         53047425.BINARY.txt
+35004134.txt         45273033.BINARY.txt  49693975.txt         50652563.BINARY.txt  51010391.txt         51809405.BINARY.txt  52447634.txt         52797744.BINARY.txt  53047425.txt
+35985708.BINARY.txt  45273033.txt         49750558.BINARY.txt  50652563.txt         51065232.BINARY.txt  51809405.txt         52476938.BINARY.txt  52797744.txt         53052943.BINARY.txt
+35985708.txt         45284807.BINARY.txt  49750558.txt         50702879.BINARY.txt  51065232.txt         51915884.BINARY.txt  52476938.txt         52830980.BINARY.txt  53052943.txt
+36642996.BINARY.txt  45284807.txt         49786731.BINARY.txt  50702879.txt         51110953.BINARY.txt  51915884.txt         52496677.BINARY.txt  52830980.txt         53071109.BINARY.txt
+36642996.txt         46134316.BINARY.txt  49786731.txt         50732546.BINARY.txt  51110953.txt         51917998.BINARY.txt  52496677.txt         52845727.BINARY.txt  53071109.txt
+38491967.BINARY.txt  46134316.txt         49992211.BINARY.txt  50732546.txt         51142763.BINARY.txt  51917998.txt         52500542.BINARY.txt  52845727.txt         53072811.BINARY.txt
+38491967.txt         46983871.BINARY.txt  49992211.txt         50736950.BINARY.txt  51142763.txt         51934027.BINARY.txt  52500542.txt         52894384.BINARY.txt  53072811.txt
+38672733.BINARY.txt  46983871.txt         50057481.BINARY.txt  50736950.txt         51145127.BINARY.txt  51934027.txt         52517734.BINARY.txt  52894384.txt         53082946.BINARY.txt
+38672733.txt         49042814.BINARY.txt  50057481.txt         50761804.BINARY.txt  51145127.txt         51987970.BINARY.txt  52517734.txt         52938698.BINARY.txt  53082946.txt
+39134375.BINARY.txt  49042814.txt         50068216.BINARY.txt  50761804.txt         51147790.BINARY.txt  51987970.txt         52564468.BINARY.txt  52938698.txt         53084107.BINARY.txt
+39134375.txt         49115690.BINARY.txt  50068216.txt         50774468.BINARY.txt  51147790.txt         52008531.BINARY.txt  52564468.txt         52947077.BINARY.txt  53084107.txt
+39569598.BINARY.txt  49115690.txt         50122160.BINARY.txt  50774468.txt         51199159.BINARY.txt  52008531.txt         52615377.BINARY.txt  52947077.txt
+39569598.txt         49148452.BINARY.txt  50122160.txt         50776149.BINARY.txt  51199159.txt         52012289.BINARY.txt  52615377.txt         52966385.BINARY.txt
+41012519.BINARY.txt  49148452.txt         50199793.BINARY.txt  50776149.txt         51210331.BINARY.txt  52012289.txt         52697458.BINARY.txt  52966385.txt
+41012519.txt         49202417.BINARY.txt  50199793.txt         50881246.BINARY.txt  51210331.txt         52173832.BINARY.txt  52697458.txt         53008075.BINARY.txt
+42800127.BINARY.txt  49202417.txt         50378566.BINARY.txt  50881246.txt         51243012.BINARY.txt  52173832.txt         52706646.BINARY.txt  53008075.txt
+42800127.txt         49273674.BINARY.txt  50378566.txt         50895620.BINARY.txt  51243012.txt         52223435.BINARY.txt  52706646.txt         53009736.BINARY.txt
+43546353.BINARY.txt  49273674.txt         50389232.BINARY.txt  50895620.txt         51247650.BINARY.txt  52223435.txt         52753467.BINARY.txt  53009736.txt
+]0;yin@f6lanuxA3: ~/amazonReview/CUSTOMERSyin@f6lanuxA3:~/amazonReview/CUSTOMERS$ cd ..
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-21 04:36:38+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- Question 4 -----
+
+Script started on 2021-10-21 07:04:01+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ cd ~/datamash-1.3/
+]0;yin@f6lanuxA3: ~/datamash-1.3yin@f6lanuxA3:~/datamash-1.3$ for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+]0;yin@f6lanuxA3: ~/datamash-1.3yin@f6lanuxA3:~/datamash-1.3$ cd ~/amazonReview/
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ less 100Customer_correlation.txt 
+[?1049h[22;0;0t[?1h=20595117         -0.11565136551674
+30559999         0.19066266277681
+20595117         -0.11565136551674
+30559999         0.19066266277681
+35004134         0.087862638914856
+35985708         -0.046338783263331
+36642996         0.010737279082623
+38491967         0.18103957160411
+38672733         0.08955570297624
+39134375         0.084568871012606
+39569598         0.090033619846145
+41012519         0.20330347238825
+42800127         0.079383512124008
+43546353         0.13299364834546
+45041039         0.16929272398274
+45193257         0.011622941652564
+45273033         0.096289060074118
+45284807         0.1730094568517
+46134316         0.15840370967022
+46983871         0.019776330492324
+49042814         -0.062851924536916
+49115690         0.02546210546973
+49148452         0.091069066874562
+100Customer_correlation.txt[K[K[?1l>[?1049l[23;0;0t]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+----- Question 5 6 7 skipped ----- 
+
+
+Script done on 2021-10-21 07:04:33+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2021-10-21 23:55:38+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+----- Question 8 9 -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/<[a-zA-Z]* \/>//g' 0895261901.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/and//g' 0895261901.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/if//g' 0895261901.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/\b[a-zA-Z]\{1,2\} //g' 0895261901.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-22 00:03:48+00:00 [COMMAND_EXIT_CODE="0"]
+
+
+----- Question 10 -----
+
+Script started on 2021-10-21 23:25:34+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="90" LINES="27"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ awk -F '\t' '{if($2==0) print $3 > "helpful_0_string"; else print $3 > "helpful_1_string"}' 0895261901.review.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls
+' ca5.txt'                     a3.txt                              ca7.txt
+ 0895261901.BINARY.txt         amazon_reviews_us_Books_v1_02.tsv   ca8.txt
+ 0895261901.review.txt         assignment_Folder                   cmds.log
+ 0895261901.txt                ca1.txt                             helpful_0_string
+ 100Customer_correlation.txt   ca2.txt                             helpful_1_string
+ CUSTOMERS                     ca3.txt                             try.txt
+ PRODUCTS                      ca4.txt                             worksheet_Folder
+ TopCustomerID.txt             ca5.txt
+ a3.2.txt                      ca6.txt
+
+
+Script started on 2021-10-21 23:30:35+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="90" LINES="27"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed 's/ /\n/g' helpful_0_string > helpful_0_word
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed 's/ /\n/g' helpful_1_string > helpful_1_word
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i '/^[[:space:]]*$/d' helpful_0_word 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i '/^[[:space:]]*$/d' helpful_1_word 
+
+Script started on 2021-10-21 23:40:29+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="90" LINES="27"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort helpful_0_word | uniq -c | sort -rn > helpful_0_word_2
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort helpful_1_word | uniq -c | sort -rn > helpful_1_word_2
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-21 23:41:25+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2021-10-21 23:45:03+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ head -n 10 helpful_0_word_2
+   4418 the
+   1379 that
+    728 this
+    657 book
+    640 for
+    577 Goldberg
+    570 media
+    527 his
+    513 are
+    477 news
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ head -n 10 helpful_1_word_2
+   2628 the
+    891 that
+    382 for
+    367 this
+    360 Goldberg
+    337 are
+    329 media
+    324 his
+    323 book
+    273 not
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-10-21 23:45:26+00:00 [COMMAND_EXIT_CODE="0"]
