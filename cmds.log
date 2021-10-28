@@ -1,0 +1,1000 @@
+ 1015  cd assignment_Folder/
+ 1016  ls
+ 1017  cd assignment_2/
+ 1018  ls
+ 1019  cp PRODUCTS/ ~/amazonReview/
+ 1020  ls
+ 1021  cd PRODUCTS/
+ 1022  ls
+ 1023  cd ..
+ 1024  ls
+ 1025  cp -r PRODUCTS/ ~/amazonReview/
+ 1026  cd ~/amazonReview/
+ 1027  ls
+ 1028  less amazon_reviews_us_Books_v1_02.tsv 
+ 1029  cd PRODUCTS/
+ 1030  ls
+ 1031  less 0609610597.txt 
+ 1032  less 0812548051.txt 
+ 1033  cd ..
+ 1034  less amazon_reviews_us_Books_v1_02.tsv 
+ 1035  less 0812548051.txt 
+ 1036  cd PRODUCTS/
+ 1037  less 0609610597.txt 
+ 1038  cd ..
+ 1039  ls
+ 1040  vi ca1.txt 
+ 1041  awk '{SUM+=$1}END{print SUM}' ca1.txt 
+ 1042  less ca1.txt 
+ 1043  vi ca1.txt 
+ 1044  awk '{SUM+=$2}END{print SUM}' ca1.txt 
+ 1045  awk '{ sum += $2; n++} END { print sum / n;}' ca1.txt 
+ 1046  awk '{ sum += $2; n++} END { print sum / n}' ca1.txt 
+ 1047  cd PRODUCTS/
+ 1048  ls
+ 1049  awk '{ sum+=$2; n++} END {print sum / n;}' 0446672211.txt 
+ 1050  cd ..
+ 1051  ls
+ 1052  ls | head -1
+ 1053  exit
+ 1054  cd amazonReview/
+ 1055  ls
+ 1056  awk '{if ($1>1) print $2}' ca1.txt 
+ 1057  awk '{if ($1>1) print $2 else print $1}' ca1.txt 
+ 1058  awk '{if ($1>1) print $2;  else print $1}' ca1.txt 
+ 1059  less ca1.txt 
+ 1060  awk '{if ($1>2) print $2;  else print $1}' ca1.txt 
+ 1061  awk '{if ($1>2) print 0;  else print 1}' ca1.txt 
+ 1062  less ca1.txt 
+ 1063  vi ca1.txt 
+ 1064  awk '{if ($1>1) print 1 \t $2; else print 0 \t $2;}' ca1.txt 
+ 1065  awk '{if ($1>1) print 1 '\t' $2; else print 0 ' \t' $2;}' ca1.txt 
+ 1066  echo "a \t b"
+ 1067  echo -e "a \t b"
+ 1068  awk '{if ($s1>1) print 1 $2;}' ca1.txt 
+ 1069  less ca1.txt 
+ 1070  awk '{if ($s1>1) print 1 ' ' $2;}' ca1.txt 
+ 1071  awk '{if ($s1>1) print 1 $2;}'OFS="\t"   ca1.txt 
+ 1072  awk '{if ($s1>1) print 1 $2;}' OFS="\t"   ca1.txt 
+ 1073  awk '{if ($s1<1) print 1 $2;}' OFS="\t"   ca1.txt 
+ 1074  awk '{if ($s1>2) print 1 $2;}' OFS="\t"   ca1.txt 
+ 1075  awk '{if ($s1>2) print 1 $2;}' {OFS="\t"}   ca1.txt 
+ 1076  awk '{if ($s1>2) print 1 $2;} {OFS="\t"}'   ca1.txt 
+ 1077  awk '{OFS="\T"} {if ($1>2) print 1 $2;]' ca1.txt 
+ 1078  awk '{OFS="\t"} {if ($1>2) print 1 $2;]' ca1.txt 
+ 1079  awk '{OFS="\t"} {if ($1>2) print 1 $2;}' ca1.txt 
+ 1080  awk 'BEGIN  {OFS="\t"} {if ($1>2) print 1 $2;}' ca1.txt 
+ 1081  awk 'BEGIN  {FS="\t"} {if ($1>2) print 1 $2;}' ca1.txt 
+ 1082  awk '{if ($1>2) print 1 $2;}' ca1.txt 
+ 1083  awk '{if ($1>2) print 1, $2;}' ca1.txt 
+ 1084  awk '{if ($1>2) print 1, "\t", $2;}' ca1.txt 
+ 1085  exit
+ 1086  cd amazonReview/
+ 1087  ls
+ 1088  vi ca1.txt 
+ 1089  median=$( awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt 
+ 1090  median=$( awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt) 
+ 1091  echo $median
+ 1092  median=$( awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); 
+ 1093  median=5
+ 1094  echo $median
+ 1095  vi ca1.txt 
+ 1096  median=$( awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk '{if ($1 > $median) print 1, "\t", $2;}' ca1.txt 
+ 1097  median=$( awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk '{if ($1 > $median) print 1, "\t", $2;}' ca1.txt > ca3.txt
+ 1098  ls
+ 1099  less ca3.txt 
+ 1100  awk '{if ($1 > $median) print 1, "\t" $2}' ca1.txt
+ 1101  awk '{if ($1>$median) print 1}' ca1.txt 
+ 1102  less ca1.txt 
+ 1103  awk '{ sum+=$2; n++} END { average= sum/n;} END { print average;}' ca1.txt 
+ 1104  awk '{ sum+=$2; n++} END { average= sum/n;} END { if($1>$average) 1, "\t", $2}' ca1.txt 
+ 1105  awk '{ sum+=$2; n++} END { average= sum/n;} END { if($1>$average) 1, "\t", $2; }' ca1.txt 
+ 1106  awk '{ sum+=$2; n++} END { average= sum/n;} END { if($1>$average) print  1, "\t", $2; }' ca1.txt 
+ 1107  less ca1.txt 
+ 1108  awk '{ sum+=$2; n++} END { average= sum/n;} END { if($1>$average) print  $1, "\t", $2; }' ca1.txt 
+ 1109  awk '{ sum+=$2; n++} END { average= sum/n;} END { print average;}' ca1.txt 
+ 1110  awk '{ sum+=$2; n++} END { average= sum/n;} END { print $1;}' ca1.txt 
+ 1111  echo $median
+ 1112  awk '{median="$median"} END {print median}' 
+ 1113  awk '{median="$median"} END {print median}' ca1.txt 
+ 1114  awk '{median="$median"} END {print $ median}' ca1.txt 
+ 1115  awk '{median="$median"} END {print $median}' ca1.txt 
+ 1116  awk -v mvar="$median" '{print mvar}' ca1.txt 
+ 1117  echo $median
+ 1118  awk -v mvar="$median" '{print mvar}' 
+ 1119  awk -v mvar="median" '{if($2>mvar) print $1, "\t", 1}' ca1.txt
+ 1120  awk -v mvar="median" '{if($2<mvar) print $1, "\t", 1}' ca1.txt
+ 1121  awk -v mvar="median" '{if($1>mvar) print $1, "\t", 1}' ca1.txt
+ 1122  awk -v mvar="median" '{if($1<mvar) print $1, "\t", 1}' ca1.txt
+ 1123  less ca1.txt 
+ 1124  $median
+ 1125  echo $median
+ 1126  awk -v mvar="$median" '{if($1<mvar) print $1, "\t", 1}' ca1.txt
+ 1127  awk -v mvar="$median" '{if($1>mvar) print $1, "\t", 1}' ca1.txt
+ 1128  median=5
+ 1129  echo $median
+ 1130  median=$(awk '{ sum+=$2; n++} END {print sum/n;)' ca1.txt 
+ 1131  )
+ 1132  median=$(awk '{ sum+=$2; n++} END {print sum/n;)' ca1.txt 
+ 1133  )
+ 1134  median=$(awk '{ sum+=$2; n++} END {print sum/n;)' ca1.txt)
+ 1135  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt)
+ 1136  echo $median
+ 1137  median=99
+ 1138  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk -v average="$median" '{if($1>average) print 1, "\t", $2}' ca1.txt
+ 1139  history > cmds.log
+ 1140  less cmds.log 
+ 1141  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk -v average="$median" '{if($1>average) print 1, "\t", $2; else print 0, "\t", $2}' ca1.txt
+ 1142  cd PRODUCTS/
+ 1143  ls
+ 1144  cp 0393317552.txt ~/amazonReview/
+ 1145  cd ..
+ 1146  ls
+ 1147  less 52447634.txt 
+ 1148  less 0393317552.txt 
+ 1149  less amazon_reviews_us_Books_v1_02.tsv 
+ 1150  less 0393317552.txt 
+ 1151  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' 0393317552.txt 
+ 1152  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' 0393317552.txt > ca3.txt
+ 1153  less ca3.txt 
+ 1154  cd ..
+ 1155  ls
+ 1156  cd datamash-1.3/
+ 1157  ./datamash -W ppearson 1:2 ~/amazonReview/ca3.txt 
+ 1158  less ~/amazonReview/ca3.txt 
+ 1159  ./datamash -w ppearson 1:2 ~/amazonReview/ca3.txt 
+ 1160  ./datamash -W ppearson 1:2 ~/amazonReview/ca3.txt 
+ 1161  ./datamash -W ppearson 1:2 < ~/amazonReview/ca3.txt 
+ 1162  gnuplot
+ 1163  gnuplot> plot sin(x)
+ 1164  gnuplot
+ 1165  apt install gnuplot-qt 
+ 1166  exit
+ 1167  cd amazonReview/
+ 1168  gnuplot -x
+ 1169  ls
+ 1170  cd PRODUCTS/
+ 1171  ls
+ 1172  cd ..
+ 1173  ls
+ 1174  less 0393317552.txt 
+ 1175  vi ca1.txt 
+ 1176  vi ca2.txt 
+ 1177  less ca2.txt 
+ 1178  sed 's/no//gi ca2
+ 1179  sed 's/no//g' ca2.txt 
+ 1180  sed 's/no/if//g' ca2.txt 
+ 1181  cd worksheet_Folder/
+ 1182  ls
+ 1183  cd ws7_work/
+ 1184  ls
+ 1185  less ws7.final.txt 
+ 1186  cd ..
+ 1187  cd ~/amazonReview/
+ 1188  sed 's/**//g' ca2.txt 
+ 1189  sed 's/..//g' ca2.txt 
+ 1190  awk 'length($0)>3' ca2.txt 
+ 1191  awk 'length($0)>2' ca2.txt 
+ 1192  sed -n '/^..$/!p' ca2.txt 
+ 1193  awk 'length($0)==2{next} 1' ca2.txt 
+ 1194  awk 'length($0)==2{next}' ca2.txt 
+ 1195  awk 'length($0)!=2' ca2.txt 
+ 1196  awk '{print $1{' ca2.txt 
+ 1197  awk '{print $1}' ca2.txt 
+ 1198  awk '{print $2}' ca2.txt 
+ 1199  awk '{print $0}' ca2.txt 
+ 1200  awk '{if(length($1>2) print $1)}' ca2.txt 
+ 1201  awk '{if(length($1>2) print $1}' ca2.txt 
+ 1202  awk '{if(length($1)>2) print $1}' ca2.txt 
+ 1203  awk '{if(length($1)>1) print $1}' ca2.txt 
+ 1204  awk '{if(length($i)>1) print $i}' ca2.txt 
+ 1205  awk '{print length($0)}' ca2.txt 
+ 1206  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i }}' ca2.txt 
+ 1207  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i, ' ' }}' ca2.txt 
+ 1208  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i, " " }}' ca2.txt 
+ 1209  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i, "\t" }}' ca2.txt 
+ 1210  awk '/^...$/' ca2.txt 
+ 1211  awk '!/^..$/' ca2.txt 
+ 1212  sed 's/\<.\> \?//g' ca2.txt 
+ 1213  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print "$s ", $i}}' ca2.txt 
+ 1214  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}}' ca2.txt 
+ 1215  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i > ca4.txt }}' ca2.txt 
+ 1216  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) echo  $i }}' ca2.txt 
+ 1217  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) echo $i }}' ca2.txt 
+ 1218  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) echo $i > ca4.txt }}' ca2.txt 
+ 1219  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i > ca4.txt }}' ca2.txt 
+ 1220  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}}' ca2.txt 
+ 1221  awk '{ ORS=" " }; {for(i=0; i<=NF; i++) {if(length($i)>2) print $i}}' ca2.txt 
+ 1222  echo
+ 1223  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}}' ca2.txt 
+ 1224  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}; {ORS=" "}' ca2.txt 
+ 1225  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}; {ORS=" "} }' ca2.txt 
+ 1226  awk '{for(i=0; i<=NF; i++) {if(length($i)>2) print $i}; {ORS=" "}; }' ca2.txt 
+ 1227  awk '{for(i=1; i<=NF; i++) {if(length($i)>2) print $i};}' ca2.txt 
+ 1228  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i};}' ca2.txt 
+ 1229  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i};}' ca2.txt > ca4.txt
+ 1230  less ca4.txt 
+ 1231  vi ca2.txt 
+ 1232  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i};}' ca2.txt > ca4.txt
+ 1233  less ca4.txt 
+ 1234  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i}; print "\n"}' ca2.txt > ca4.txt
+ 1235  less ca4.txt 
+ 1236  lessca2
+ 1237  less ca2.txt 
+ 1238  vi ca2.txt 
+ 1239  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i}; print "\n"}' ca2.txt > ca4.txt
+ 1240  less ca4.txt 
+ 1241  vi ca2.txt 
+ 1242  awk '{{ORS=" "}; for(i=1; i<=NF; i++) {if(length($i)>2) print $i}; print "\n"}' ca2.txt > ca4.txt
+ 1243  less ca4.txt 
+ 1244  sed -e 's/\b\w{1,2}\b//g' ca2.txt 
+ 1245  sed -r '/^.{,3}$/d' ca2.txt 
+ 1246  sed -r '/^.{,2}$/d' ca2.txt 
+ 1247  sed '/^.\{,3\}$/d' ca2.txt 
+ 1248  sed -e 's [a-zA-Z0-9]\{1\} //g' ca2.txt 
+ 1249  sed -e 's/ [a-zA-Z0-9]\{1\} //g' ca2.txt 
+ 1250  sed -e 's/ [a-zA-Z0-9]\{1\} / /g' ca2.txt 
+ 1251  sed -e 's/ [a-zA-Z0-9]\{2\} / /g' ca2.txt 
+ 1252  sed 's/ [a-zA-Z0-9 ] / /g' | sed 's/^ *\| *$//g' ca2.txt 
+ 1253  sed -e 's/ [a-zA-Z0-9]\{2\} / /g' ca2.txt | sed -e 's/ [a-zA-Z0-9]\{2\} / /g'
+ 1254  sed -e 's/ [a-zA-Z0-9]\{1\} / /g' ca2.txt 
+ 1255  sed 's [a-zA-Z0-9] {1,2} //g' ca2.txt 
+ 1256  sed 's/ [a-zA-Z0-9] {1,2} //g' ca2.txt 
+ 1257  sed -e 's/ [a-zA-Z0-9]\{1\} / /g' ca2.txt 
+ 1258  sed -e 's/ [a-zA-Z0-9]\{4\} / /g' ca2.txt 
+ 1259  sed -e 's/ [a-zA-Z0-9]\{2\} / /g' ca2.txt 
+ 1260  sed  's/ [a-zA-Z0-9]\{2\} / /g' ca2.txt 
+ 1261  sed  's/ [a-zA-Z0-9]\{1\} / /g' ca2.txt 
+ 1262  sed  's/ [a-zA-Z0-9]\{1\2\} / /g' ca2.txt 
+ 1263  sed  's/ [a-zA-Z0-9]\{1\} / /g' ca2.txt 
+ 1264  sed -e  's/ [a-zA-Z0-9]\{1\2\} / /g' ca2.txt 
+ 1265  sed -e  's/ [a-zA-Z0-9]\{1-2\} / /g' ca2.txt 
+ 1266  sed -e  's/ [a-zA-Z0-9]\{1,2\} / /g' ca2.txt 
+ 1267  sed -e 's/ [a-zA-Z0-9]{2} //g' ca2.txt 
+ 1268  sed -e 's/ [a-zA-Z0-9]{2} / /g' ca2.txt 
+ 1269  sed -e 's/ [a-zA-Z0-9]\ {1,2\}\b  //g' ca2.txt 
+ 1270  sed 's/\b[a-zA-Z]\{1,2\} //g' ca2.txt 
+ 1271  sed 's/[a-zA-Z]\{1,2\} //g' ca2.txt 
+ 1272  sed 's/\b[a-zA-Z]\{1,2\} //g' ca2.txt 
+ 1273  sed 's/\b[a-zA-Z0-9]\{1,2\} //g' ca2.txt 
+ 1274  sed -e 's/ [a-zA-Z0-9]\ {1,2\}\b  //g' ca2.txt
+ 1275  sed  's/ [a-zA-Z0-9]\ {1,2\}\b  //g' ca2.txt
+ 1276  sed -e 's/[a-zA-Z0-9]\{1,2\}\b//g' ca2.txt
+ 1277  exit
+ 1278  cd PRODUCTS/
+ 1279  for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1280  ls
+ 1281  cd ..
+ 1282  cd amazonReview/
+ 1283  ls
+ 1284  cd PRODUCTS/
+ 1285  ls
+ 1286  less 0446672211.AVGRATING.txt 
+ 1287  rm 0446672211.AVGRATING.txt 
+ 1288  ls
+ 1289  cd ..
+ 1290  ls
+ 1291  cd ..
+ 1292  cd amazonReview/
+ 1293  ls
+ 1294  less 0393317552.txt 
+ 1295  median=$(awk '{sum+=$2; n++} END{print sum/n;}}')
+ 1296  median=$(awk '{sum+=$2; n++} END{print sum/n;}')
+ 1297  median=$(awk '{sum+=$2; n++} END {print sum/n;}')
+ 1298  median=$(awk '{sum+=$2; n++} END {print sum/n;}' 0393317552.txt )
+ 1299  echo $median
+ 1300  median=$(awk '{ sum+=$2; n++} END {print sum/n;}' ca1.txt); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' 0393317552.txt > ca3.txt
+ 1301  less ca3.txt 
+ 1302  less 0393317552.txt 
+ 1303  cd PRODUCTS/
+ 1304  ls
+ 1305  ls head -n 1
+ 1306  ls | head -n 1
+ 1307  ls | head -n 2
+ 1308  for i in {1..3}; do ls | head -n $i | tail -l ; done
+ 1309  ls | head -n 3 | tail -l
+ 1310  ls | head -n 3 | tail -1
+ 1311  for i in {1..3}; do ls | head -n $i | tail -1 ; done
+ 1312  cd ..
+ 1313  filename=$(ls | head -n $i | tail -1; done)
+ 1314  filename=$(ls | head -n $i | tail -1;)
+ 1315  echo $filename
+ 1316  cd PRODUCTS/
+ 1317  ls
+ 1318  cd ..
+ 1319  ls
+ 1320  cd assignment_Folder/
+ 1321  cd assignment_2/
+ 1322  ls
+ 1323  cd CUSTOMERS/
+ 1324  ls
+ 1325  cd ..
+ 1326  ls
+ 1327  cp CUSTOMERS/ ~/amazonReview/
+ 1328  cp -r CUSTOMERS/ ~/amazonReview/
+ 1329  cd ~/amazonReview/
+ 1330  ls
+ 1331  cd CUSTOMERS/
+ 1332  ls
+ 1333  cd ..
+ 1334  ls
+ 1335  cd Pro
+ 1336  cd PRODUCTS/
+ 1337  ls
+ 1338  less 0446672211.AVGRATING.txt 
+ 1339  rm 0446672211.AVGRATING.txt 
+ 1340  ls
+ 1341  cd ..
+ 1342  ls
+ 1343  cd PRODUCTS/
+ 1344  ls
+ 1345  crontab -e 
+ 1346  rm 0446672211.AVGRATING.txt 
+ 1347  ls
+ 1348  for i in {1..2}; do $filename=(ls | head -n $i | tail -1; done 
+ 1349  for i in {1..2}; do $filename=(ls | head -n $i | tail -1); done 
+ 1350  for i in {1..2}; do $filename=$(ls | head -n $i | tail -1); done 
+ 1351  for i in {1..2}; do $filename=$(ls | head -n $i | tail -1); echo $filename;  done 
+ 1352  ls | head -n 1 | tail -1
+ 1353  for i in {1..2}; do filename=$(ls | head -n $i | tail -1); echo $filename;  done 
+ 1354  for i in {1..30}; do filename=$(ls | head -n $i | tail -1); echo $filename;  done 
+ 1355  echo $filename
+ 1356  echo $filename | cut -f 1 -d '.'
+ 1357  for i in {1..2}; do filename=$(ls | head -n $i | tail -1); filename2=$(echo $filename | cut -f 1 -d '.'); median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1358  ls
+ 1359  less 0060193395.BINARY.txt 
+ 1360  ls
+ 1361  for i in {1..3}; do filename=$(ls | head -n $i | tail -1); filename2=$(echo $filename | cut -f 1 -d '.'); median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1362  ls
+ 1363  rm ******.BINARY.txt
+ 1364  ls
+ 1365  for i in {1..10}; do filename=$(ls | head -n $i | tail -1); filename2=$(echo $filename | cut -f 1 -d '.'); median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename); awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1366  ls
+ 1367  rm ******.BINARY.txt
+ 1368  ls
+ 1369  for i in {1..10}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1370  ls
+ 1371  rm ******.BINARY.txt
+ 1372  ls
+ 1373  for i in {1..4}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1374  ls
+ 1375  for i in {1..4}; do echo i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1376  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt ;  done
+ 1377  ls
+ 1378  rm ********.BINARY.txt
+ 1379  ls
+ 1380  ls | wc -l
+ 1381  for i in {1..5}; do echo $i; done
+ 1382  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename2;  done
+ 1383  ls
+ 1384  ls head -n 2 | tail -1
+ 1385  ls | head -n 2 | tail -1
+ 1386  ls | head -n 1 | tail -1
+ 1387  rm *****.BINARY.txt
+ 1388  ls
+ 1389  ls | head -n 1 | tail -1
+ 1390  ls | head -n 2 | tail -1
+ 1391  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename)&&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1392  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1393  rm *****.BINARY.txt
+ 1394  ls
+ 1395  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1396  rm *****.BINARY.txt
+ 1397  ls
+ 1398  ls | head -n 3 | tail -1
+ 1399  for i in {1..4}; do echo ls | head -n $i | tail -1; done
+ 1400  for i in {1..4}; do ls | head -n $i | tail -1; done
+ 1401  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && echo $filename && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) && awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1402  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && echo $filename; done
+ 1403  rm *****.BINARY.txt
+ 1404  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && echo $filename; done
+ 1405  rm *******.BINARY.txt
+ 1406  ls
+ 1407  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && echo $filename ' ' $filename2;  done
+ 1408  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) && echo $filename ' ' $filename2;  done
+ 1409  rm ******.BINARY.txt
+ 1410  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1411  rm ****.BINARY.txt
+ 1412  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) && echo $filename ' ' $filename2  done
+ 1413  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) && echo $filename ' ' $filename2;  done
+ 1414  for i in {1..4}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1415  ls
+ 1416  less 0060193395.txt 
+ 1417  less 0060193395.BINARY.txt 
+ 1418  for i in {1..100}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt && echo $filename;  done
+ 1419  for i in {1..100}; do echo $i &&  filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1420  rm ****.BINARY.txt
+ 1421  ls
+ 1422  ls | wc -l
+ 1423  for i in {1..100}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1424  ls
+ 1425  ls | wc -l
+ 1426  rm ****.BINARY.txt
+ 1427  ls
+ 1428  for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1429  ls
+ 1430  ls | wc -l
+ 1431  rm ****.BINARY.txt
+ 1432  ls
+ 1433  cd ~/amazonReview/CUSTOMERS/
+ 1434  ls
+ 1435  ls | wc -l
+ 1436  cd ..
+ 1437  ls
+ 1438  script a3.txt
+ 1439  vi a3.txt 
+ 1440  cd CUSTOMERS/
+ 1441  cd ..
+ 1442  cd CUSTOMERS/
+ 1443  for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1444  ls
+ 1445  cd ..
+ 1446  cd ~/datamash-1.3/
+ 1447  for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1448  echo good
+ 1449  cd ~/amazonReview/
+ 1450  less 100Customer_correlation.txt 
+ 1451  cd amazonReview/
+ 1452  script -a a3.txt 
+ 1453  vi a3.txt 
+ 1454  script -a a3.txt 
+ 1455  vi a3.txt 
+ 1456  cd CUSTOMERS/
+ 1457  ls
+ 1458  ls ***.BINARY.txt
+ 1459  for i in {1..100}; do filename=$(ls *****.BINARY.txt /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1460  ls
+ 1461  ls | wc -l
+ 1462  cd ..
+ 1463  cd ~/datamash-1.3/
+ 1464  for i in {1..100}; do filename=$(ls *****.BINARY.txt /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1465  cd .
+ 1466  cd ~
+ 1467  cd amazonReview/
+ 1468  ls
+ 1469  cd CUSTOMERS/
+ 1470  ls
+ 1471  ls *****.BINARY.txt
+ 1472  cd ..
+ 1473  ls *****.BINARY.txt ~/amazonReview/CUSTOMERS/
+ 1474  cd ~/datamash-1.3/
+ 1475  for i in {1..100}; do filename=$(ls *****.BINARY.txt /home/yin/amazonReview/CUSTOMERS/ | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1476  ls *****.BINARY.txt ~/amazonReview/CUSTOMERS/
+ 1477  ls ~/amazonReview/CUSTOMERS/
+ 1478  ls ~/amazonReview/CUSTOMERS/ *****.BINARY.txt
+ 1479  cd ~/amazonReview/C
+ 1480  cd ~/amazonReview/CUSTOMERS/
+ 1481  ls ****.BINARY.txt
+ 1482  cd ..
+ 1483  ls ******.BINARY.txt PRODUCTS/
+ 1484  ls
+ 1485  ls **3.txt
+ 1486  cd ..
+ 1487  ls ~/amazonReview/ **3.txt
+ 1488  ls **3.txt amazonReview/
+ 1489  ls
+ 1490  ls ~/amazonReview/
+ 1491  ls ~/amazonReview/ | grep 3.
+ 1492  ls ~/amazonReview/CUSTOMERS/ | grep BINARY
+ 1493  cd ~/datamash-1.3/
+ 1494  for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1495  cd ~/amazonReview/CUSTOMERS/
+ 1496  ls
+ 1497  less 51915884.txt 
+ 1498  less 53047425.txt 
+ 1499  less 53072811.BINARY.txt 
+ 1500  cd ..
+ 1501  ls
+ 1502  cd amazonReview/
+ 1503  ls
+ 1504  cd assignment_Folder/
+ 1505  cd assignment_2/
+ 1506  ls
+ 1507  cd CUSTOMERS/
+ 1508  ls
+ 1509  less 53009736.txt 
+ 1510  cd ..
+ 1511  cd CUSTOMERS/
+ 1512  ls
+ 1513  ls -l
+ 1514  cd ..
+ 1515  cd .
+ 1516  cd ..
+ 1517  ls
+ 1518  cd ..
+ 1519  ls
+ 1520  cd worksheet_Folder/
+ 1521  ls
+ 1522  cd ws7_work/
+ 1523  ls
+ 1524  cd ..
+ 1525  cd ws6_work/
+ 1526  ls
+ 1527  cd PRODUCTS/
+ 1528  ls
+ 1529  cd ..
+ 1530  cd .
+ 1531  cd ..
+ 1532  cd ws5_work/
+ 1533  ls
+ 1534  cd ..
+ 1535  cd ws4_work/
+ 1536  ls
+ 1537  cd ..
+ 1538  ls
+ 1539  cd CUSTOMERS/
+ 1540  ls
+ 1541  less 53082946.
+ 1542  less 53082946.txt 
+ 1543  rm *
+ 1544  ls
+ 1545  cd ..
+ 1546  cut -f 2 amason.. | sort | uniq -c | sort -rn > 100CustomersID 
+ 1547  cd assignment_Folder/assignment_2/
+ 1548  ls
+ 1549  less 100CustomersID.txt 
+ 1550  cp 100CustomersID.txt ~/amazonReview/
+ 1551  cd ~/amazonReview/
+ 1552  ls
+ 1553  less 100CustomersID
+ 1554  rm 100CustomersID
+ 1555  ls
+ 1556  less 100CustomersID.txt 
+ 1557  for i in {1..100}; do numID=$(head -n $i 100CustomersID.txt | tail -1) && grep $numID amazon... | cut -f 8,9 > CUSTOMERS/$numID.txt; done
+ 1558  for i in {1..100}; do numID=$(head -n $i 100CustomersID.txt | tail -1) && grep $numID amazon_reviews_us_Books_v1_02.tsv | cut -f 8,9 > CUSTOMERS/$numID.txt; done
+ 1559  grep 428800127 amazon_reviews_us_Books_v1_02.tsv  > ca5.txt
+ 1560  less ca5.txt 
+ 1561  less amazon_reviews_us_Books_v1_02.tsv 
+ 1562  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -rn > 100CustomersID.txt 
+ 1563  less 100CustomersID.txt 
+ 1564  head -n 1 100CustomersID.txt 
+ 1565  less 100CustomersID.txt 
+ 1566  cut -b 9-16 100CustomersID.txt > TopCustomerID.txt
+ 1567  less TopCustomerID.txt 
+ 1568  for i in {1..100}; do numID=$(head -n $i TopCustomerID.txt | tail -1) && grep $numID amazon_reviews_us_Books_v1_02.tsv | cut -f 8,9 > CUSTOMERS/$numID.txt; done
+ 1569  cd CUSTOMERS/
+ 1570  ls
+ 1571  less 53047425.txt 
+ 1572  cd ..
+ 1573  vi a3.txt 
+ 1574  cd CUSTOMERS/
+ 1575  for i in {1..2}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1576  ls
+ 1577  rm ****.BINARY.txt
+ 1578  ls
+ 1579  ls | wc -l
+ 1580  for i in {1..200}; do filename=$(ls | head -n $i | tail -1) && filename2=$(echo $filename | cut -f 1 -d '.') && median=$(awk '{ sum+=$2; n++} END {print sum/n;}' $filename) &&  awk -v average="$median" '{if($2>average) print $1, "\t", 1; else print $1, "\t", 0}' $filename > $filename2.BINARY.txt;  done
+ 1581  ls
+ 1582  less 53072811.BINARY.txt 
+ 1583  cd ..
+ 1584  ls
+ 1585  rm 100CustomersID.txt 
+ 1586  ls
+ 1587  cd ~/datamash-1.3/
+ 1588  for i in {1..2}; do filename=$(ls ~/amazonReview/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1589  cd ~/amazonReview/
+ 1590  ls
+ 1591  less 100Customer_correlation.txt 
+ 1592  cd ~/datamash-1.3/
+ 1593  for i in {1..100}; do filename=$(ls ~/amazonReview/CUSTOMERS/ | grep BINARY | head -n $i | tail -1) && correlation=$(./datamash -W ppearson 1:2 < /home/yin/amazonReview/CUSTOMERS/$filename) && filename2=$(echo $filename | cut -f 1 -d '.') && echo -e $filename2 '\t' $correlation >> /home/yin/amazonReview/100Customer_correlation.txt; done
+ 1594  cd ~/amazonReview/
+ 1595  less 100Customer_correlation.txt 
+ 1596  script -a a3.txt 
+ 1597  vi a3.txt 
+ 1598  exit
+ 1599  echo good
+ 1600  cd amazonReview/
+ 1601  ls
+ 1602  less 0393317552.txt 
+ 1603  less 52447634.txt 
+ 1604  rm 0393317552.txt 52447634.txt 
+ 1605  ls
+ 1606  cd worksheet_Folder/
+ 1607  cd ws7_work/
+ 1608  ls
+ 1609  cd ..
+ 1610  cd PRODUCTS/
+ 1611  ls
+ 1612  cd ..
+ 1613  less amazon_reviews_us_Books_v1_02.tsv 
+ 1614  grep 0895261901 amazon_reviews_us_Books_v1_02.tsv | cut -f 14 > 0895261901.txt
+ 1615  less 0895261901.txt 
+ 1616  ls
+ 1617  less ca1.txt 
+ 1618  less ca2.txt 
+ 1619  echo ca1.txt 
+ 1620  cat ca1.txt > ca2.txt 
+ 1621  less ca2.txt 
+ 1622  vi ca2.txt 
+ 1623  cat ca1.txt ca2.txt ca7.txt
+ 1624  cat ca1.txt ca2.txt > ca7.txt
+ 1625  less ca7.txt 
+ 1626  script a3.2.txt
+ 1627  cd worksheet_Folder/
+ 1628  ls
+ 1629  cd ws7_work/
+ 1630  ls
+ 1631  less ws7.final.txt 
+ 1632  cd ..
+ 1633  ls
+ 1634  sed -i 's/<[a-zA-Z]* \/>//g' 0895261901.txt 
+ 1635  sed -i 's/and//g' 0895261901.txt 
+ 1636  sed -i 's/if//g' 0895261901.txt 
+ 1637  sed -i 's/\b[a-zA-Z]\{1,2\} //g' 0895261901.txt 
+ 1638  echo good
+ 1639  cp 0895261901.BINARY.txt ~/amazonReview/
+ 1640  cd ..
+ 1641  ls
+ 1642  paste 0895261901.txt 0895261901.BINARY.txt | column -s $'\t' -t > 0895261901.review.txt
+ 1643  paste -d '\t' 0895261901.BINARY.txt 0895261901.txt > 0895261901.review.txt 
+ 1644  awk -F '\t' '{if($2==0) print $3 > "helpful_0_string"; else print $3 > "helpful_1_string"}' 0895261901.review.txt
+ 1645  ls
+ 1646  sed 's/ /\n/g' helpful_0_string > helpful_0_word
+ 1647  sed 's/ /\n/g' helpful_1_string > helpful_1_word
+ 1648  sed -i '/^[[:space:]]*$/d' helpful_0_word 
+ 1649  sed -i '/^[[:space:]]*$/d' helpful_1_word 
+ 1650  uniq -c helpful_0_word | sort -rn > helpful_0_word_2
+ 1651  sort helpful_0_word | uniq -c | sort -rn > helpful_0_word_2 
+ 1652  sort helpful_1_word | uniq -c | sort -rn > helpful_1_word_2
+ 1653  head -n 10 helpful_0_word_2 
+ 1654  head -n 10 helpful_1_word_2 
+ 1655  sed -i 's/<[a-zA-Z]* \/>//g' 0895261901.txt
+ 1656  sed -i 's/and//g' 0895261901.txt 
+ 1657  sed -i 's/if//g' 0895261901.txt 
+ 1658  sed -i 's/\b[a-zA-Z]\{1,2\} //g' 0895261901.txt 
+ 1659  cd amazonReview/
+ 1660  ls
+ 1661  vi a3.2.txt 
+ 1662  script a3.2.txt
+ 1663  less 0895261901.txt 
+ 1664  cd ..
+ 1665  ./src/gnuplot
+ 1666  cd gnuplot-5.4.2/
+ 1667  ./src/gnuplot
+ 1668  cd ..
+ 1669  cd amazonReview/
+ 1670  vi a3.2.txt 
+ 1671  vi a3.2.txt
+ 1672  ls
+ 1673  cd PRODUCTS/
+ 1674  ls
+ 1675  ls 089****.txt
+ 1676  less 0895261901.
+ 1677  less 0895261901.txt
+ 1678  script -a a3.2.txt
+ 1679  vi ca1
+ 1680  cd ..
+ 1681  cd PRODUCTS/
+ 1682  ls ca1
+ 1683  cd ..
+ 1684  ls
+ 1685  vi ca1.txt 
+ 1686  vi ca2.txt 
+ 1687  paste ca1.txt ca2.txt | column -s $'\t' -t
+ 1688  script -a a3.2.txt
+ 1689  vi a3.2.txt 
+ 1690  less 0895261901.review.txt 
+ 1691  vi 0895261901.review.txt 
+ 1692  awk '{print $2}' 0895261901.review.txt > ca6.txt
+ 1693  less ca6.txt 
+ 1694  awk '{print $1}' 0895261901.review.txt > ca6.txt
+ 1695  less ca6.txt 
+ 1696  less 0895261901.review.txt 
+ 1697  less 0895261901.txt 
+ 1698  ls
+ 1699  less 0895261901.txt 
+ 1700  less 0895261901.BINARY.txt 
+ 1701  less 0895261901.review.txt 
+ 1702  awk -F "\t" '{print $2}' 0895261901.review.txt > ca6.txt
+ 1703  less ca6.txt 
+ 1704  awk -F '\t' '{print $2}' 0895261901.review.txt > ca6.txt
+ 1705  less ca6.txt 
+ 1706  awk -F '\t' '{print $1}' 0895261901.review.txt > ca6.txt
+ 1707  less ca6.txt 
+ 1708  awk -F '\t' '{print $3}' 0895261901.review.txt > ca6.txt
+ 1709  less ca6.txt 
+ 1710  awk -F '\t' '{print $1}' 0895261901.review.txt > ca6.txt
+ 1711  less ca6.txt 
+ 1712  less 0895261901.BINARY.txt 
+ 1713  paste 0895261901.BINARY.txt 0895261901.txt | column -s $'\t' -t > 0895261901.review.txt 
+ 1714  less 0895261901.review.txt 
+ 1715  awk -F '\t' '{print $1}' 0895261901.review.txt > ca6.txt
+ 1716  less ca6.txt 
+ 1717  awk -F '\t' '{print $1}' 0895261901.BINARY.txt > ca6.txt
+ 1718  less ca6.txt 
+ 1719  less 0895261901.review.txt 
+ 1720  paste ca1.txt ca2.txt | column -s $'\t' -t
+ 1721  awk -F '\t' '{print $1}' ca3.txt  > ca6.txt
+ 1722  less ca3.txt 
+ 1723  less ca6.txt 
+ 1724  vi ca1.txt 
+ 1725  vi ca2.txt 
+ 1726  echo < ca1.txt 
+ 1727  echo < ca2.txt 
+ 1728  column ca1.txt  ca2.txt 
+ 1729  vi ca1.txt 
+ 1730  column ca1.txt  ca2.txt 
+ 1731  column -s  ca1.txt  ca2.txt 
+ 1732  column -s $'\t' ca1.txt  ca2.txt 
+ 1733  column -s $'\t' ca1.txt  ca2.txt -t
+ 1734  column -s $'\t' -t ca1.txt 
+ 1735  column -s $'\t' -t ca1.txt ca2.txt 
+ 1736  paste -d ca1.txt  ca2.txt 
+ 1737  paste -d ca1.txt ca2.txt 
+ 1738  paste -d ' ' ca1.txt ca2.txt 
+ 1739  paste -d '\t' ca1.txt ca2.txt 
+ 1740  paste -d '\t' ca1.txt ca2.txt > ca6.txt
+ 1741  less ca6.txt 
+ 1742  awk '{print $1}' ca6.txt 
+ 1743  ls
+ 1744  vi a3.2.txt 
+ 1745  script -a a3.2.txt
+ 1746  vi a3.2.txt 
+ 1747  awk '{print $1}' 0895261901.review.txt > ca6.txt 
+ 1748  less ca6.txt 
+ 1749  less 0895261901.review.txt 
+ 1750  less 0895261901.BINARY.txt 
+ 1751  less 0895261901.review.txt 
+ 1752  vi ca3.txt 
+ 1753  awk '{if($2==0) print good}' 0895261901.review.txt 
+ 1754  awk '{if($2==0) print good}' ca3.txt 
+ 1755  less ca3.txt 
+ 1756  awk '{if($2==1) print good}' ca3.txt 
+ 1757  awk '{if($2==1) print 2}' ca3.txt 
+ 1758  awk '{if($2==1) print "good"}' ca3.txt 
+ 1759  awk '{if($2==1) print $3}' ca3.txt 
+ 1760  awk -F '\t' '{if($2==1) print $3}' ca3.txt 
+ 1761  awk -F '\t' '{if($2==1) print $3 > ca5.txt }' ca3.txt 
+ 1762  awk -F '\t' '{if($2==1) print $3 }' ca3.txt 
+ 1763  less ca5.txt 
+ 1764  cat ca5.txt 
+ 1765  cat ca5.txt | for i in $line; do echo i; done
+ 1766  cat ca5.txt | for i in $line; do echo $i; done
+ 1767  cat ca5.txt | column 
+ 1768  cat ca5.txt | column -s
+ 1769  cat ca5.txt | column -s ' '
+ 1770  cat ca5.txt | column -s ' ' -t
+ 1771  cat ca5.txt | column -t
+ 1772  cat ca5.txt | sed 's/' '/\n/g' 
+ 1773  cat ca5.txt | sed -e 's/' '/\n/g' 
+ 1774  cat ca5.txt | sed -e 's/' '/\\\n/g' 
+ 1775  sed 's/:/\n/g' <<< "he:llo:you"
+ 1776  sed 's/:/\n/g' <<< cat ca5.txt 
+ 1777  sed 's/ /\n/g' <<< cat ca5.txt 
+ 1778  cat ca5.txt | sed 's/ /\n/g' 
+ 1779  cat ca5.txt | sed 's/ /\n/g' > ca6.txt
+ 1780  less ca6.txt 
+ 1781  awk -F '\t' '{ if($2==1) print $3}' ca5.txt 
+ 1782  less ca5.txt 
+ 1783  awk -F '\t' '{ if($2==1) print $3}' ca3.txt 
+ 1784  awk -F '\t' '{ if($2==1) sed 's/ /\n/g' $3 > ca6.txt}' ca3.txt 
+ 1785  awk -F '\t' '{ if($2==1) echo good}' ca3.txt 
+ 1786  vi ca3.txt 
+ 1787  cat ca3.txt | sed 's/ /\n/g'
+ 1788  awk -F '\t' '{ if($2==1) print $3}' ca3.txt 
+ 1789  awk -F '\t' '{ if($2==1) print $3 > ca5.txt }' ca3.txt 
+ 1790  awk -F '\t' '{ if($2==1) print $3 > " ca5.txt" }' ca3.txt 
+ 1791  less ca5.txt 
+ 1792  awk -F '\t' '{ if($2==1) print $3 > "ca5.txt" }' ca3.txt 
+ 1793  less ca5.txt 
+ 1794  sed 's/ /\n/g' ca5.txt 
+ 1795  awk -F '\t' '{if($2==0) print $3 > "helpful_0_string"}' 0895261901.review.txt 
+ 1796  ls
+ 1797  less helpful_0_string 
+ 1798  awk -F '\t' '{if($2==0) print $3 > "helpful_0_string"; else print $3 > "helpful_1_string"}' 0895261901.review.txt 
+ 1799  ls
+ 1800  less helpful_0_string 
+ 1801  less helpful_1_string 
+ 1802  sed 's/ /\n/g' helpful_0_string > ca5.txt 
+ 1803  less ca5.txt 
+ 1804  vi ca5.txt 
+ 1805  sort ca5.txt 
+ 1806  sort ca5.txt > ca6.txt 
+ 1807  less ca6.txt 
+ 1808  sort ca5.txt | uniq -c | sort -rn > ca6.txt 
+ 1809  less ca6.txt 
+ 1810  sort ca5.txt > ca6.txt 
+ 1811  sed '/^[[:space:]]8$/d' ca6.txt 
+ 1812  sed '/^[[:space:]]8$/d' ca6.txt > ca7.txt 
+ 1813  less ca7.txt 
+ 1814  sed '/^[[:space:]]*$/d' ca6.txt > ca7.txt 
+ 1815  less ca7.txt 
+ 1816  uniq -c | sort -rn ca7.txt > ca8.txt
+ 1817  uniq -c ca7.txt | sort -rn > ca8.txt
+ 1818  less ca8.txt 
+ 1819  script a3.2.txt
+ 1820  vi a3.2.txt 
+ 1821  less helpful_
+ 1822  less helpful_0_string 
+ 1823  sed 's/ /\ng' ca5.txt > ca6.txt 
+ 1824  history > cmds.log
+ 1825  less cmds.log 
+ 1826  less ca5.txt 
+ 1827  vi ca1.txt 
+ 1828  sed 's/ /\n/g' ca1.txt > ca2.txt 
+ 1829  less ca2.txt 
+ 1830  script -a a3.2.txt
+ 1831  vi a3.2.txt 
+ 1832  less helpful_0_word 
+ 1833  script -a a3.2.txt 
+ 1834  less helpful_0_word_2 
+ 1835  less helpful_0_word
+ 1836  less helpful_0_word_2 
+ 1837  uniq -c helpful_0_word > ca1.txt 
+ 1838  less ca1.txt 
+ 1839  vi a3.2.txt 
+ 1840  script -a a3.2.txt 
+ 1841  less helpful_0_word_2 
+ 1842  less helpful_1_word_2 
+ 1843  ls
+ 1844  less helpful_1_word_2 
+ 1845  vi a3.2.txt 
+ 1846  script -a a3.2.txt 
+ 1847  vi a3.2.txt 
+ 1848  vi a3.txt 
+ 1849  vi a3.2.txt 
+ 1850  ls
+ 1851  ls a**
+ 1852  less 0895261901.review.txt 
+ 1853  less 0895261901.txt 
+ 1854  less cmds.log 
+ 1855  script a3.3.txt
+ 1856  vi a3.3.txt 
+ 1857  ls a**
+ 1858  vi a3.txt 
+ 1859  vi a3.2.txt 
+ 1860  cd ..
+ 1861  cd gnuplot-5.4.2/
+ 1862  ./src/gnuplot
+ 1863  less
+ 1864  cd ~/amazonReview/
+ 1865  ls
+ 1866  less TopCustomerID.txt 
+ 1867  ls
+ 1868  vi a3.txt 
+ 1869  ls
+ 1870  less 100Customer_correlation.txt 
+ 1871  less 0895261901.BINARY.txt 
+ 1872  vi abcdefg.sh
+ 1873  ls
+ 1874  rm abcdefg.sh 
+ 1875  vi abcdefg.sh
+ 1876  bash abcdefg.sh 
+ 1877  cd ~/datamash-1.3/
+ 1878  ls
+ 1879  ./src/gnuplot
+ 1880  cd ~/gnuplot-5.4.2/
+ 1881  ./src/gnuplot
+ 1882  ls
+ 1883  ./src/plot
+ 1884  ./src/gnuplot
+ 1885  ls
+ 1886  cp ~/amazonReview/0895261901.BINARY.txt ~/gnuplot-5.4.2
+ 1887  ls
+ 1888  ./src/gnuplot
+ 1889  cd ~
+ 1890  ls
+ 1891  cd amazonReview/
+ 1892  ls
+ 1893  ls a3.***
+ 1894  ls a3.txt 
+ 1895  less a3.2.txt 
+ 1896  less a3.3.txt 
+ 1897  less a3.2.txt 
+ 1898  vi ca1.txt 
+ 1899  rm ca1.txt 
+ 1900  vi ca1.txt
+ 1901  vi ca2.txt 
+ 1902  cat ca1.txt ca2.txt > ca3.txt 
+ 1903  less ca3.txt 
+ 1904  cat ca1.txt ca2.txt ca3.txt > ca4.txt 
+ 1905  less ca4.txt 
+ 1906  less ca3.txt 
+ 1907  less ca4.txt 
+ 1908  cat a3.txt a3.3.txt a3.2.txt > a3.mod.txt
+ 1909  less a3.mod.txt 
+ 1910  vi a3.mod.txt 
+ 1911  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a3.mod.txt > a3.clean.txt
+ 1912  tr -cd '\11\12\15\40-\176' < a3.clean.txt > a3.final.txt
+ 1913  less a3.final.txt 
+ 1914  history > cmds.log
+ 1915  git ls-files
+ 1916  git rm --cached cmds.log ws7.final.txt 
+ 1917  git add a3.final.txt 
+ 1918  git remote set-url origin https://github.com/AdamY02/assign3
+ 1919  git commit -m "assignment 3"
+ 1920  git push origin master
+ 1921  exit
+ 1922  cd amazonReview/
+ 1923  ls
+ 1924  mkdir assign_3
+ 1925  mv a3.*** assign_3/
+ 1926  ls
+ 1927  cd assign
+ 1928  cd assign_3/
+ 1929  ls
+ 1930  cd ..
+ 1931  ls
+ 1932  mv 0895261901.*** assign_3/
+ 1933  ls
+ 1934  mv helpful_*** assign_3/
+ 1935  ls
+ 1936  mv CUSTOMERS/ assign_3/
+ 1937  mv PRODUCTS/ assign_3/
+ 1938  ls
+ 1939  mv TopCustomerID.txt 100Customer_correlation.txt  assign_3/
+ 1940  ls
+ 1941  less ' ca5.txt' 
+ 1942  rm ' ca5.txt' 
+ 1943  ls
+ 1944  mv assign_3/ assignment_Folder/
+ 1945  cd assignment_Folder/
+ 1946  ls
+ 1947  cd ..
+ 1948  less amazon_reviews_us_Books_v1_02.tsv 
+ 1949  awk -F '\t' '{if($12=="Y") print $0 > "ca1.txt"}'
+ 1950  less cs1
+ 1951  less ca1.txt 
+ 1952  vi ca1.txt 
+ 1953  awk -F '\t' '{if($12=="Y") print $0 > "ca1.txt"}' ca1.txt 
+ 1954  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"}' ca1.txt 
+ 1955  less ca1.txt 
+ 1956  less ca2.txt 
+ 1957  vi ca1.txt 
+ 1958  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"}' ca1.txt 
+ 1959  less ca2.txt 
+ 1960  exit
+ 1961  awk -F '\t' '{if($12=="Y") print $0 > "verified.txt"; else print $0 > "unverified.txt"}' amazon_reviews_us_Books_v1_02.tsv 
+ 1962  less verified.txt 
+ 1963  cut -f 14 verified.txt | sed 's/ /\n/g' > verified_word.txt
+ 1964  sed -i 's/[.,]//g' verified_word.txt
+ 1965  sed -i '/^[[:space:]]*$/d' verified_word.txt
+ 1966  sort verified_word.txt | uniq -c | sort -rn > verified_word_2.txt
+ 1967  head -n 10 verified_word_2.txt 
+ 1968  cut -f 14 unverified.txt | sed 's/ /\n/g' > unverified_word.txt
+ 1969  sed -i 's/[.,]//g' unverified_word.txt
+ 1970  sed -i '/^[[:space:]]*$/d' unverified_word.txt
+ 1971  sort unverified_word.txt | uniq -c | sort -rn > unverified_word_2.txt
+ 1972  head -n unverified_word_2.txt 
+ 1973  head -n 10 unverified_word_2.txt 
+ 1974  cd amazonReview/
+ 1975  less ca1.txt 
+ 1976  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"}' ca1.txt
+ 1977  less ca2.txt 
+ 1978  script ws8.txt
+ 1979  less amazon_reviews_us_Books_v1_02.tsv 
+ 1980  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"; else print $0 > ca3.txt}' ca1.txt 
+ 1981  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"; else print $0 > "ca3.txt"}'
+ 1982  awk -F '\t' '{if($12=="Y") print $0 > "ca2.txt"; else print $0 > "ca3.txt"}' ca1.txt 
+ 1983  less ca2.txt 
+ 1984  less ca3.txt 
+ 1985  less ca1.txt 
+ 1986  script ws8.txt
+ 1987  less amazon_reviews_us_Books_v1_02.tsv 
+ 1988  cut -f 14 verified.txt | sed 's/ /\n/g' > verified_word.txt
+ 1989  less verified_word.txt 
+ 1990  sed -i 's/[.,]//g' verified_word.txt 
+ 1991  less verified_word.txt 
+ 1992  vi ws8.txt 
+ 1993  script -a ws8.txt 
+ 1994  less verified_word.txt 
+ 1995  script -a ws8.txt 
+ 1996  vi ws8.txt 
+ 1997  less unverified
+ 1998  less unverified.txt 
+ 1999  vi ws8.txt 
+ 2000  exit
+ 2001  cd amazonReview/
+ 2002  ls
+ 2003  less ws8.txt 
+ 2004  ls ws8.***
+ 2005  less ws8.txt 
+ 2006  vi ws8.txt 
+ 2007  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws8.txt > ws8.clean.txt
+ 2008  ls ws8.**
+ 2009  tr -cd '\11\12\15\40-\176' < ws8.clean.txt > ws8.final.txt
+ 2010  ls ws8.**
+ 2011  git ls-files
+ 2012  git rm --cached a3.final.txt 
+ 2013  git add ws8.final.txt 
+ 2014  history > cmds.log
