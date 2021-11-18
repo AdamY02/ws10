@@ -1,0 +1,249 @@
+----- Question 1 -----
+Script started on 2021-11-08 10:40:03+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort -nr -k 1 training.1600000.processed.noemoticon.csv | head -n 100 > reviews.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ awk -F "\",\"" 'BEGIN{OFS="\",\"";} {print $0 > "REVIEWS/" $2".txt" }' reviews.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-11-08 10:40:26+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- Question 2 remove the ing,ed and s -----
+Script started on 2021-11-08 10:40:59+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in {1..100}; do filename=$(ls REVIEWS/ | head -n $i | tail -1) && sed -E -i 's/ing( |$|!|\.)/ /' REVIEWS/$filename && sed -E -i 's/ed( |$|!|\.)/ /' REVIEWS/$filename && sed -E -i 's/s( |$|!|\.)/ /' REVIEWS/$filename ; done
+
+----- Question 3 remove punctuation, short word and stop words -----
+----- my loop is very long and hard to read, I added each command here to explain -----
+----- sed -i 's/\b[a-zA-Z]\{1,2\} //g' -> remove short words -----
+----- awk -F "\",\"" -i inplace 'BEGIN{OFS="\",\"";}{ gsub(/!/, "", $6); gsub(/\./, "", $6); gsub(/:/, "", $6); gsub(/,/, "", $6); gsub(/?/, "", $6); print}' -> remove punctuation-----
+----- awk -F "," -i inplace 'BEGIN{OFS=",";}{ gsub(/about/, "", $6); gsub(/any/, "", $6); gsub(/but/, "", $6); gsub(/has/, "", $6); print}' -> remove some stop words -----
+----- sed -i 's/  */ /g' -> remove extra spaces -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in {1..100}; do filename=$(ls REVIEWS/ | head -n $i | tail -1) && awk -F "\",\"" -i inplace 'BEGIN{OFS="\",\"";}{ gsub(/!/, "", $6); gsub(/\./, "", $6); gsub(/:/, "", $6); gsub(/,/, "", $6); gsub(/?/, "", $6); print}' REVIEWS/$filename && sed -i 's/\b[a-zA-Z]\{1,2\} //g' REVIEWS/$filename && awk -F "," -i inplace 'BEGIN{OFS=",";}{ gsub(/about/, "", $6); gsub(/any/, "", $6); gsub(/but/, "", $6); gsub(/has/, "", $6); print}' REVIEWS/$filename && sed -i 's/  */ /g' REVIEWS/$filename; done
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-11-08 10:41:27+00:00 [COMMAND_EXIT_CODE="0"]
+
+
+
+----- Question 4 -----
+----- script takes two file and compare the tweets in two file -----
+
+Script started on 2021-11-16 22:31:56+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ less compare.sh
+[?1049h[22;0;0t[?1h=#!/bin/bash
+
+head -n 1 $1 | cut -f 6 -d "," | tr -d '"' > tem1.txt
+
+for i in {1..10000}
+do
+        head -n $i $2 | tail -1 | cut -f 6 -d "," | tr -d '"'  > tem2.txt
+         
+
+
+        com_word=$(comm -12 <(tr " " "\n" < tem1.txt | sort) <(tr " " "\n" < tem2.txt | sort) | wc -w )
+        if [ $com_word -ge 2 ]
+        then
+                head -n $i $2 | tail -1 >> $1
+        fi
+        
+done
+
+rm tem1.txt
+rm tem2.txt
+compare.sh (END)[K[K[?1l>[?1049l[23;0;0t]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-11-16 22:32:04+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- Question 5 -----
+
+----- I need to do this for every 20 files, otherwise the system will kill my process -----
+
+----- first attemp -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ [K]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ ls REVIEWS/ | head -n 20 | ~/parallel-20211022/src /parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+----- second attemp -----
+
+Script started on 2021-11-17 05:14:17+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="189" LINES="50"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+real	5m1.460s
+user	16m0.169s
+sys	21m13.496s
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-11-17 05:28:44+00:00 [COMMAND_EXIT_CODE="0"] 
+
+----- third attemp -----
+
+[]0;yin@f6lanuxA3: ~/amazonReview^Gyin@f6lanuxA3:~/amazonReview$ time ls REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv
+
+real    5m28.737s
+user    15m50.818s
+sys     21m15.137s
+
+----- fourth attemp -----
+
+
+
+
+Script started on 2021-11-17 22:12:10+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+real	12m17.660s
+user	15m1.371s
+sys	27m28.637s
+Script done on 2021-11-17 22:25:05+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- fifth attemp -----
+----- I forgot to turn on the capture for the fifth one -----
+
+
+
+
+----- Question 6 -----
+
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in REVIEWS/*.txt; do cut -f 6 -d "," $i | tr -d '"'  >> word_count.txt; done
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed 's/ /\n/g' word_count.txt > word_count2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/ //g' word_count2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i -e 's/[.,\:\;]//g' word_count2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i -r '/^.{,2}$/d' word_count2.txt
+
+----- removing some of frequent words -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/the//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/you//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/can//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/and//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/or//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/was//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/her//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/him//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/are//g' word_count2.txt 
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/for//g' word_count2.txt 
+
+----- remove empty line -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i '/^$/d' word_count2.txt 
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+
+
+Script started on 2021-11-17 23:59:28+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ head -n  10 word_count3.txt 
+   4794 that
+   4787 have
+   4279 not
+   4053 just
+   3901 with
+   3744 get
+   3431 this
+   3392 but
+   3088 I'm
+   3048 wk
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ exit
+
+Script done on 2021-11-17 23:59:48+00:00 [COMMAND_EXIT_CODE="0"]
+
+
+----- Question 7 -----
+----- repeat all process for Q1 to Q6 for 0 helpfulness tweets -----
+
+----- Q7.1 -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort -n -k 1 training.1600000.processed.noemoticon.csv | head -n 100 > unhelpful_reviews.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ awk -F "\",\"" 'BEGIN{OFS="\",\"";} {print $0 > "UNHELPFUL_REVIEWS/" $2".txt" }' unhelpful_reviews.txt
+
+----- Q7.2 -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && sed -E -i 's/ing( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/ed( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/s( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename ; done
+
+----- Q7.3 -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && awk -F "\",\"" -i inplace 'BEGIN{OFS="\",\"";}{ gsub(/!/, "", $6); gsub(/\./, "", $6); gsub(/:/, "", $6); gsub(/,/, "", $6); gsub(/?/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/\b[a-zA-Z]\{1,2\} //g' UNHELPFUL_REVIEWS/$filename && awk -F "," -i inplace 'BEGIN{OFS=",";}{ gsub(/about/, "", $6); gsub(/any/, "", $6); gsub(/but/, "", $6); gsub(/has/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/  */ /g' UNHELPFUL_REVIEWS/$filename; done
+
+
+----- Q7.4 -----
+same script use as the one on Q4
+
+
+----- Q7.5 ------
+
+----- first attemp -----
+Script started on 2021-11-18 05:02:58+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls UNHELPFUL_REVIEWS/ | head -n 20 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+1 Killed
+
+real	50m57.436s
+user	0m1.083s
+sys	1m19.001s
+
+cript done on 2021-11-18 06:00:09+00:00 [COMMAND_EXIT_CODE="0"]
+
+----- second attemp -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls UNHELPFUL_REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+real	4m25.963s
+user	5m47.473s
+sys	14m27.585s
+
+----- third attemp -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls UNHELPFUL_REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+
+real	5m52.949s
+user	5m43.964s
+sys	17m48.481s
+
+----- fourth attemp -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls UNHELPFUL_REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+real	3m14.765s
+user	0m0.391s
+sys	0m7.224s
+
+----- fifth attemp -----
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ time ls UNHELPFUL_REVIEWS/ | head -n 100 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+
+
+
+real	11m10.341s
+user	5m15.890s
+sys	24m8.190s
+
+----- Q7.6 -----
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ for i in UNHELPFUL_REVIEWS/*.txt; do cut -f 6 -d "," $i | tr -d '"'  >> unhelpful_wordcount.txt; done
+
+Script started on 2021-11-18 22:56:33+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed 's/ /\n/g' unhelpful_wordcount.txt > unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/ //g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i -r '/^.{,2}$/d' unhelpful_wordcount2.txt
+
+Script started on 2021-11-18 23:01:42+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/the//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/you//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/can//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/or//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/and//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/was//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/her//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/him//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/are//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i 's/for//g' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sed -i '/^$/d' unhelpful_wordcount2.txt
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ sort unhelpful_wordcount2.txt | uniq -c | sort -rn > unhelpful_wordcount3.txt
+
+]0;yin@f6lanuxA3: ~/amazonReviewyin@f6lanuxA3:~/amazonReview$ head -n 10 unhelpful_wordcount3.txt 
+   1175 that
+   1016 not
+   1009 with
+    979 have
+    874 just
+    794 out
+    736 get
+    702 but
+    657 like
+    650 I'm
