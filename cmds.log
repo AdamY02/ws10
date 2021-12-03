@@ -1,1000 +1,1000 @@
- 1128  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
+ 1024  cut -f 6 -d "," word_count.txt | tr -d '"' | sed 's/ /\n/g' > word_count2.txt
+ 1025  less word_count2.txt 
+ 1026  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1027  less word_count3.txt 
+ 1028  less word_count1
+ 1029  less word_count1.
+ 1030  less word_count.txt 
+ 1031  less word_count2.txt 
+ 1032  sed 's/ /\n/g' word_count.txt > word_count2.txt
+ 1033  less word_count2.txt 
+ 1034  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
+ 1035  less word_count2.txt 
+ 1036  vi ca3.txt 
+ 1037  vi ca5.txt 
+ 1038  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1039  less ca5.txt 
+ 1040  sed 's/ /\n/g' word_count.txt > word_count2.txt
+ 1041  less word_count2.txt 
+ 1042  sed -i 's/  */ /g' word_count2.txt 
+ 1043  vi ca5.txt 
+ 1044  sed -e 's/,//g' ca5.txt 
+ 1045  sed -e 's/.,//g' ca5.txt 
+ 1046  sed -e 's/://g' ca5.txt 
+ 1047  sed -e 's/[.,]//g' ca5.txt 
+ 1048  sed -e 's/[.,\:]//g' ca5.txt 
+ 1049  sed -e 's/[.,\:\;]//g' ca5.txt 
+ 1050  sed -e 's/[.,\:\;]//g' word_count2.txt 
+ 1051  sed -e -i 's/[.,\:\;]//g' word_count2.txt 
+ 1052  sed -e 's/[.,\:\;]//g' word_count2.txt > word_count3.txt 
+ 1053  less word_count3.txt 
+ 1054  sed -e 's/[.,\:\;]//g' word_count2.txt > word_count3.txt
+ 1055  sed -i -e 's/[.,\:\;]//g' word_count2.txt
+ 1056  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
+ 1057  less word_count2.txt 
+ 1058  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1059  less word_count3.txt 
+ 1060  cut -f 6 -d "," ca3.txt | tr -d '"' > word_count.txt 
+ 1061  sed 's/ //g' word_count.txt > word_count2.txt 
+ 1062  sed -i -e 's[.,\:\;]//g' word_count2.txt 
+ 1063  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
+ 1064  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count3.txt 
+ 1065  less word_count3.txt 
+ 1066  less word_count2.txt 
+ 1067  less word_count3.txt 
+ 1068  vi ca5.txt 
+ 1069  sed 's/ //g' ca5.txt 
+ 1070  cut -f 6 -d "," ca3.txt | tr -d '"' > word_count.txt 
+ 1071  sed 's/ /\n/g' word_count.txt > word_count2.txt 
+ 1072  less word_count2.txt 
+ 1073  sed -i 's/ //g' word_count2.txt 
+ 1074  less word_count2.txt 
+ 1075  sed -i -e 's/ //g' word_count2.txt 
+ 1076  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
+ 1077  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
+ 1078  less word_count2.txt 
+ 1079  vi ca5.txt 
+ 1080  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1081  less ca5.txt 
+ 1082  vi ca5.txt 
+ 1083  sed -i 's/ /\n/g' ca5.txt 
+ 1084  less ca5.txt 
+ 1085  ed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1086  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1087  less ca5.txt 
+ 1088  sed -i 's/ //g' ca5.txt 
+ 1089  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1090  less ca5.txt 
+ 1091  vi ca5.txt 
+ 1092  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
+ 1093  vi ca5.txt 
+ 1094  vi ca6.txt 
+ 1095  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca6.txt 
+ 1096  vi ca6.txt 
+ 1097  sed -i -E 's/\b[a-zA-Z]\{1,2\}( |\n)//g' ca6.txt 
+ 1098  less ca6.txt 
+ 1099  sed -i -E 's/\b[a-zA-Z]\{1,2\}( |\n)//g' ca5.txt 
+ 1100  less ca5.txt 
+ 1101  sed -r '/^.{,2}$/d' ca5.txt 
+ 1102  less ca5.txt 
+ 1103  cut -f 6 -d "," ca3.txt | tr -d '"'  > word_count.txt
+ 1104  sed 's/ /\n/g' word_count.txt > word_count2.txt
+ 1105  sed 's/ //g' word_count2.txt 
+ 1106  sed -i 's/ //g' word_count2.txt 
+ 1107  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
+ 1108  sed -i -r '/^.{,2}$/d' word_count2.txt 
+ 1109  less word_count2.txt 
+ 1110  sort word_count2.txt | uniq -c | sort -rn> word_count2.txt 
+ 1111  less word_count2.txt 
+ 1112  sed 's/ /\n/g' word_count.txt > word_count2.txt
+ 1113  sed -i 's/ //g' word_count2.txt 
+ 1114  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
+ 1115  sed -i -r '/^.{,2}$/d' word_count2.txt 
+ 1116  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt 
+ 1117  less word_count3.txt 
+ 1118  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1119  less word_count3.txt 
+ 1120  exit
+ 1121  vi compare.sh 
+ 1122  less compare
+ 1123  less compare.sh 
+ 1124  less compare.sh
+ 1125  cd amazonReview/
+ 1126  ls
+ 1127  less a4.txt 
+ 1128  vi a4.txt 
  1129  vi tryshell.sh 
- 1130  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1131  vi tryshell.sh 
- 1132  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1133  vi tryshell.sh 
- 1134  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1135  wc -l "by his upset" 
- 1136  wc -l  < "by his upset" 
- 1137  vi tryshell.sh 
- 1138  vi ca8.txt
- 1139  vi ca99.txt 
- 1140  vi ca9.txt
- 1141  yin@f6lanuxA3:~/amazonReview$ ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv
- 1142  comm -12 <(tr " " "\n" < ca8.txt | sort) <(tr " " "\n" < ca9.txt | sort)
- 1143  comm -12 <(tr " " "\n" < ca8.txt | sort) <(tr " " "\n" < ca9.txt | sort) | wc -l
- 1144  head -n 3 training.1600000.processed.noemoticon.csv | tail -1
- 1145  vi tryshell.sh 
- 1146  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1147  less ca3.txt 
- 1148  vi tryshell.sh 
- 1149  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1150  wc -w ca8.txt 
- 1151  wc -l ca8.txt 
- 1152  vi tryshell.sh 
- 1153  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1154  vi tryshell.sh 
- 1155  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1156  vi tryshell.sh 
- 1157  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1158  vi tryshell.sh 
- 1159  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1160  vi tryshell.sh 
- 1161  less tem2.txt 
- 1162  less tem2.txt | echo " "
- 1163  cat < tem2.txt | echo
- 1164  cat < tem2.txt 
- 1165  vi tryshell.sh 
- 1166  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1167  less ca3.txt 
- 1168  head -n 1 ca1.txt > ca3.txt 
- 1169  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1170  less ca3.txt 
- 1171  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1172  less ca3.txt 
- 1173  vi tryshell.sh 
- 1174  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1175  less ca3.txt 
- 1176  head -n 2 ca1.txt | tail -1 > ca3.txt 
- 1177  less ca3.txt 
- 1178  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1179  less ca3.txt 
- 1180  parallel echo ::: one two three
- 1181  vi tryshell.sh 
- 1182  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1183  less ca3.txt 
- 1184  head -n 5 ca1.txt | tail -1 > ca3.txt 
- 1185  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1186  less ca3.txt 
- 1187  vi tryshell.sh 
- 1188  less ca3.txt 
- 1189  vi ca3.txt 
- 1190  vi tryshell.sh 
- 1191  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1192  vi tryshell.sh 
- 1193  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1194  vi tryshell.sh 
- 1195  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1196  less ca3.txt 
- 1197  wc -l ca3.txt 
- 1198  vi tryshell.sh 
- 1199  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1200  head -n 15 ca1.txt > ca3.txt 
- 1201  less ca3.txt 
- 1202  head -n 15 ca1.txt | tail -1 > ca3.txt 
- 1203  less ca3.txt 
- 1204  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1205  less ca3.txt 
- 1206  vi training.1600000.processed.noemoticon.csv 
- 1207  less ca3.txt 
- 1208  vi tryshell.sh 
- 1209  head -n 8 ca1.txt | tail -1 > ca3.txt 
- 1210  les ca3.txt 
- 1211  less ca3.txt 
- 1212  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1213  less ca3.txt 
- 1214  vi tryshell.sh 
- 1215  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1216  less ca3.txt 
- 1217  head -n 10 ca1.txt | tail -1 > ca3.txt 
- 1218  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1219  less ca3.txt 
- 1220  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1221  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1222  less ca3.txt 
- 1223  vi tryshell.sh 
- 1224  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1225  less ca3.txt 
- 1226  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1227  less ca3.txt 
- 1228  vi tryshell.sh 
- 1229  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1230  less ca3.txt 
- 1231  vi tryshell.sh 
- 1232  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1233  less ca3.txt 
- 1234  vi tryshell.sh 
- 1235  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1236  less ca3.txt 
- 1237  vi tryshell.sh 
- 1238  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1239  less ca3.txt 
- 1240  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1241  less ca3.txt 
- 1242  vi tryshell.sh 
- 1243  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1244  less ca3.txt 
- 1245  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1246  vi tryshell.sh 
- 1247  less ca3.txt 
- 1248  head -n 3 | tail -1 > ca3.txt 
- 1249  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1250  less ca3.txt 
- 1251  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1252  vi tryshell.sh 
- 1253  less ca3.txt 
- 1254  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1255  less ca3.txt 
- 1256  vi tryshell.sh 
- 1257  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1258  vi tryshell.sh 
- 1259  sed -n 2 ca1.txt 
- 1260  sed -n 2p ca1.txt 
- 1261  vi tryshell.sh 
- 1262  ls
- 1263  vi qwe.sh
- 1264  chmod qwe.sh
- 1265  chmod +755  qwe.sh
- 1266  ./qwe.sh 
- 1267  vi qwe.sh
- 1268  ./qwe.sh ca1.txt 
- 1269  rm qwe.sh 
- 1270  vi tryshell.sh 
- 1271  less ca3.txt 
- 1272  sed -n 3p ca1.txt > ca3.txt 
- 1273  less ca3.txt 
- 1274  ./tryshell.sh 
- 1275  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1276  vi tryshell.sh 
- 1277  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1278  vi tryshell.sh 
- 1279  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1280  less ca3.txt 
- 1281  vi tryshell.sh 
- 1282  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1283  less ca3.txt 
- 1284  vi tryshell.sh 
- 1285  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1286  vi tryshell.sh 
- 1287  head -n 3 | tail -1 > ca3.txt 
- 1288  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1289  less ca3.txt 
- 1290  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1291  less ca3.txt 
- 1292  vi tryshell.sh 
- 1293  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1294  less ca3.txt 
- 1295  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1296  less ca3.txt 
- 1297  vi tryshell.sh 
- 1298  vi ca8.txt 
- 1299  cat ca8.txt >> ca9
- 1300  less ca9
- 1301  less ca8.txt 
- 1302  less ca9
- 1303  cat ca8.txt >> ca9.txt 
- 1304  less ca9
- 1305  less ca9.txt 
- 1306  rm ca8.txt 
- 1307  rm ca9
- 1308  rm ca9.txt 
- 1309  ls
- 1310  rm ca99.txt 
- 1311  ls
- 1312  vi cl.sh 
- 1313  vi tryshell.sh 
- 1314  head -n 3 ca1.txt > ca3.txt 
- 1315  less ca3.txt 
- 1316  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1317  less ca3.txt 
- 1318  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1319  head -n 200000 training.1600000.processed.noemoticon.csv | tail -1
- 1320  sed -n 2000p training.1600000.processed.noemoticon.csv 
- 1321  sed -n 20000p training.1600000.processed.noemoticon.csv 
- 1322  sed -n 200000p training.1600000.processed.noemoticon.csv 
- 1323  vi tryshell.sh 
- 1324  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1325  less ca3.txt 
- 1326  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1327  vi tryshell.sh 
- 1328  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1329  less ca3.txt 
- 1330  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1331  less ca3.txt 
- 1332  vi tryshell.sh 
- 1333  vi ca3.txt 
- 1334  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1335  less ca3.txt 
- 1336  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1337  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1338  vi tryshell.sh 
- 1339  ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1340  time echo good
- 1341  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1342  less ca3.txt 
- 1343  time ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1344  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1345  less ca3.txt 
- 1346  vi tryshell.sh 
- 1347  time ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv 
- 1348  wc -l ca3.txt 
- 1349  exit
- 1350  wget https://www.gnu.org/software/parallel/
- 1351  ls
- 1352  ls -l
- 1353  rm index.html 
- 1354  wget https://ftpmirror.gnu.org/parallel/parallel-latest.tar.bz2
+ 1130  ls compare
+ 1131  ls compare*
+ 1132  cp tryshell.sh compare.sh
+ 1133  ls
+ 1134  ls com*
+ 1135  vi compare.sh 
+ 1136  less word_count3.txt 
+ 1137  script -a a4.txt 
+ 1138  vi a4.txt 
+ 1139  script try003.txt
+ 1140  less try003.txt 
+ 1141  vi try003.txt 
+ 1142  rm try003.txt 
+ 1143  script -a a4.txt 
+ 1144  vi a4.txt 
+ 1145  ~/parallel-20211022/src/parallel echo ::: a b c
+ 1146  ~/parallel-20211022/src/parallel rm ::: ca5.txt ca6.txt ca7.txt 
+ 1147  ls ca
+ 1148  ca*
+ 1149  ls
+ 1150  ls ca*
+ 1151  ls
+ 1152  ~/parallel-20211022/src/parallel echo "good" > :::gc1.txt gc2.txt gc3.txt
+ 1153  ls gc*
+ 1154  ls
+ 1155  ~/parallel-20211022/src/parallel echo ::: ls
+ 1156  ls | head -n 1 | echo
+ 1157  ls | head -n 1 
+ 1158  ls | head -n 1 | echo
+ 1159  ls | head -n 2 | echo
+ 1160  ls
+ 1161  vi cl.sh
+ 1162  cp cl.sh trysh.sh
+ 1163  vi trysh.sh 
+ 1164  ls | head -n 1 | trysh.sh
+ 1165  trysh.sh ca2.txt
+ 1166  ls | head -n 1 | ./trysh.sh
+ 1167  history > cmds.log
+ 1168  less cmds.log
+ 1169  vi trysh.sh 
+ 1170  ls
+ 1171  cd try005/
+ 1172  ls
+ 1173  less ca1.txt 
+ 1174  rm *
+ 1175  ls
+ 1176  echo good > bb1.txt
+ 1177  echo good > bb2.txt
+ 1178  echo good > bb3.txt
+ 1179  ls
+ 1180  ls | ~/parallel-20211022/src/parallel cd 
+ 1181  ls | ~/parallel-20211022/src/parallel echo
+ 1182  ls | echo
+ 1183  cd ..
+ 1184  for i in try005/*.txt; do echo ls | head -n 1 | tail -1; done
+ 1185  for i in try005/*.txt; do ls | head -n 1 | tail -1| echo ; done
+ 1186  for i in try005/*.txt; do ls | ~/parallel-20211022/src/parallel echo ; done
+ 1187  ls try005/
+ 1188  for i in try005/*.txt; do ls try005/ | ~/parallel-20211022/src/parallel echo ; done
+ 1189  for i in try005/*.txt; do ls try005/ | ~/parallel-20211022/src/parallel echo && good ; done
+ 1190  ls try005/ | ~/parallel-20211022/src/parallel echo
+ 1191  ls
+ 1192  vi trysh.sh 
+ 1193  ./trysh.sh ca3.txt ca4.txt 
+ 1194  ls try005/ | ~/parallel-20211022/src/parallel trysh.sh
+ 1195  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh
+ 1196  ls try005/ && ca5.txt | ~/parallel-20211022/src/parallel ./trysh.sh 
+ 1197  ls try005/
+ 1198  for i in try005/; do echo $i; done
+ 1199  for i in try005/*.txt ; do echo $i; done
+ 1200  for i in try005/*.txt ; do echo $i ~/parallel-20211022/src/parallel ; done
+ 1201  for i in try005/*.txt ; do echo $i & ; done
+ 1202  for i in try005/*.txt ; do echo $i & done
+ 1203  for i in try005/*.txt ; do echo $i ~/parallel-20211022/src/parallel  done
+ 1204  cd try005/
+ 1205  echo 'one two three' | xargs mkdir
+ 1206  ls
+ 1207  rm one two three
+ 1208  rmdir one two three
+ 1209  ls
+ 1210  cd ..
+ 1211  exit
+ 1212  time ls REVIEWS/ | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv
+ 1213  cd amazonReview/
+ 1214  ~/parallel-20211022/src/parallel echo ::: a b c ::: d
+ 1215  ls try005/
+ 1216  ls try005/ | ~/parallel-20211022/src/parallel echo
+ 1217  ls try005/ | ~/parallel-20211022/src/parallel echo ::: ggg
+ 1218  ls try005/ ::: ggg | ~/parallel-20211022/src/parallel echo
+ 1219  ls try005/
+ 1220  ls try005/ && "good
+ 1221  ls try005/ && "good"
+ 1222  ls try005/ ::: 3
+ 1223  ls try005/ | ~/parallel-20211022/src/parallel echo
+ 1224  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo
+ 1225  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} {2}
+ 1226  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} {abc.txt}
+ 1227  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} abc.txt
+ 1228  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo  abc.txt
+ 1229  ls try005/ | ~/parallel-20211022/src/parallel --max-args=1 echo abc.txt
+ 1230  ls
+ 1231  vi trysh.sh 
+ 1232  vi ca4.txt 
+ 1233  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh ca4.txt
+ 1234  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {2} {1}
+ 1235  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {2} ca4.txt
+ 1236  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {1} ca4.txt
+ 1237  ls
+ 1238  ls REVIEWS/ | head -n 2 > rfile.txt
+ 1239  less rfile.tx
+ 1240  ls REVIEWS/ | head -n 1 | cp try005/
+ 1241  cd REVIEWS/
+ 1242  ls
+ 1243  cp 2193577228.txt ~/amazonReview/try005/
+ 1244  cp 2193579434.txt ~/amazonReview/try005/
+ 1245  cd ..
+ 1246  cd try005/
+ 1247  ls
+ 1248  rm bb*.txt
+ 1249  ls
+ 1250  cd ..
+ 1251  ls try005/
+ 1252  vi compare.sh 
+ 1253  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh {1} training.1600000.processed.noemoticon.csv 
+ 1254  vi compare.sh 
+ 1255  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh {1} training.1600000.processed.noemoticon.csv 
+ 1256  vi compare.sh 
+ 1257  ls try005/
+ 1258  ls -d try005/
+ 1259  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
+ 1260  vi compare.sh 
+ 1261  vi trysh.sh 
+ 1262  cat ca4.txt 
+ 1263  cat < ca4.txt 
+ 1264  vi trysh.sh 
+ 1265  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} ca4.txt 
+ 1266  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {try005/1} ca4.txt 
+ 1267  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1268  cd try005/
+ 1269  less 2193577228.txt 
+ 1270  less 2193579434.txt 
+ 1271  cd ..
+ 1272  vi compare.sh 
+ 1273  ls trysh*
+ 1274  vi trysh.sh 
+ 1275  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1276  less tem1.txt 
+ 1277  vi compare.sh 
+ 1278  less tem1.txt 
+ 1279  cd try005/
+ 1280  ls
+ 1281  less 2193577228.txt 
+ 1282  less 2193579434.txt 
+ 1283  cd ..
+ 1284  less tem1.txt 
+ 1285  cd try005/
+ 1286  less 2193579434.txt 
+ 1287  less 2193577228.txt 
+ 1288  cd ..
+ 1289  vi compare.sh 
+ 1290  vi trysh.sh 
+ 1291  ls tem*
+ 1292  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1293  ls tem*
+ 1294  ls tem
+ 1295  ls
+ 1296  less :::gc1.txt
+ 1297  rm :::gc1.txt
+ 1298  ls
+ 1299  cd try005/
+ 1300  less 2193579434.txt
+ 1301  ls
+ 1302  less 2193579434.txt.tem.txt 
+ 1303  cd ..
+ 1304  vi trysh.sh 
+ 1305  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1306  vi trysh.sh 
+ 1307  cd try005/
+ 1308  ls
+ 1309  cd ..
+ 1310  vi trysh.sh 
+ 1311  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1312  vi trysh.sh 
+ 1313  cd try005/
+ 1314  ls
+ 1315  rm *.txt.tem.txt
+ 1316  ls
+ 1317  cd ..
+ 1318  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1319  cd try005/
+ 1320  ls
+ 1321  rm *.txt.tem.txt
+ 1322  cd ..
+ 1323  vi trysh.sh 
+ 1324  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
+ 1325  cd try005/
+ 1326  ls
+ 1327  cd ..
+ 1328  vi compare.sh 
+ 1329  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
+ 1330  cd try005/
+ 1331  ls
+ 1332  less 2193577228.txt 
+ 1333  less 2193579434.txt 
+ 1334  rm *
+ 1335  cd ..
+ 1336  cd REVIEWS/
+ 1337  ls
+ 1338  less 2193574981.txt 
+ 1339  less 2193574986.txt
+ 1340  less 2193579249.txt 
+ 1341  less 2193578319.txt 
+ 1342  less 2193574986.txt
+ 1343  cp 2193574986.txt ~/amazonReview/try005/
+ 1344  less 2193577315.txt 
+ 1345  less 2193576691.txt 
+ 1346  cp 2193576691.txt ~/amazonReview/try005/
+ 1347  cd ~/amazonReview/
+ 1348  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
+ 1349  cd try005/
+ 1350  ls
+ 1351  less 2193574986.txt 
+ 1352  less 2193576691.txt 
+ 1353  less 2193574986.txt 
+ 1354  less 2193576691.txt 
  1355  ls
- 1356  bunzip2 parallel-latest.tar.bz2 
- 1357  ls
- 1358  tar xvf parallel-latest.tar 
- 1359  ls
- 1360  cd parallel-20211022/
- 1361  ls
- 1362  cd ..
- 1363  ./parallel-20211022/src/parallel echo ::: one two three
- 1364  cd amazonReview/
- 1365  ~/parallel-20211022/src/parallel echo ::: one two
- 1366  ls
- 1367  head -n 3 | tail -1 > ca3.txt 
- 1368  head -n 3 ca1.txt | tail -1 > ca3.txt 
- 1369  head -n 7 ca1.txt | tail -1 > ca4.txt 
- 1370  time ~/parallel-20211022/src/parallel echo one two
- 1371  time ~/parallel-20211022/src/parallel echo ::: one two
- 1372  time echo one | time ~/parallel-20211022/src/parallel echo two
- 1373  vi tryshell.sh 
- 1374  time ./tryshell.sh ca3.txt training.1600000.processed.noemoticon.csv  | ~/parallel-20211022/src/parallel time ./tryshell.sh ca4.txt training.1600000.processed.noemoticon.csv 
- 1375  less ca4.txt 
- 1376  less ca3.txt 
- 1377  cut -f 6 -d "," ca3.txt > word_count.txt
- 1378  less word_count.txt 
- 1379  cut -f 6 -d "," ca3.txt | tr -d '"' > word_count.txt
- 1380  less word_count.txt 
- 1381  vi ca5.txt 
- 1382  sed 's/ /\n/g' ca5.txt 
- 1383  sed 's/ /\n/g' ca4.txt
- 1384  cut -f 6 -d "," ca4.txt | tr -d '"' | sed 's/ /\n/g' ca4.txt 
- 1385  cut -f 6 -d "," ca4.txt | tr -d '"' | sed 's/ /\n/g' 
- 1386  less ca4.txt 
- 1387  cut -f 6 -d "," word_count.txt | tr -d '"' | sed 's/ /\n/g' > word_count2.txt
- 1388  less word_count2.txt 
- 1389  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1390  less word_count3.txt 
- 1391  less word_count1
- 1392  less word_count1.
- 1393  less word_count.txt 
- 1394  less word_count2.txt 
- 1395  sed 's/ /\n/g' word_count.txt > word_count2.txt
- 1396  less word_count2.txt 
- 1397  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
- 1398  less word_count2.txt 
- 1399  vi ca3.txt 
- 1400  vi ca5.txt 
- 1401  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1402  less ca5.txt 
- 1403  sed 's/ /\n/g' word_count.txt > word_count2.txt
- 1404  less word_count2.txt 
- 1405  sed -i 's/  */ /g' word_count2.txt 
- 1406  vi ca5.txt 
- 1407  sed -e 's/,//g' ca5.txt 
- 1408  sed -e 's/.,//g' ca5.txt 
- 1409  sed -e 's/://g' ca5.txt 
- 1410  sed -e 's/[.,]//g' ca5.txt 
- 1411  sed -e 's/[.,\:]//g' ca5.txt 
- 1412  sed -e 's/[.,\:\;]//g' ca5.txt 
- 1413  sed -e 's/[.,\:\;]//g' word_count2.txt 
- 1414  sed -e -i 's/[.,\:\;]//g' word_count2.txt 
- 1415  sed -e 's/[.,\:\;]//g' word_count2.txt > word_count3.txt 
- 1416  less word_count3.txt 
- 1417  sed -e 's/[.,\:\;]//g' word_count2.txt > word_count3.txt
- 1418  sed -i -e 's/[.,\:\;]//g' word_count2.txt
- 1419  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
- 1420  less word_count2.txt 
- 1421  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1422  less word_count3.txt 
- 1423  cut -f 6 -d "," ca3.txt | tr -d '"' > word_count.txt 
- 1424  sed 's/ //g' word_count.txt > word_count2.txt 
- 1425  sed -i -e 's[.,\:\;]//g' word_count2.txt 
- 1426  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
- 1427  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count3.txt 
- 1428  less word_count3.txt 
- 1429  less word_count2.txt 
- 1430  less word_count3.txt 
- 1431  vi ca5.txt 
- 1432  sed 's/ //g' ca5.txt 
- 1433  cut -f 6 -d "," ca3.txt | tr -d '"' > word_count.txt 
- 1434  sed 's/ /\n/g' word_count.txt > word_count2.txt 
- 1435  less word_count2.txt 
- 1436  sed -i 's/ //g' word_count2.txt 
- 1437  less word_count2.txt 
- 1438  sed -i -e 's/ //g' word_count2.txt 
- 1439  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
- 1440  sed -i 's/\b[a-zA-Z]\{1,2\} //g' word_count2.txt 
- 1441  less word_count2.txt 
- 1442  vi ca5.txt 
- 1443  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1444  less ca5.txt 
- 1445  vi ca5.txt 
- 1446  sed -i 's/ /\n/g' ca5.txt 
- 1447  less ca5.txt 
- 1448  ed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1449  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1450  less ca5.txt 
- 1451  sed -i 's/ //g' ca5.txt 
- 1452  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1453  less ca5.txt 
- 1454  vi ca5.txt 
- 1455  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca5.txt 
- 1456  vi ca5.txt 
- 1457  vi ca6.txt 
- 1458  sed -i 's/\b[a-zA-Z]\{1,2\} //g' ca6.txt 
- 1459  vi ca6.txt 
- 1460  sed -i -E 's/\b[a-zA-Z]\{1,2\}( |\n)//g' ca6.txt 
- 1461  less ca6.txt 
- 1462  sed -i -E 's/\b[a-zA-Z]\{1,2\}( |\n)//g' ca5.txt 
- 1463  less ca5.txt 
- 1464  sed -r '/^.{,2}$/d' ca5.txt 
- 1465  less ca5.txt 
- 1466  cut -f 6 -d "," ca3.txt | tr -d '"'  > word_count.txt
- 1467  sed 's/ /\n/g' word_count.txt > word_count2.txt
- 1468  sed 's/ //g' word_count2.txt 
- 1469  sed -i 's/ //g' word_count2.txt 
- 1470  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
- 1471  sed -i -r '/^.{,2}$/d' word_count2.txt 
- 1472  less word_count2.txt 
- 1473  sort word_count2.txt | uniq -c | sort -rn> word_count2.txt 
- 1474  less word_count2.txt 
- 1475  sed 's/ /\n/g' word_count.txt > word_count2.txt
- 1476  sed -i 's/ //g' word_count2.txt 
- 1477  sed -i -e 's/[.,\:\;]//g' word_count2.txt 
- 1478  sed -i -r '/^.{,2}$/d' word_count2.txt 
- 1479  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt 
- 1480  less word_count3.txt 
- 1481  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1482  less word_count3.txt 
- 1483  exit
- 1484  vi compare.sh 
- 1485  less compare
- 1486  less compare.sh 
- 1487  less compare.sh
- 1488  cd amazonReview/
- 1489  ls
- 1490  less a4.txt 
- 1491  vi a4.txt 
- 1492  vi tryshell.sh 
- 1493  ls compare
- 1494  ls compare*
- 1495  cp tryshell.sh compare.sh
- 1496  ls
- 1497  ls com*
- 1498  vi compare.sh 
- 1499  less word_count3.txt 
- 1500  script -a a4.txt 
- 1501  vi a4.txt 
- 1502  script try003.txt
- 1503  less try003.txt 
- 1504  vi try003.txt 
- 1505  rm try003.txt 
- 1506  script -a a4.txt 
- 1507  vi a4.txt 
- 1508  ~/parallel-20211022/src/parallel echo ::: a b c
- 1509  ~/parallel-20211022/src/parallel rm ::: ca5.txt ca6.txt ca7.txt 
- 1510  ls ca
- 1511  ca*
- 1512  ls
- 1513  ls ca*
- 1514  ls
- 1515  ~/parallel-20211022/src/parallel echo "good" > :::gc1.txt gc2.txt gc3.txt
- 1516  ls gc*
- 1517  ls
- 1518  ~/parallel-20211022/src/parallel echo ::: ls
- 1519  ls | head -n 1 | echo
- 1520  ls | head -n 1 
- 1521  ls | head -n 1 | echo
- 1522  ls | head -n 2 | echo
- 1523  ls
- 1524  vi cl.sh
- 1525  cp cl.sh trysh.sh
- 1526  vi trysh.sh 
- 1527  ls | head -n 1 | trysh.sh
- 1528  trysh.sh ca2.txt
- 1529  ls | head -n 1 | ./trysh.sh
- 1530  history > cmds.log
- 1531  less cmds.log
- 1532  vi trysh.sh 
- 1533  ls
- 1534  cd try005/
- 1535  ls
- 1536  less ca1.txt 
- 1537  rm *
- 1538  ls
- 1539  echo good > bb1.txt
- 1540  echo good > bb2.txt
- 1541  echo good > bb3.txt
- 1542  ls
- 1543  ls | ~/parallel-20211022/src/parallel cd 
- 1544  ls | ~/parallel-20211022/src/parallel echo
- 1545  ls | echo
- 1546  cd ..
- 1547  for i in try005/*.txt; do echo ls | head -n 1 | tail -1; done
- 1548  for i in try005/*.txt; do ls | head -n 1 | tail -1| echo ; done
- 1549  for i in try005/*.txt; do ls | ~/parallel-20211022/src/parallel echo ; done
- 1550  ls try005/
- 1551  for i in try005/*.txt; do ls try005/ | ~/parallel-20211022/src/parallel echo ; done
- 1552  for i in try005/*.txt; do ls try005/ | ~/parallel-20211022/src/parallel echo && good ; done
- 1553  ls try005/ | ~/parallel-20211022/src/parallel echo
- 1554  ls
- 1555  vi trysh.sh 
- 1556  ./trysh.sh ca3.txt ca4.txt 
- 1557  ls try005/ | ~/parallel-20211022/src/parallel trysh.sh
- 1558  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh
- 1559  ls try005/ && ca5.txt | ~/parallel-20211022/src/parallel ./trysh.sh 
- 1560  ls try005/
- 1561  for i in try005/; do echo $i; done
- 1562  for i in try005/*.txt ; do echo $i; done
- 1563  for i in try005/*.txt ; do echo $i ~/parallel-20211022/src/parallel ; done
- 1564  for i in try005/*.txt ; do echo $i & ; done
- 1565  for i in try005/*.txt ; do echo $i & done
- 1566  for i in try005/*.txt ; do echo $i ~/parallel-20211022/src/parallel  done
- 1567  cd try005/
- 1568  echo 'one two three' | xargs mkdir
- 1569  ls
- 1570  rm one two three
- 1571  rmdir one two three
- 1572  ls
- 1573  cd ..
- 1574  exit
- 1575  time ls REVIEWS/ | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv
- 1576  cd amazonReview/
- 1577  ~/parallel-20211022/src/parallel echo ::: a b c ::: d
- 1578  ls try005/
- 1579  ls try005/ | ~/parallel-20211022/src/parallel echo
- 1580  ls try005/ | ~/parallel-20211022/src/parallel echo ::: ggg
- 1581  ls try005/ ::: ggg | ~/parallel-20211022/src/parallel echo
- 1582  ls try005/
- 1583  ls try005/ && "good
- 1584  ls try005/ && "good"
- 1585  ls try005/ ::: 3
- 1586  ls try005/ | ~/parallel-20211022/src/parallel echo
- 1587  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo
- 1588  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} {2}
- 1589  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} {abc.txt}
- 1590  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo {1} abc.txt
- 1591  ls try005/ | ~/parallel-20211022/src/parallel --max-args=2 echo  abc.txt
- 1592  ls try005/ | ~/parallel-20211022/src/parallel --max-args=1 echo abc.txt
- 1593  ls
- 1594  vi trysh.sh 
- 1595  vi ca4.txt 
- 1596  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh ca4.txt
- 1597  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {2} {1}
- 1598  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {2} ca4.txt
- 1599  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {1} ca4.txt
- 1600  ls
- 1601  ls REVIEWS/ | head -n 2 > rfile.txt
- 1602  less rfile.tx
- 1603  ls REVIEWS/ | head -n 1 | cp try005/
- 1604  cd REVIEWS/
- 1605  ls
- 1606  cp 2193577228.txt ~/amazonReview/try005/
- 1607  cp 2193579434.txt ~/amazonReview/try005/
- 1608  cd ..
- 1609  cd try005/
- 1610  ls
- 1611  rm bb*.txt
- 1612  ls
- 1613  cd ..
- 1614  ls try005/
- 1615  vi compare.sh 
- 1616  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh {1} training.1600000.processed.noemoticon.csv 
- 1617  vi compare.sh 
- 1618  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh {1} training.1600000.processed.noemoticon.csv 
- 1619  vi compare.sh 
- 1620  ls try005/
- 1621  ls -d try005/
- 1622  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
- 1623  vi compare.sh 
- 1624  vi trysh.sh 
- 1625  cat ca4.txt 
- 1626  cat < ca4.txt 
- 1627  vi trysh.sh 
- 1628  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} ca4.txt 
- 1629  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh {try005/1} ca4.txt 
- 1630  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1631  cd try005/
- 1632  less 2193577228.txt 
- 1633  less 2193579434.txt 
- 1634  cd ..
- 1635  vi compare.sh 
- 1636  ls trysh*
- 1637  vi trysh.sh 
- 1638  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1639  less tem1.txt 
- 1640  vi compare.sh 
- 1641  less tem1.txt 
- 1642  cd try005/
- 1643  ls
- 1644  less 2193577228.txt 
- 1645  less 2193579434.txt 
- 1646  cd ..
- 1647  less tem1.txt 
- 1648  cd try005/
- 1649  less 2193579434.txt 
- 1650  less 2193577228.txt 
- 1651  cd ..
- 1652  vi compare.sh 
- 1653  vi trysh.sh 
- 1654  ls tem*
- 1655  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1656  ls tem*
- 1657  ls tem
- 1658  ls
- 1659  less :::gc1.txt
- 1660  rm :::gc1.txt
- 1661  ls
- 1662  cd try005/
- 1663  less 2193579434.txt
- 1664  ls
- 1665  less 2193579434.txt.tem.txt 
- 1666  cd ..
- 1667  vi trysh.sh 
- 1668  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1669  vi trysh.sh 
- 1670  cd try005/
- 1671  ls
- 1672  cd ..
- 1673  vi trysh.sh 
- 1674  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1675  vi trysh.sh 
- 1676  cd try005/
- 1677  ls
- 1678  rm *.txt.tem.txt
- 1679  ls
- 1680  cd ..
- 1681  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1682  cd try005/
- 1683  ls
- 1684  rm *.txt.tem.txt
- 1685  cd ..
- 1686  vi trysh.sh 
- 1687  ls try005/ | ~/parallel-20211022/src/parallel ./trysh.sh try005/{1} 
- 1688  cd try005/
- 1689  ls
- 1690  cd ..
- 1691  vi compare.sh 
- 1692  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
- 1693  cd try005/
- 1694  ls
- 1695  less 2193577228.txt 
- 1696  less 2193579434.txt 
- 1697  rm *
- 1698  cd ..
- 1699  cd REVIEWS/
- 1700  ls
- 1701  less 2193574981.txt 
- 1702  less 2193574986.txt
- 1703  less 2193579249.txt 
- 1704  less 2193578319.txt 
- 1705  less 2193574986.txt
- 1706  cp 2193574986.txt ~/amazonReview/try005/
- 1707  less 2193577315.txt 
- 1708  less 2193576691.txt 
- 1709  cp 2193576691.txt ~/amazonReview/try005/
- 1710  cd ~/amazonReview/
- 1711  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
- 1712  cd try005/
- 1713  ls
- 1714  less 2193574986.txt 
- 1715  less 2193576691.txt 
- 1716  less 2193574986.txt 
- 1717  less 2193576691.txt 
- 1718  ls
- 1719  rm 2193576691.txt 
- 1720  cd ~/amazonReview/REVIEWS/
+ 1356  rm 2193576691.txt 
+ 1357  cd ~/amazonReview/REVIEWS/
+ 1358  ls
+ 1359  less 2193574981
+ 1360  less 2193574986.txt 
+ 1361  less 2193575839.txt 
+ 1362  less 2193574897.txt 
+ 1363  less 2193574981.txt 
+ 1364  less 2193578758.txt 
+ 1365  less 2193579249.txt 
+ 1366  cp 2193579249.txt ~/amazonReview/try005/
+ 1367  cd ~/amazonReview/try005/
+ 1368  ls
+ 1369  less 2193579249.txt 
+ 1370  cd ..
+ 1371  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
+ 1372  cd try005/
+ 1373  ls
+ 1374  less 2193579249.txt 
+ 1375  cd ..
+ 1376  time ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
+ 1377  vi compare.sh 
+ 1378  script -a a4.txt 
+ 1379  cd REVIEWS/
+ 1380  ls
+ 1381  exit
+ 1382  cd amazonReview/
+ 1383  ls
+ 1384  cd REVIEWS/
+ 1385  ls
+ 1386  rm *.txt.tem*.txt
+ 1387  ls
+ 1388  less 2193579249.txt 
+ 1389  less 2193602129.txt 
+ 1390  less 2193574897.txt 
+ 1391  cd ..
+ 1392  vi a4.txt 
+ 1393  cd REVIEWS/
+ 1394  less 2193574981.txt 
+ 1395  less 2193574986.txt 
+ 1396  vi ca4
+ 1397  cd ..
+ 1398  vi ca4.txt 
+ 1399  head -n 1 ca4.txt > ca4.txt 
+ 1400  less ca4.txt 
+ 1401  vi ca4.txt 
+ 1402  head -n 1 ca4.txt 
+ 1403  head -n 1 ca4.txt > ca4.txt 
+ 1404  less ca4.txt 
+ 1405  vi ca4.txt 
+ 1406  head -n 1 ca4.txt 
+ 1407  exit
+ 1408  ls REVIEWS/ | head -n 20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1409  time ls REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1410  echo good
+ 1411  time ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1412  cd amazonReview/
+ 1413  ls
+ 1414  vi ca4.txt 
+ 1415  sed -n '1p;$p' ca4.txt 
+ 1416  sed -n '1p' ca4.txt 
+ 1417  sed -i -n '1p' ca4.txt 
+ 1418  less ca4.txt 
+ 1419  for i in REVIEWS/*.txt ; do sed -i -n '1p' $i; done
+ 1420  cd REVIEWS/
+ 1421  ls 
+ 1422  less 2193574897.txt 
+ 1423  less 2193574981.txt 
+ 1424  cd ..
+ 1425  ls REVIEWS/ | head -n 10
+ 1426  ls REVIEWS/ | head -n 10 | tail -2
+ 1427  ls REVIEWS/ | wc -
+ 1428  ls REVIEWS/ | tail -90
+ 1429  ls REVIEWS/ | head -n 30 | tail -10
+ 1430  vi compare.sh 
+ 1431  vi a4.txt 
+ 1432  script -a a4.txt 
+ 1433  cd REVIEWS/
+ 1434  ls
+ 1435  less 2193574897.txt 
+ 1436  cd ..
+ 1437  vi a4.txt 
+ 1438  script -a a4.txt 
+ 1439  vi a4.txt 
+ 1440  time ls REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1441  vi a4.txt 
+ 1442  time ls REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1443  vi a4.txt 
+ 1444  script -a a4.txt 
+ 1445  vi a4.txt 
+ 1446  script -a a4.txt 
+ 1447  vi a4.txt 
+ 1448  exit
+ 1449  time ls REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1450  vi compare.sh 
+ 1451  cd amazonReview/
+ 1452  vi a4.txt 
+ 1453  ls REVIEWS/ | head -n 100 | tail -40
+ 1454  cd REVIEWS/
+ 1455  rm *.txt.tem*.txt
+ 1456  ls
+ 1457  cd ..
+ 1458  ls REVIEWS/ | head -n 100 | tail -40
+ 1459  history > cmds.log 
+ 1460  less cmds.log 
+ 1461  vi ca4.txt 
+ 1462  sed -i -n '1p' ca4.txt 
+ 1463  less ca4.txt 
+ 1464  ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel sed -i -n '1p' 
+ 1465  ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel sed -i -n '1p' REVIEWS/{1}
+ 1466  cd REVIEWS/
+ 1467  ls
+ 1468  less 2193602129.txt 
+ 1469  less 2193574897.txt 
+ 1470  cd ..
+ 1471  script -a a4.txt 
+ 1472  vi a4.txt 
+ 1473  time ls REVIEWS/ | head -n 100 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1474  for i in REVIEWS/*.txt; do cut -f 6 -d "," REVIEWS/$i | tr -d '"'  >> word_count.txt; done
+ 1475  for i in REVIEWS/*.txt; do cut -f 6 -d "," $i | tr -d '"'  >> word_count.txt; done
+ 1476  sed 's/ /\n/g' word_count.txt > word_count2.txt
+ 1477  sed -i 's/ //g' word_count2.txt
+ 1478  sed -i -e 's/[.,\:\;]//g' word_count2.txt
+ 1479  sed -i -r '/^.{,2}$/d' word_count2.txt
+ 1480  sed -i 's/the//g' word_count2.txt 
+ 1481  sed -i 's/you//g' word_count2.txt 
+ 1482  sed -i 's/can//g' word_count2.txt 
+ 1483  sed -i 's/and//g' word_count2.txt 
+ 1484  sed -i 's/or//g' word_count2.txt 
+ 1485  sed -i 's/was//g' word_count2.txt 
+ 1486  echo good 
+ 1487  sed -i 's/her//g' word_count2.txt 
+ 1488  sed -i 's/him//g' word_count2.txt 
+ 1489  sed -i 's/are//g' word_count2.txt 
+ 1490  sed -i 's/for//g' word_count2.txt 
+ 1491  echo good
+ 1492  sed -i '/^$/d' word_count2.txt 
+ 1493  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1494  echo good
+ 1495  head -n  10 word_count3.txt 
+ 1496  cd amazonReview/
+ 1497  vi a4.txt 
+ 1498  cd REVIEWS/
+ 1499  ls
+ 1500  less 2193602129.txt 
+ 1501  less 2193602064.txt 
+ 1502  less 2193578576.txt 
+ 1503  less 2193579249.txt 
+ 1504  less 2193576534.txt 
+ 1505  less 2193601966.txt 
+ 1506  less 2193575834.txt 
+ 1507  cd ..
+ 1508  vi a4.txt 
+ 1509  script -a a4.txt 
+ 1510  vi a4.txt 
+ 1511  ls word_count*
+ 1512  rm word_count*
+ 1513  ls word_count*
+ 1514  echo REVIEWS/2193579249.txt 
+ 1515  for i in REVIEWS/*.txt; do echo REVIEWS/$i; done
+ 1516  script -a a4.txt 
+ 1517  echo good >> gg.txt
+ 1518  less gg.txt 
+ 1519  rm gg.txt 
+ 1520  vi a4.txt 
+ 1521  script -a a4.txt 
+ 1522  vi a4.txt 
+ 1523  ls word*
+ 1524  less word_count.txt 
+ 1525  script -a a4.txt 
+ 1526  less word_count.txt 
+ 1527  wc -l < word_count.txt 
+ 1528  vi a4.txt 
+ 1529  script -a a4.txt 
+ 1530  vi a4.txt 
+ 1531  less word_count2.txt 
+ 1532  cp word_count2.txt word_2.txt
+ 1533  less word_2.txt 
+ 1534  sed -i 's/the//g' word_2.txt 
+ 1535  less word_2.txt 
+ 1536  sed -i '/^$/d' word_2.txt 
+ 1537  less word_2.txt 
+ 1538  sed -i 's/you//g' word_2.txt 
+ 1539  less word_2.txt 
+ 1540  less word_count2.txt 
+ 1541  vi a4.txt 
+ 1542  script -a a4.txt 
+ 1543  vi a4.txt 
+ 1544  script -a a4.txt 
+ 1545  vi a4.txt 
+ 1546  script -a a4.txt 
+ 1547  vi a4.txt 
+ 1548  less word_count2.txt 
+ 1549  script -a a4.txt 
+ 1550  vi a4.txt 
+ 1551  less word_count3.txt 
+ 1552  sed -i 's/f//g' word_count2.txt 
+ 1553  less word_count3.txt 
+ 1554  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1555  less word_count3.txt 
+ 1556  sed -i '/^$/d' word_count2.txt 
+ 1557  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
+ 1558  less word_count3.txt 
+ 1559  vi a4.txt 
+ 1560  script -a a4.txt 
+ 1561  vi a4.txt 
+ 1562  script -a a4.txt 
+ 1563  exit
+ 1564  sort -n -k 1 training.1600000.processed.noemoticon.csv | head -n 100 > unhelpful_reviews.txt
+ 1565  awk -F "\",\"" 'BEGIN{OFS="\",\"";} {print $0 > "UNHELPFUL_REVIEWS/" $2".txt" }' unhelpful_reviews.txt
+ 1566  for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && sed -E -i 's/ing( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/ed( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/s( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename ; done
+ 1567  for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && awk -F "\",\"" -i inplace 'BEGIN{OFS="\",\"";}{ gsub(/!/, "", $6); gsub(/\./, "", $6); gsub(/:/, "", $6); gsub(/,/, "", $6); gsub(/?/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/\b[a-zA-Z]\{1,2\} //g' UNHELPFUL_REVIEWS/$filename && awk -F "," -i inplace 'BEGIN{OFS=",";}{ gsub(/about/, "", $6); gsub(/any/, "", $6); gsub(/but/, "", $6); gsub(/has/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/  */ /g' UNHELPFUL_REVIEWS/$filename; done
+ 1568  time ls UNHELPFUL_REVIEWS/ | head -n 20 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1569  cd UNHELPFUL_REVIEWS/
+ 1570  ls
+ 1571  cd amazonReview/
+ 1572  vi a4.txt 
+ 1573  ls
+ 1574  cp a4.txt a4.cp.txt
+ 1575  vi a4.
+ 1576  vi a4.txt 
+ 1577  less reviews.txt 
+ 1578  mkdir UNHELPFUL_REVIEWS
+ 1579  script -a a4.txt 
+ 1580  less unhelpful_reviews.txt 
+ 1581  cd UNHELPFUL_REVIEWS/
+ 1582  ls
+ 1583  less 1467834053.txt 
+ 1584  cd ..
+ 1585  vi a4.
+ 1586  vi a4.txt 
+ 1587  echo good
+ 1588  script -a a4.txt 
+ 1589  vi a4.txt 
+ 1590  script -a a4.txt 
+ 1591  vi a4.txt 
+ 1592  ls REVIEWS/ | head -n 5 | tail -5
+ 1593  vi a4.
+ 1594  vi a4.txt 
+ 1595  script -a a4.txt 
+ 1596  vi a4.txt 
+ 1597  script -a a4.txt 
+ 1598  cd UNHELPFUL_REVIEWS/
+ 1599  less 1467810369.txt 
+ 1600  less 1467812964.txt 
+ 1601  less 1467836024.txt 
+ 1602  less 1467834053.txt 
+ 1603  less 1467812579.txt 
+ 1604  cd ..
+ 1605  vi a4.txt 
+ 1606  vi compare.sh 
+ 1607  vi a4.txt 
+ 1608  time ls UNHELPFUL_REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1609  time ls UNHELPFUL_REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1610  time ls UNHELPFUL_REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1611  time ls UNHELPFUL_REVIEWS/ | head -n 100 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
+ 1612  cd amazonReview/
+ 1613  vi a4.txt 
+ 1614  cd UNHELPFUL_REVIEWS/
+ 1615  ls
+ 1616  rm *.txt.tem*.txt
+ 1617  ls
+ 1618  less 1467825003.txt 
+ 1619  ls | wc -l
+ 1620  less 1467823851.txt 
+ 1621  cd ..
+ 1622  script -a a4.txt
+ 1623  vi a4.
+ 1624  vi a4.txt 
+ 1625  script -a a4.txt 
+ 1626  vi a4.txt 
+ 1627  script -a a4.txt 
+ 1628  vi a4.txt 
+ 1629  cd REVIEWS/
+ 1630  ls
+ 1631  ls | wc -l
+ 1632  cd ..
+ 1633  script -a a4.txt 
+ 1634  vi a4.t
+ 1635  vi a4.txt 
+ 1636  exit
+ 1637  for i in UNHELPFUL_REVIEWS/*.txt; do cut -f 6 -d "," $i | tr -d '"'  >> unhelpful_wordcount.txt; done
+ 1638  sed 's/ /\n/g' unhelpful_wordcount.txt > unhelpful_wordcount2.txt
+ 1639  sed -i 's/ //g' unhelpful_wordcount2.txt
+ 1640  sed -i -e 's/[.,\:\;]//g' unhelpful_wordcount2.txt
+ 1641  echo good
+ 1642  sed -i -r '/^.{,2}$/d' unhelpful_wordcount2.txt
+ 1643  sed -i 's/the//g' unhelpful_wordcount2.txt
+ 1644  sed -i 's/you//g' unhelpful_wordcount2.txt
+ 1645  sed -i 's/can//g' unhelpful_wordcount2.txt
+ 1646  sed -i 's/or//g' unhelpful_wordcount2.txt
+ 1647  sed -i 's/and//g' unhelpful_wordcount2.txt
+ 1648  sed -i 's/was//g' unhelpful_wordcount2.txt
+ 1649  sed -i 's/her//g' unhelpful_wordcount2.txt
+ 1650  sed -i 's/him//g' unhelpful_wordcount2.txt
+ 1651  sed -i 's/are//g' unhelpful_wordcount2.txt
+ 1652  sed -i 's/for//g' unhelpful_wordcount2.txt
+ 1653  sed '/^$/d' unhelpful_wordcount2.txt 
+ 1654  sed -i '/^$/d' unhelpful_wordcount2.txt
+ 1655  sort unhelpful_wordcount2.txt | uniq -c | sort -rn > unhelpful_wordcount3.txt
+ 1656  head -n 10 unhelpful_wordcount3.txt 
+ 1657  cat < randomsample.sh 
+ 1658  ./randomsample.sh 100 amazon_reviews_us_Books_v1_02.tsv 
+ 1659  cd amazonReview/
+ 1660  vi a4.txt 
+ 1661  script -a a4.txt 
+ 1662  less unhelpful_wordcount.txt 
+ 1663  vi a4.t
+ 1664  vi a4.txt 
+ 1665  script -a a4.txt 
+ 1666  vi a4.txt 
+ 1667  script -a a4.txt 
+ 1668  vi a4.txt 
+ 1669  head -n 320 a4.txt | tail -1
+ 1670  head -n 120 a4.txt | tail -1
+ 1671  head -n 150 a4.txt | tail -1
+ 1672  head -n 158 a4.txt | tail -1
+ 1673  head -n 159 a4.txt | tail -1
+ 1674  head -n 172 a4.txt | tail -1
+ 1675  head -n 185 a4.txt | tail -1
+ 1676  head -n 189 a4.txt | tail -1
+ 1677  head -n 193 a4.txt | tail -1
+ 1678  head -n 195 a4.txt | tail -1
+ 1679  head -n 206 a4.txt | tail -1
+ 1680  head -n 208 a4.txt | tail -1
+ 1681  head -n 209 a4.txt | tail -1
+ 1682  head -n 214 a4.txt | tail -1
+ 1683  head -n 228 a4.txt | tail -1
+ 1684  head -n 235 a4.txt | tail -1
+ 1685  head -n 240 a4.txt | tail -1
+ 1686  head -n 237 a4.txt | tail -1
+ 1687  head -n 235 a4.txt | tail -1
+ 1688  head -n 236 a4.txt | tail -1
+ 1689  vi a4.txt 
+ 1690  head -n 237 a4.txt | tail -1
+ 1691  head -n 237 a4.txt > a4.c2.txt
+ 1692  less a4.c2.txt 
+ 1693  cp a4.c2.txt a4.txt
+ 1694  vi a4.txt 
+ 1695  script -a a4.txt 
+ 1696  less unhelpful_wordcount3.txt 
+ 1697  sed -i 's/f//g' unhelpful_wordcount2.txt
+ 1698  sed -i '/^$/d' unhelpful_wordcount2.txt
+ 1699  sort unhelpful_wordcount2.txt | uniq -c | sort -rn > unhelpful_wordcount3.txt
+ 1700  less unhelpful_wordcount3.txt 
+ 1701  vi a4.txt 
+ 1702  script -a a4.txt 
+ 1703  vi a4.txt 
+ 1704  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a4.txt > a4.clean.txt
+ 1705  tr -cd '\11\12\15\40-\176' < a4.clean.txt > a4.final.txt
+ 1706  git ls-files
+ 1707  git rm --cahced cmds.log ws8.final.txt 
+ 1708  git add a4.final.txt 
+ 1709  git commot -m "assignment4"
+ 1710  git commit -m "assignment 4"
+ 1711  git remote set-url origin https://github.com/AdamY02/assign4.git
+ 1712  git push origin master
+ 1713  git ls-files
+ 1714  git rm --cached ws8.final.txt 
+ 1715  git rm --cached a4.txt 
+ 1716  git rm --cached a4.final.txt 
+ 1717  git rm --cached cmds.log 
+ 1718  git ls-files
+ 1719  echo $(($RANDOM % 100))
+ 1720  wc -l < amazon_reviews_us_Books_v1_02.tsv 
  1721  ls
- 1722  less 2193574981
- 1723  less 2193574986.txt 
- 1724  less 2193575839.txt 
- 1725  less 2193574897.txt 
- 1726  less 2193574981.txt 
- 1727  less 2193578758.txt 
- 1728  less 2193579249.txt 
- 1729  cp 2193579249.txt ~/amazonReview/try005/
- 1730  cd ~/amazonReview/try005/
- 1731  ls
- 1732  less 2193579249.txt 
- 1733  cd ..
- 1734  ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
- 1735  cd try005/
- 1736  ls
- 1737  less 2193579249.txt 
- 1738  cd ..
- 1739  time ls try005/ | ~/parallel-20211022/src/parallel ./compare.sh try005/{1} training.1600000.processed.noemoticon.csv 
- 1740  vi compare.sh 
- 1741  script -a a4.txt 
- 1742  cd REVIEWS/
+ 1722  mkdir assing_4
+ 1723  mv a4* assing_4/
+ 1724  ls
+ 1725  mv compare.sh assing_4/
+ 1726  mv word_count* assing_4/
+ 1727  mv unhelpful_* assing_4/
+ 1728  ls
+ 1729  less rfile.txt 
+ 1730  rm rfile.txt 
+ 1731  mv reviews.txt assing_4/
+ 1732  ls
+ 1733  less cl.sh
+ 1734  less trysh.sh 
+ 1735  rm trysh.sh
+ 1736  rm tryshell.sh 
+ 1737  less try.txt 
+ 1738  rm try.txt 
+ 1739  rm tem1.txt 
+ 1740  ls
+ 1741  less word_2.txt 
+ 1742  rm word_2.txt 
  1743  ls
- 1744  exit
- 1745  cd amazonReview/
- 1746  ls
- 1747  cd REVIEWS/
- 1748  ls
- 1749  rm *.txt.tem*.txt
- 1750  ls
- 1751  less 2193579249.txt 
- 1752  less 2193602129.txt 
- 1753  less 2193574897.txt 
- 1754  cd ..
- 1755  vi a4.txt 
- 1756  cd REVIEWS/
- 1757  less 2193574981.txt 
- 1758  less 2193574986.txt 
- 1759  vi ca4
- 1760  cd ..
- 1761  vi ca4.txt 
- 1762  head -n 1 ca4.txt > ca4.txt 
- 1763  less ca4.txt 
- 1764  vi ca4.txt 
- 1765  head -n 1 ca4.txt 
- 1766  head -n 1 ca4.txt > ca4.txt 
- 1767  less ca4.txt 
- 1768  vi ca4.txt 
- 1769  head -n 1 ca4.txt 
- 1770  exit
- 1771  ls REVIEWS/ | head -n 20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1772  time ls REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1773  echo good
- 1774  time ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1775  cd amazonReview/
- 1776  ls
- 1777  vi ca4.txt 
- 1778  sed -n '1p;$p' ca4.txt 
- 1779  sed -n '1p' ca4.txt 
- 1780  sed -i -n '1p' ca4.txt 
- 1781  less ca4.txt 
- 1782  for i in REVIEWS/*.txt ; do sed -i -n '1p' $i; done
- 1783  cd REVIEWS/
- 1784  ls 
- 1785  less 2193574897.txt 
- 1786  less 2193574981.txt 
- 1787  cd ..
- 1788  ls REVIEWS/ | head -n 10
- 1789  ls REVIEWS/ | head -n 10 | tail -2
- 1790  ls REVIEWS/ | wc -
- 1791  ls REVIEWS/ | tail -90
- 1792  ls REVIEWS/ | head -n 30 | tail -10
- 1793  vi compare.sh 
- 1794  vi a4.txt 
- 1795  script -a a4.txt 
- 1796  cd REVIEWS/
- 1797  ls
- 1798  less 2193574897.txt 
- 1799  cd ..
- 1800  vi a4.txt 
- 1801  script -a a4.txt 
- 1802  vi a4.txt 
- 1803  time ls REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1804  vi a4.txt 
- 1805  time ls REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1806  vi a4.txt 
- 1807  script -a a4.txt 
- 1808  vi a4.txt 
- 1809  script -a a4.txt 
- 1810  vi a4.txt 
+ 1744  rm abcdefg.sh 
+ 1745  mv REVIEWS/ assing_4/
+ 1746  mv UNHELPFUL_REVIEWS/ assing_4/
+ 1747  ls
+ 1748  mv assing_4/ assignment_Folder/
+ 1749  ls
+ 1750  rm ca*
+ 1751  ls
+ 1752  vi randomsample.sh
+ 1753  ls
+ 1754  vi cl.sh 
+ 1755  vi randomsample.sh 
+ 1756  vi cl.sh 
+ 1757  vi randomsample.sh 
+ 1758  chmod +x 755 randomsample.sh 
+ 1759  chmod 755 randomsample.sh 
+ 1760  ls
+ 1761  ./randomsample.sh 8
+ 1762  vi randomsample.sh 
+ 1763  ./randomsample.sh 8
+ 1764  vi randomsample.sh 
+ 1765  ./randomsample.sh 2
+ 1766  vi randomsample.sh 
+ 1767  ./randomsample.sh 2
+ 1768  ./randomsample.sh 9
+ 1769  vi randomsample.sh 
+ 1770  ./randomsample.sh 9 8
+ 1771  ./randomsample.sh 9 
+ 1772  vi randomsample.sh 
+ 1773  ./randomsample.sh 9 
+ 1774  ./randomsample.sh 9 5
+ 1775  ./randomsample.sh 9 8
+ 1776  ./randomsample.sh 100 8
+ 1777  vi randomsample.sh 
+ 1778  vi ca1.txt
+ 1779  vi randomsample.sh 
+ 1780  ./randomsample.sh 9 ca1.txt 
+ 1781  ./randomsample.sh 50 amazon_reviews_us_Books_v1_02.tsv 
+ 1782  ./randomsample.sh 1000 amazon_reviews_us_Books_v1_02.tsv 
+ 1783  script ws9.txt
+ 1784  vi ws9.txt 
+ 1785  git ls-files
+ 1786  history > cmds.log 
+ 1787  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws9.txt > ws9.clean.txt
+ 1788  tr -cd '\11\12\15\40-\176' <  ws9.clean.txt > ws9.final.txt
+ 1789  git add ws9.final.txt 
+ 1790  git add cmds.log 
+ 1791  git ls-files
+ 1792  git remote set-url origin https://github.com/AdamY02/ws9.git
+ 1793  git push origin master 
+ 1794  git commit -m "ws9"
+ 1795  git ls-files
+ 1796  git push origin master
+ 1797  git remote set-url origin https://github.com/AdamY02/ws9.git
+ 1798  git push origin master
+ 1799  ls
+ 1800  cd worksheet_Folder/
+ 1801  ls
+ 1802  cd ..
+ 1803  mkdir ws9_work
+ 1804  ls
+ 1805  mv ws9.* ws9_work/
+ 1806  ls
+ 1807  mv ws9_work/ worksheet_Folder/
+ 1808  ls
+ 1809  rm 2193574981.txt 
+ 1810  ls
  1811  exit
- 1812  time ls REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1813  vi compare.sh 
+ 1812  cat randomsample.sh 
+ 1813  ./randomsample.sh 5 amazon_reviews_us_Books_v1_02.tsv 
  1814  cd amazonReview/
- 1815  vi a4.txt 
- 1816  ls REVIEWS/ | head -n 100 | tail -40
- 1817  cd REVIEWS/
- 1818  rm *.txt.tem*.txt
+ 1815  ls
+ 1816  cd worksheet_Folder/
+ 1817  ls
+ 1818  cd ws9_work/
  1819  ls
- 1820  cd ..
- 1821  ls REVIEWS/ | head -n 100 | tail -40
- 1822  history > cmds.log 
- 1823  less cmds.log 
- 1824  vi ca4.txt 
- 1825  sed -i -n '1p' ca4.txt 
- 1826  less ca4.txt 
- 1827  ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel sed -i -n '1p' 
- 1828  ls REVIEWS/ | head -n 100 | tail -40 | ~/parallel-20211022/src/parallel sed -i -n '1p' REVIEWS/{1}
- 1829  cd REVIEWS/
- 1830  ls
- 1831  less 2193602129.txt 
- 1832  less 2193574897.txt 
- 1833  cd ..
- 1834  script -a a4.txt 
- 1835  vi a4.txt 
- 1836  time ls REVIEWS/ | head -n 100 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1837  for i in REVIEWS/*.txt; do cut -f 6 -d "," REVIEWS/$i | tr -d '"'  >> word_count.txt; done
- 1838  for i in REVIEWS/*.txt; do cut -f 6 -d "," $i | tr -d '"'  >> word_count.txt; done
- 1839  sed 's/ /\n/g' word_count.txt > word_count2.txt
- 1840  sed -i 's/ //g' word_count2.txt
- 1841  sed -i -e 's/[.,\:\;]//g' word_count2.txt
- 1842  sed -i -r '/^.{,2}$/d' word_count2.txt
- 1843  sed -i 's/the//g' word_count2.txt 
- 1844  sed -i 's/you//g' word_count2.txt 
- 1845  sed -i 's/can//g' word_count2.txt 
- 1846  sed -i 's/and//g' word_count2.txt 
- 1847  sed -i 's/or//g' word_count2.txt 
- 1848  sed -i 's/was//g' word_count2.txt 
- 1849  echo good 
- 1850  sed -i 's/her//g' word_count2.txt 
- 1851  sed -i 's/him//g' word_count2.txt 
- 1852  sed -i 's/are//g' word_count2.txt 
- 1853  sed -i 's/for//g' word_count2.txt 
- 1854  echo good
- 1855  sed -i '/^$/d' word_count2.txt 
- 1856  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1857  echo good
- 1858  head -n  10 word_count3.txt 
- 1859  cd amazonReview/
- 1860  vi a4.txt 
- 1861  cd REVIEWS/
- 1862  ls
- 1863  less 2193602129.txt 
- 1864  less 2193602064.txt 
- 1865  less 2193578576.txt 
- 1866  less 2193579249.txt 
- 1867  less 2193576534.txt 
- 1868  less 2193601966.txt 
- 1869  less 2193575834.txt 
- 1870  cd ..
- 1871  vi a4.txt 
- 1872  script -a a4.txt 
- 1873  vi a4.txt 
- 1874  ls word_count*
- 1875  rm word_count*
- 1876  ls word_count*
- 1877  echo REVIEWS/2193579249.txt 
- 1878  for i in REVIEWS/*.txt; do echo REVIEWS/$i; done
- 1879  script -a a4.txt 
- 1880  echo good >> gg.txt
- 1881  less gg.txt 
- 1882  rm gg.txt 
- 1883  vi a4.txt 
- 1884  script -a a4.txt 
- 1885  vi a4.txt 
- 1886  ls word*
- 1887  less word_count.txt 
- 1888  script -a a4.txt 
- 1889  less word_count.txt 
- 1890  wc -l < word_count.txt 
- 1891  vi a4.txt 
- 1892  script -a a4.txt 
- 1893  vi a4.txt 
- 1894  less word_count2.txt 
- 1895  cp word_count2.txt word_2.txt
- 1896  less word_2.txt 
- 1897  sed -i 's/the//g' word_2.txt 
- 1898  less word_2.txt 
- 1899  sed -i '/^$/d' word_2.txt 
- 1900  less word_2.txt 
- 1901  sed -i 's/you//g' word_2.txt 
- 1902  less word_2.txt 
- 1903  less word_count2.txt 
- 1904  vi a4.txt 
- 1905  script -a a4.txt 
- 1906  vi a4.txt 
- 1907  script -a a4.txt 
- 1908  vi a4.txt 
- 1909  script -a a4.txt 
- 1910  vi a4.txt 
- 1911  less word_count2.txt 
- 1912  script -a a4.txt 
- 1913  vi a4.txt 
- 1914  less word_count3.txt 
- 1915  sed -i 's/f//g' word_count2.txt 
- 1916  less word_count3.txt 
- 1917  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1918  less word_count3.txt 
- 1919  sed -i '/^$/d' word_count2.txt 
- 1920  sort word_count2.txt | uniq -c | sort -rn > word_count3.txt
- 1921  less word_count3.txt 
- 1922  vi a4.txt 
- 1923  script -a a4.txt 
- 1924  vi a4.txt 
- 1925  script -a a4.txt 
- 1926  exit
- 1927  sort -n -k 1 training.1600000.processed.noemoticon.csv | head -n 100 > unhelpful_reviews.txt
- 1928  awk -F "\",\"" 'BEGIN{OFS="\",\"";} {print $0 > "UNHELPFUL_REVIEWS/" $2".txt" }' unhelpful_reviews.txt
- 1929  for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && sed -E -i 's/ing( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/ed( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename && sed -E -i 's/s( |$|!|\.)/ /' UNHELPFUL_REVIEWS/$filename ; done
- 1930  for i in {1..100}; do filename=$(ls UNHELPFUL_REVIEWS/ | head -n $i | tail -1) && awk -F "\",\"" -i inplace 'BEGIN{OFS="\",\"";}{ gsub(/!/, "", $6); gsub(/\./, "", $6); gsub(/:/, "", $6); gsub(/,/, "", $6); gsub(/?/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/\b[a-zA-Z]\{1,2\} //g' UNHELPFUL_REVIEWS/$filename && awk -F "," -i inplace 'BEGIN{OFS=",";}{ gsub(/about/, "", $6); gsub(/any/, "", $6); gsub(/but/, "", $6); gsub(/has/, "", $6); print}' UNHELPFUL_REVIEWS/$filename && sed -i 's/  */ /g' UNHELPFUL_REVIEWS/$filename; done
- 1931  time ls UNHELPFUL_REVIEWS/ | head -n 20 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1932  cd UNHELPFUL_REVIEWS/
- 1933  ls
- 1934  cd amazonReview/
- 1935  vi a4.txt 
- 1936  ls
- 1937  cp a4.txt a4.cp.txt
- 1938  vi a4.
- 1939  vi a4.txt 
- 1940  less reviews.txt 
- 1941  mkdir UNHELPFUL_REVIEWS
- 1942  script -a a4.txt 
- 1943  less unhelpful_reviews.txt 
- 1944  cd UNHELPFUL_REVIEWS/
- 1945  ls
- 1946  less 1467834053.txt 
- 1947  cd ..
- 1948  vi a4.
- 1949  vi a4.txt 
- 1950  echo good
- 1951  script -a a4.txt 
- 1952  vi a4.txt 
- 1953  script -a a4.txt 
- 1954  vi a4.txt 
- 1955  ls REVIEWS/ | head -n 5 | tail -5
- 1956  vi a4.
- 1957  vi a4.txt 
- 1958  script -a a4.txt 
- 1959  vi a4.txt 
- 1960  script -a a4.txt 
- 1961  cd UNHELPFUL_REVIEWS/
- 1962  less 1467810369.txt 
- 1963  less 1467812964.txt 
- 1964  less 1467836024.txt 
- 1965  less 1467834053.txt 
- 1966  less 1467812579.txt 
- 1967  cd ..
- 1968  vi a4.txt 
- 1969  vi compare.sh 
- 1970  vi a4.txt 
- 1971  time ls UNHELPFUL_REVIEWS/ | head -n 40 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1972  time ls UNHELPFUL_REVIEWS/ | head -n 60 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1973  time ls UNHELPFUL_REVIEWS/ | head -n 80 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1974  time ls UNHELPFUL_REVIEWS/ | head -n 100 | tail -20 | ~/parallel-20211022/src/parallel ./compare.sh UNHELPFUL_REVIEWS/{1} training.1600000.processed.noemoticon.csv 
- 1975  cd amazonReview/
- 1976  vi a4.txt 
- 1977  cd UNHELPFUL_REVIEWS/
- 1978  ls
- 1979  rm *.txt.tem*.txt
- 1980  ls
- 1981  less 1467825003.txt 
- 1982  ls | wc -l
- 1983  less 1467823851.txt 
- 1984  cd ..
- 1985  script -a a4.txt
- 1986  vi a4.
- 1987  vi a4.txt 
- 1988  script -a a4.txt 
- 1989  vi a4.txt 
- 1990  script -a a4.txt 
- 1991  vi a4.txt 
- 1992  cd REVIEWS/
- 1993  ls
- 1994  ls | wc -l
- 1995  cd ..
- 1996  script -a a4.txt 
- 1997  vi a4.t
- 1998  vi a4.txt 
+ 1820  less ws9.final.txt 
+ 1821  cd ..
+ 1822  ls
+ 1823  vi randomsample.sh 
+ 1824  vi cl.sh 
+ 1825  ./cl.sh 5
+ 1826  vi cl.sh
+ 1827  ./cl.sh 5
+ 1828  vi cl.sh
+ 1829  vi cl.sh 5
+ 1830  ./cl.sh 5
+ 1831  vi cl.sh 
+ 1832  ./cl.sh 
+ 1833  vi cl.sh 
+ 1834  ./cl.sh 5
+ 1835  vi cl.sh 
+ 1836  ./cl.sh 5
+ 1837  vi randomsample.sh 
+ 1838  vi ca1.txt 
+ 1839  ./randomsample.sh 3 ca1.txt 
+ 1840  wc -l < ca1.txt 
+ 1841  vi randomsample.sh 
+ 1842  wc -l < ca1.txt 
+ 1843  ./randomsample.sh 3 ca1.txt 
+ 1844  vi randomsample.sh 
+ 1845  ./randomsample.sh 3 ca1.txt 
+ 1846  vi cl.sh 
+ 1847  vi randomsample.sh 
+ 1848  ./randomsample.sh 3 ca1.txt 
+ 1849  vi randomsample.sh 
+ 1850  ./randomsample.sh 3 ca1.txt 
+ 1851  vi randomsample.sh 
+ 1852  ./randomsample.sh 5 amazon_reviews_us_Books_v1_02.tsv 
+ 1853  ./randomsample.sh 5 ca1.txt 
+ 1854  vi randomsample.sh 
+ 1855  wc -l < amazon_reviews_us_Books_v1_02.tsv 
+ 1856  ./randomsample.sh 5 amazon_reviews_us_Books_v1_02.tsv 
+ 1857  git commit -m "ws9.2" 
+ 1858  ls
+ 1859  script -a ws9.txt
+ 1860  vi ws9.txt 
+ 1861  perl -pe 's/\x1b\[[0-9;]*[mG]//g' ws9.txt > ws9.clean.txt
+ 1862  tr -cd '\11\12\15\40-\176' < ws9.clean.txt > ws9.final.txt
+ 1863  git ls-files
+ 1864  gir rm --cached ws9.final.txt 
+ 1865  git rm --cached ws9.final.txt 
+ 1866  git commit -m
+ 1867  git commit -m "ws9"
+ 1868  git add ws9.final.txt 
+ 1869  git commit -m "ws9"
+ 1870  git push origin master
+ 1871  exit
+ 1872  cd amazonReview/
+ 1873  ls
+ 1874  cd ..
+ 1875  ls
+ 1876  wget https://sourceforge.net/projects/weka/files/weka-3-8/3.8.5/weka-3-8-5-azul-zulu-linux.zip/download?use_mirror=phoenixnap
+ 1877  ls
+ 1878  rm 'download?use_mirror=phoenixnap' 
+ 1879  ls
+ 1880  wget https://sourceforge.net/projects/weka/files/weka-3-8/3.8.5/weka-3-8-5-azul-zulu-linux.zip
+ 1881  ls
+ 1882  unzip weka-3-8-5-azul-zulu-linux.zip 
+ 1883  ls
+ 1884  cd weka-3-8-5/
+ 1885  export CLASSPATH=$CLASSPATH:`pwd`/weka.jar:`pwd`/libsvm.jar
+ 1886  echo good > 123.txt
+ 1887  ls
+ 1888  rm 123.txt 
+ 1889  cd ..
+ 1890  echo good > 123.txt
+ 1891  ls
+ 1892  java weka.core.converters.TextDirectoryLoader -dir 123.txt > 123.arff
+ 1893  java weka.core.converters.TextDirectoryLoader ~ 123.txt > 123.arff
+ 1894  ls
+ 1895  ls 123.
+ 1896  ls 123.*
+ 1897  vi 123.arff 
+ 1898  rm 123.arff
+ 1899  vi 123.txt 
+ 1900  java weka.core.converters.TextDirectoryLoader -dir 123.txt > 123.txt.arff
+ 1901  cd weka-3-8-5/
+ 1902  ls
+ 1903  cd ..
+ 1904  exit
+ 1905  ls
+ 1906  wget https://sjsu.instructure.com/courses/1431198/files/65819867/download?download_frd=1
+ 1907  ls
+ 1908  less 'download?download_frd=1' 
+ 1909  mv 'download?download_frd=1' numbers.py
+ 1910  ls
+ 1911  cd amazonReview/
+ 1912  ls
+ 1913  cd ..
+ 1914  mv numbers.py ~/amazonReview/
+ 1915  cd amazonReview/
+ 1916  ls
+ 1917  time python3 numbers.py 
+ 1918  cd amazonReview/
+ 1919  ls
+ 1920  vi ca1.txt 
+ 1921  awk -F "\",\"" '{print $1} ca1
+ 1922  awk -F "\",\"" '{print $1}' ca1.txt 
+ 1923  vi ca1.txt 
+ 1924  awk -F "\",\"" '{print $1}' ca1.txt 
+ 1925  awk -F "\",\"" 'BEGIN{min=0} {print $1}' ca1.txt 
+ 1926  awk -F "\",\"" 'BEGIN{min=0} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1927  awk -F "\",\"" 'BEGIN{min=$1} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1928  awk -F "\",\"" 'BEGIN{min=$100} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1929  awk -F "\",\"" 'BEGIN{min=100} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1930  awk -F "\",\"" 'BEGIN{min=100,max=0} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1931  awk -F "\",\"" 'BEGIN{min=100}{max=0} {if ($1<min) min=$1}END{print min} ' ca1.txt 
+ 1932  awk -F "\",\"" 'BEGIN{min=100}{max=0} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print min} ' ca1.txt
+ 1933  awk -F "\",\"" 'BEGIN{min=100}{max=0} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print min, max} ' ca1.txt
+ 1934  awk -F "\",\"" 'BEGIN{min=100}{max=0} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max} ' ca1.txt
+ 1935  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count=count+$1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1936  vi ca1.txt 
+ 1937  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count+=$1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1938  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count=$1+1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1939  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1940  vi ca1.txt 
+ 1941  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1942  vi ca1.txt 
+ 1943  awk -F "\",\"" 'BEGIN{min=100}{max=0}{count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1944  awk -F "\",\"" 'BEGIN{min=100 max=0 count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1945  awk -F "\",\"" 'BEGIN{min=100 max=0 count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}' ca1.txt
+ 1946  awk -F "\",\"" 'BEGIN{min=100, max=0, count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}' ca1.txt
+ 1947  awk -F "\",\"" 'BEGIN{min=100&&max=0&&count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}' ca1.txt
+ 1948  awk -F "\",\"" 'BEGIN{min=100 && max=0 && count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1949  vi ca1.txt 
+ 1950  awk -F "\",\"" 'BEGIN{min=100 && max=0 && count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1951  vi ca1.txt 
+ 1952  awk -F "\",\"" 'BEGIN{min=100 && max=0 && count=0} {count += $1} {if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1953  awk -F "\",\"" 'BEGIN{min=100 && max=0 && count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1954  awk -F "\",\"" 'BEGIN{min=12 && max=0 && count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1955  awk -F "\",\"" 'BEGIN{min=12} {if ($1<min) min=$1} {print min max count}' ca1.txt
+ 1956  awk -F "\",\"" 'BEGIN{min=12 && max=0 && count=0} {print min max count}' ca1.txt
+ 1957  awk -F "\",\"" 'BEGIN{min=12 && max=0 && count=0} {print "min: " min "max: " max}' ca1.txt
+ 1958  awk -F "\",\"" 'BEGIN{min=12 && max=0} {print "min: " min "max: " max}' ca1.txt
+ 1959  awk -F "\",\"" 'BEGIN{min=12 && max=85} {print "min: " min "max: " max}' ca1.txt
+ 1960  awk -F "\",\"" 'BEGIN{min=12 && max=0} {print "min: " min "max: " max}' ca1.txt
+ 1961  awk -F "\",\"" 'BEGIN{min=12 && max=12} {print "min: " min " max: " max}' ca1.txt
+ 1962  awk -F "\",\"" 'BEGIN{min=12 && max=1} {print "min: " min " max: " max}' ca1.txt
+ 1963  awk -F "\",\"" 'BEGIN{min=12 && max=10} {print "min: " min " max: " max}' ca1.txt
+ 1964  awk -F "\",\"" 'BEGIN{ min=12 && max=10} {print "min: " min " max: " max}' ca1.txt
+ 1965  awk -F "\",\"" 'BEGIN{max=10 && min=12} {print "min: " min " max: " max}' ca1.txt
+ 1966  awk -F "\",\"" 'BEGIN{max=10 & min=12} {print "min: " min " max: " max}' ca1.txt
+ 1967  awk -F "\",\"" 'BEGIN{count=0 && max=10 && min=12} {print "min: " min " max: " max}' ca1.txt
+ 1968  awk -F "\",\"" 'NR==1 {min=$1; max=$1, count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1969  awk -F "\",\"" 'NR==1 {min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1970  vi ca1.txt 
+ 1971  awk -F "\",\"" 'NR>1 {min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1972  vi ca1.txt 
+ 1973  awk -F "\",\"" 'NR==1 {min=$1; max=$1; count=0} {co"count: " count} ' ca1.txt
+ 1974  awk -F "\",\"" 'NR==1 {min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1975  awk -F "\",\"" 'NR>1 {min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} ' ca1.txt
+ 1976  vi ca1.txt 
+ 1977  awk -F "\",\"" 'NR>1 {{min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count} }' ca1.txt
+ 1978  awk -F "\",\"" 'NR>1 {{min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1979  awk -F "\",\"" 'NR==2 {{min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1980  awk -F "\",\"" 'NR==1 {{min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1981  awk -F "\",\"" 'NR==2 {min=$1; max=$1; count=0} {count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1982  awk -F "\",\"" 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1983  vi ca1.txt 
+ 1984  awk -F "\",\"" 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "count: " count}' ca1.txt
+ 1985  awk -F "\",\"" 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "average: " count/NR}' ca1.txt
+ 1986  vi ca1.txt 
+ 1987  awk -F "\",\"" 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "average: " count/NR-1}' ca1.txt
+ 1988  awk -F "\",\"" 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' ca1.txt
+ 1989  less amazon_reviews_us_Books_v1_02.tsv 
+ 1990  vi ca1.txt 
+ 1991  awk -F " " 'NR==2{min=$1; max=$1; count=0} NR>1{{count += $1}{if ($1<min) min=$1}{if ($1>max) max=$1} {print min max count}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' ca1.txt
+ 1992  awk -F " " 'NR==2{min=$9; max=$9; count=0} NR>1{{count += $9}{if ($9<min) min=$9}{if ($9>max) max=$9} {print min max count}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' ca1.txt
+ 1993  vi ca1.txt 
+ 1994  awk -F " " 'NR==2{min=$9; max=$9; count=0} NR>1{{count += $9}{if ($9<min) min=$9}{if ($9>max) max=$9} {print min max count}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' ca1.txt
+ 1995  less amazon_reviews_us_Books_v1_02.tsv 
+ 1996  awk -F " " 'NR==2{min=$9; max=$9; count=0} NR>1{{count += $9}{if ($9<min) min=$9}{if ($9>max) max=$9}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' amazon_reviews_us_Books_v1_02.tsv 
+ 1997  less amazon_reviews_us_Books_v1_02.tsv 
+ 1998  awk -F "\t" 'NR==2{min=$9; max=$9; count=0} NR>1{{count += $9}{if ($9<min) min=$9}{if ($9>max) max=$9}}END{print "min: " min, "max: " max, "average: " count/(NR-1)}' amazon_reviews_us_Books_v1_02.tsv 
  1999  exit
  2000  cd amazonReview/
- 2001  vi a4.txt 
- 2002  script -a a4.txt 
- 2003  less unhelpful_wordcount.txt 
- 2004  vi a4.t
- 2005  vi a4.txt 
- 2006  script -a a4.txt 
- 2007  vi a4.txt 
- 2008  script -a a4.txt 
- 2009  vi a4.txt 
- 2010  head -n 320 a4.txt | tail -1
- 2011  head -n 120 a4.txt | tail -1
- 2012  head -n 150 a4.txt | tail -1
- 2013  head -n 158 a4.txt | tail -1
- 2014  head -n 159 a4.txt | tail -1
- 2015  head -n 172 a4.txt | tail -1
- 2016  head -n 185 a4.txt | tail -1
- 2017  head -n 189 a4.txt | tail -1
- 2018  head -n 193 a4.txt | tail -1
- 2019  head -n 195 a4.txt | tail -1
- 2020  head -n 206 a4.txt | tail -1
- 2021  head -n 208 a4.txt | tail -1
- 2022  head -n 209 a4.txt | tail -1
- 2023  head -n 214 a4.txt | tail -1
- 2024  head -n 228 a4.txt | tail -1
- 2025  head -n 235 a4.txt | tail -1
- 2026  head -n 240 a4.txt | tail -1
- 2027  head -n 237 a4.txt | tail -1
- 2028  head -n 235 a4.txt | tail -1
- 2029  head -n 236 a4.txt | tail -1
- 2030  vi a4.txt 
- 2031  head -n 237 a4.txt | tail -1
- 2032  head -n 237 a4.txt > a4.c2.txt
- 2033  less a4.c2.txt 
- 2034  cp a4.c2.txt a4.txt
- 2035  vi a4.txt 
- 2036  script -a a4.txt 
- 2037  less unhelpful_wordcount3.txt 
- 2038  sed -i 's/f//g' unhelpful_wordcount2.txt
- 2039  sed -i '/^$/d' unhelpful_wordcount2.txt
- 2040  sort unhelpful_wordcount2.txt | uniq -c | sort -rn > unhelpful_wordcount3.txt
- 2041  less unhelpful_wordcount3.txt 
- 2042  vi a4.txt 
- 2043  script -a a4.txt 
- 2044  vi a4.txt 
- 2045  perl -pe 's/\x1b\[[0-9;]*[mG]//g' a4.txt > a4.clean.txt
- 2046  tr -cd '\11\12\15\40-\176' < a4.clean.txt > a4.final.txt
- 2047  git ls-files
- 2048  git rm --cahced cmds.log ws8.final.txt 
- 2049  git add a4.final.txt 
- 2050  git commot -m "assignment4"
- 2051  git commit -m "assignment 4"
- 2052  git remote set-url origin https://github.com/AdamY02/assign4.git
- 2053  git push origin master
- 2054  git ls-files
- 2055  git rm --cached ws8.final.txt 
- 2056  git rm --cached a4.txt 
- 2057  git rm --cached a4.final.txt 
- 2058  git rm --cached cmds.log 
- 2059  git ls-files
- 2060  echo $(($RANDOM % 100))
- 2061  wc -l < amazon_reviews_us_Books_v1_02.tsv 
- 2062  ls
- 2063  mkdir assing_4
- 2064  mv a4* assing_4/
- 2065  ls
- 2066  mv compare.sh assing_4/
- 2067  mv word_count* assing_4/
- 2068  mv unhelpful_* assing_4/
- 2069  ls
- 2070  less rfile.txt 
- 2071  rm rfile.txt 
- 2072  mv reviews.txt assing_4/
- 2073  ls
- 2074  less cl.sh
- 2075  less trysh.sh 
- 2076  rm trysh.sh
- 2077  rm tryshell.sh 
- 2078  less try.txt 
- 2079  rm try.txt 
- 2080  rm tem1.txt 
- 2081  ls
- 2082  less word_2.txt 
- 2083  rm word_2.txt 
- 2084  ls
- 2085  rm abcdefg.sh 
- 2086  mv REVIEWS/ assing_4/
- 2087  mv UNHELPFUL_REVIEWS/ assing_4/
- 2088  ls
- 2089  mv assing_4/ assignment_Folder/
- 2090  ls
- 2091  rm ca*
- 2092  ls
- 2093  vi randomsample.sh
- 2094  ls
- 2095  vi cl.sh 
- 2096  vi randomsample.sh 
- 2097  vi cl.sh 
- 2098  vi randomsample.sh 
- 2099  chmod +x 755 randomsample.sh 
- 2100  chmod 755 randomsample.sh 
- 2101  ls
- 2102  ./randomsample.sh 8
- 2103  vi randomsample.sh 
- 2104  ./randomsample.sh 8
- 2105  vi randomsample.sh 
- 2106  ./randomsample.sh 2
- 2107  vi randomsample.sh 
- 2108  ./randomsample.sh 2
- 2109  ./randomsample.sh 9
- 2110  vi randomsample.sh 
- 2111  ./randomsample.sh 9 8
- 2112  ./randomsample.sh 9 
- 2113  vi randomsample.sh 
- 2114  ./randomsample.sh 9 
- 2115  ./randomsample.sh 9 5
- 2116  ./randomsample.sh 9 8
- 2117  ./randomsample.sh 100 8
- 2118  vi randomsample.sh 
- 2119  vi ca1.txt
- 2120  vi randomsample.sh 
- 2121  ./randomsample.sh 9 ca1.txt 
- 2122  ./randomsample.sh 50 amazon_reviews_us_Books_v1_02.tsv 
- 2123  ./randomsample.sh 1000 amazon_reviews_us_Books_v1_02.tsv 
- 2124  script ws9.txt
- 2125  vi ws9.txt 
- 2126  git ls-files
- 2127  history > cmds.log 
+ 2001  time python3 number.py
+ 2002  ls
+ 2003  cd ..
+ 2004  ls
+ 2005  cd amazonReview/
+ 2006  ls
+ 2007  time python3 numbers.py 
+ 2008  ls
+ 2009  vi MinMaxAverage.sh
+ 2010  vi randomsample.sh 
+ 2011  vi MinMaxAverage.sh
+ 2012  vi randomsample.sh 
+ 2013  vi MinMaxAverage.sh
+ 2014  chmod +x MinMaxAverage.sh 
+ 2015  ls
+ 2016  ./MinMaxAverage.sh 
+ 2017  script ws10.txt
+ 2018  vi ws10.txt 
+ 2019  script -a ws10.txt 
+ 2020  vi ws10.txt 
+ 2021  script -a ws10.txt 
+ 2022  vi ws10.txt 
+ 2023  history > cmds.log
